@@ -1,3 +1,5 @@
+alias:: Property
+
 - Properties are key-value pairs that allow you to annotate a block or page
 	- _Page properties_ are defined by putting them into the first block of the page (_[[frontmatter]]_)
 	- _Block properties_ are defined by putting them into any other block
@@ -27,8 +29,8 @@
 	  type:: documentation
 	  parts:: motor, steering wheel, tyres
 	  ```
-	- Each block can also have _many_ pairs of properties (except for the first block, which will be served as page properties)
-	- Properties (key-value pairs) can be added via frontmatter-like syntax for a page (first block of the page) or a block:
+	- Each block may also have _many_ pairs of properties (except for the first block, which will be served as page properties)
+	- Properties (key-value pairs) can be added via [[frontmatter]]-like syntax for a page (first block of the page) or a block:
 	  ```
 	  type:: [[book]]
 	  author:: [[sönke ahrens]]
@@ -45,7 +47,7 @@
 			  {{query (property parts)}}
 			- We can also use [[Queries/Advanced Queries]]:
 				-
-				  #+BEGIN_SRC clojure
+				   #+BEGIN_SRC clojure
 				   #+BEGIN_QUERY
 				   {:title [:h2 "My books"]
 				    :query [:find (pull ?b [*])
@@ -70,10 +72,9 @@
 		  title: Mathematics and Plausible Reasoning
 		  published: 2009
 		  ```
-## Special Properties
+- ## Special Properties
 	- There are special properties that control Logseq functionality (the number in brackets indicates how many values you may define):
 		- `tags` (N) get listed in their own section "Pages tagged with X" below a page.
-		      ![image.png](../assets/image_1626436683291_0.png)
 		- `template` (1) designates a page as a template.
 		- `template-including-parent` (1) (in previous versions `include-parent`) specifies whether the parent level content of the selected block should be included when using a template
 		- `collapsed` (1) specifies whether a block is collapsed.

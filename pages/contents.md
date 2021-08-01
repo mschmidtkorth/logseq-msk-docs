@@ -1,1 +1,1 @@
-- [[Logseq - Unofficial Documentation]]
+[[Logseq - Unofficial Documentation]]

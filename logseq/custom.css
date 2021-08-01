@@ -1610,7 +1610,7 @@ content .admonitionblock {
 /* Footnotes */
 
 .footdef {
-	font-size: .8em !important;
+	font-size: .5em !important;
 }
 
 /*==================================================*/

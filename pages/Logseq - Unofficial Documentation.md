@@ -4,7 +4,7 @@
   #+END_NOTE
 -
   #+BEGIN_TIP
-  * **You have never used an [[Infinite Outliner]] application?** Feel free to play around - click on links with brackets `[[]]` (you may also hover over them!) to be taken to another section of content, hover over the bullet on the left side to expand/collapse content or click on it to open it in its own view. 
+  * **You have never used an [[Infinite Outliner]] application?** Feel free to play around - click on links with brackets `[[]]` (you may also hover over them!) to be taken to another section of content, hover over the bullet on the left side to expand/collapse content or click on it to open it in its own view.
   * Press `t` then `w` (like typing `tw`) to increase the page width.
   #+END_TIP
 - # Introduction
@@ -25,7 +25,7 @@
 		  ![image.png](../assets/image_1625607156086_0.png)
 		  Source: [OneStutteringMind](https://youtu.be/8cZdHIgwPro?t=610)
 		- Logseq is built on a few fundamental features:
-		  1. **You own your data:** Logseq uses plain Markdown files to store any of your content (it uses additional syntax ([example](https://discuss.logseq.com/t/headings-where-they-at/391/12)) - you will always be able to retrieve your data or look at it with any text editor. It uses an additional database it generates from your Markdown files used to store metadata. 
+		  1. **You own your data:** Logseq uses plain Markdown files to store any of your content (it uses additional syntax ([example](https://discuss.logseq.com/t/headings-where-they-at/391/12)) - you will always be able to retrieve your data or look at it with any text editor. It uses an additional database it generates from your Markdown files used to store metadata.
 		  1. **Privacy-first and offline access:** Your data does not leave your computer and you do not need to be online to use Logseq. It offers an optional [[Github login]] that uses a thin backend server for authentication and image upload (deprecated). You are able to encrypt your data ([[Features/Encryption]]).
 		  1. **Community-driven:** The Logseq team is heavily interacting with the community by making the frontend code [open-source](https://github.com/logseq/logseq) (not the backend code) and engaging with users on [Discord](https://discord.gg/KpN4eHY) in a very transparent way ([roadmap](https://trello.com/b/8txSM12G/roadmap)).
 		  1. **Free:** The current features are (and supposedly remain) free. The Logseq team is planning to introduce advanced features, such as collaboration, that may possibly be paid in order to provide for future development. **You are able to [donate](https://opencollective.com/logseq) to the team which I can only recommend.**
@@ -187,158 +187,6 @@
 		- ## [[Macros]]
 		- ## [[Spaced Repetition]] (Flashcards)
 		- ## Querying Data ([[Queries]])
-		  collapsed:: true
-			-
-			  #+BEGIN_TIP
-			  Logseq queries are identically implemented to [Roam's](https://elaptics.co.uk/roam-course/lesson-6/)
-			  #+END_TIP
-			-
-			  #+BEGIN_TIP
-			  To debug queries, open Developer Console and look for `$APP.Tl`
-			  ![image.png](../assets/image_1625748582353_0.png){:height 280, :width 464}
-			  #+END_TIP
-			- TODO Early draft - fix queries and results; update from official documentation
-			- You can query pages, blocks etc. and display them
-			- There are [[Queries/Simple Queries]] and [[Queries/Advanced Queries]]
-			- Advanced queries
-				-
-				  ```datalog
-				  #+BEGIN_QUERY
-				  {:title "All pages with tag myTagA"
-				   :query [:find (pull ?b [*])
-				       :where
-				       [?p :page/name "myTagA"]
-				       [?b :block/ref-pages ?p]]
-				  :collapsed? true}
-				  #+END_QUERY
-				  ```
-				- ?p = short for ?page, ?b = short for ?block
-				- :block/name` is the block's name; note that there is [no `:page/name`](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs) - a page is simply a special block
-				-
-				  created-at:: 1626300859256
-				  updated-at:: 1626300859256
-				  #+BEGIN_QUERY
-				  {:query [:find (pull ?b [*])
-				       :where
-				       [?p :block/name "praise"]
-				       [?b :block/ref-pages ?p]]
-				  :collapsed? true}
-				  #+END_QUERY
-			- TODO Titles 
-			  ```
-			  #+BEGIN_QUERY
-			      {:title [:h2 "My books"]
-			        :query [...]}
-			      #+END_QUERY
-			  ```
-			- Query all pages part of a hierarchy
-			  updated-at:: 1626301594584
-			  created-at:: 1626301594584
-			  #+BEGIN_QUERY
-			  {:title "All pages starts with Home/Garden"
-			   :query [:find (pull ?p [*])
-			           :where
-			           [?p :block/name ?name]
-			           [(str/starts-with (?name) "Home/Garden")]
-			  ]}
-			  #+END_QUERY
-				- Alternative
-				  updated-at:: 1626301589734
-				  created-at:: 1626301588472
-				-
-				  #+BEGIN_QUERY
-				  {:title "Home/Garden children pages"
-				   :query [:find (pull ?p [*])
-				           :where
-				           [?p :block/namespace ?namespace]
-				           [?namespace :block/name "Home/Garden"]]}
-				  #+END_QUERY
-			- Limit query to current page
-			  ```
-			  {{query (page-property parent <%  current page %>)}}
-			  ```
-			- <page_name> <keyword 1>, without <keyword 2> OR ["page" "keyword" "not this keyword"]
-			  #+BEGIN_QUERY
-			  {:query [:find (pull ?b [*])
-			           :in $ ?pagename ?keyword ?not
-			           :where
-			           [(str "(?i)" ?keyword) ?matcher1]
-			           [(re-pattern ?matcher1) ?regex1]
-			           [(str "(?i)" ?not) ?matcher2]
-			           [(re-pattern ?matcher2) ?regex2]
-			           [?p :block/original-name ?pagename]
-			           [?b :block/page ?p]
-			           [?b :block/content ?c]
-			           (not [(re-find ?regex2 ?c)])
-			           [(re-find ?regex1 ?c)]]
-			   :inputs ["page" "keyword" "not this keyword"]
-			   }
-			  #+END_QUERY
-			- Sort by priority
-			  #+BEGIN_QUERY
-			        {:title "🟢 ACTIVE"
-			          :query [:find (pull ?h [*])
-			                  :in $ ?start ?today
-			                  :where
-			                  [?h :block/marker ?marker]
-			                  [?h :block/page ?p]
-			                  [?p :page/journal? true]
-			                  [?p :page/journal-day ?d]
-			                  [(>= ?d ?start)]
-			                  [(<= ?d ?today)]
-			                  [(contains? #{"NOW" "DOING"} ?marker)]]
-			          :inputs [:14d :today]
-			          :result-transform (fn [result]
-			                              (sort-by (fn [h]
-			                                         (get h :block/priority "Z")) result))
-			          :collapsed? false}
-			  #+END_QUERY
-			- Add links
-			  ```clojure
-			  (let [nickname (second (:url (second (first title))))]
-			                           [:a {:href (str "page/" nickname)}
-			                            nickname])
-			  ```
-			- Querying tasks
-				-
-				  ```clojure
-				  {:title            "🔨 NOW"
-				      :query            [:find (pull ?h [*])
-				                         :in $ ?start ?today
-				                         :where
-				                         [?h :block/marker ?marker]
-				                         [(contains? #{"NOW" "DOING"} ?marker)]
-				                         [?h :block/page ?p]
-				                         [?p :block/journal? true]
-				                         [?p :block/journal-day ?d]
-				                         [(>= ?d ?start)]
-				                         [(<= ?d ?today)]]
-				      :inputs           [:14d :today]
-				      :result-transform (fn [result]
-				                          (sort-by (fn [h]
-				                                     (get h :block/priority "Z")) result))
-				      :collapsed?       false}
-				  
-				  {:title      "📅 NEXT"
-				      :query      [:find (pull ?h [*])
-				                   :in $ ?start ?next
-				                   :where
-				                   [?h :block/marker ?marker]
-				                   [(contains? #{"NOW" "LATER" "TODO"} ?marker)]
-				                   [?h :block/ref-pages ?p]
-				                   [?p :block/journal? true]
-				                   [?p :block/journal-day ?d]
-				                   [(> ?d ?start)]
-				                   [(< ?d ?next)]]
-				      :inputs     [:today :7d-after]
-				      :collapsed? false}
-				  ```
-			- Not working - limited to current page ... https://discuss.logseq.com/t/query-todos-on-current-page/1481 https://discord.com/channels/725182569297215569/743670484863811649/816094510223589396
-				- {{query (and (task later) (between <% this monday %> <% this friday %>))}}
-				- {{query (and ([[mine]]) (page-property parent <% current page %>))}}
-				- {{query (page-property parent <% current page %>)}}
-				  query-table:: false
-				- {{query (page-property parent <% current page %>)}}
 - # Development
   collapsed:: true
 	- To contribute to Logseq, clone the [git repository](https://github.com/logseq/logseq/), `cd logseq`, `yarn install`, `yarn watch` (check log output - it lists multiple IPs/addresses to open)
@@ -347,8 +195,8 @@
 		  If the Logseq page stays blank, open the dashboard URL (e.g. `http://localhost:9630/dashboard`) and click on `Force recompile` for the Electron app
 		  #+END_TIP
 	- ## [[Plugins API]]
-# Logseq vs. Similar Apps
-collapsed:: true
+- # Logseq vs. Similar Apps
+  collapsed:: true
 	- See [[Infinite Outliners]]
 	- ## VuePress
 		- Advantages
@@ -391,7 +239,7 @@ collapsed:: true
 		- This is typically only a visual issue and your content is not lost. Confirm it by opening the Markdown file in a text editor
 		- To resolve
 			-
-			  1. [[Reindex]] your [[graph]], or 
+			  1. [[Reindex]] your [[graph]], or
 			  1. Restart Logseq, or
 			  1. Go to _Settings > Clear Cache_ or use `Cmd+Shift+R` to reload without cache
 - # Resources
