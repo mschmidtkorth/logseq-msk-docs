@@ -189,6 +189,7 @@
 		- ## [[Spaced Repetition]] (Flashcards)
 		- ## Querying Data ([[Queries]])
 - # Development
+  collapsed:: true
 	- To contribute to Logseq, clone the [git repository](https://github.com/logseq/logseq/), `cd logseq`, `yarn install`, `yarn watch` (check log output - it lists multiple IPs/addresses to open)
 		-
 		  #+BEGIN_TIP
@@ -250,4 +251,4 @@
 	- [Great videos around](https://www.youtube.com/channel/UC525q2RIufHjnaHOuIUFY9A) [[PKM]]
 		- [Learn anything fast with Roam](https://www.youtube.com/watch?v=df-Pufz0OBc)
 	- Introduction videos: [1](https://www.youtube.com/watch?v=Vw-x7yTTO0s&t=496s), [2](https://www.youtube.com/watch?v=43PKm0TfyNk), [3](https://www.youtube.com/watch?v=43PKm0TfyNk), [4](https://www.youtube.com/watch?v=280hiGGM1Yg)
-- TODO Go through official Logseq documentation
+- DOING Go through official Logseq documentation
