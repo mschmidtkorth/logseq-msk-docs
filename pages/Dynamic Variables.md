@@ -1,0 +1,25 @@
+- Dynamic variables are calculated on-the-fly. They can be used to specify date/time or the current page.
+- **USAGE**
+	- You can use dynamic variables in [[Templates]], [[Queries]] or [[Macros]].
+	- The syntax is `<% nameOfVariable %>`.
+- **EXAMPLES**
+	- Date & Time ([source](https://logseq.github.io/#/page/dynamic%20variables))
+		- `today` => [[Today's journal page]]
+		- `yesterday` => [[Yesterday's journal page]]
+		- `tomorrow` => [[Tomorrow's journal page]]
+		- `time` => Current time, e.g. 22:44
+		- `Last Friday` => [[Feb 12th, 2021]]
+			- There are other ways of using [natural language](https://github.com/wanasit/chrono) dates -
+				- `Today, Tomorrow, Yesterday, Last Friday` etc
+				- `17 August 2013 - 19 August 2013`
+				- `This Friday from 13:00 - 16.00`
+				- `5 days ago`
+				- `2 weeks from now`
+				- `Sat Aug 17 2013 18:40:39 GMT+0900 (JST)`
+				- `2014-11-30T08:15:30-05:30`
+	- Page properties
+		- `current page` => [[Current page]]
+	- Usage in queries
+		-
+		- NOW Understand how dynamic variables work
+		- {{query (and (page <% current page %>) (todo now))}}

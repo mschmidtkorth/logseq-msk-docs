@@ -1,0 +1,3 @@
+- [Documentation](https://logseq.github.io/page/Queries#/page/advanced%20queries)
+- **USAGE**
+	- Advanced queries are written via [Datalog](https://en.wikipedia.org/wiki/Datalog) with Clojure syntax

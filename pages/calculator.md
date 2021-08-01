@@ -1,0 +1,1 @@
+- A calculator is a [[mobile device]]
