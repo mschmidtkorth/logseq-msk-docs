@@ -6,6 +6,7 @@
   #+BEGIN_TIP
   * **You have never used an [[Infinite Outliner]] application?** Feel free to play around - click on links with brackets `[[]]` (you may also hover over them!) to be taken to another section of content, hover over the bullet on the left side to expand/collapse content or click on it to open it in its own view.
   * Press `t` then `w` (like typing `tw`) to increase the page width.
+  * Use the search at the top left of the screen.
   #+END_TIP
 - # Introduction
   heading:: true
@@ -188,13 +189,13 @@
 		- ## [[Spaced Repetition]] (Flashcards)
 		- ## Querying Data ([[Queries]])
 - # Development
-  collapsed:: true
 	- To contribute to Logseq, clone the [git repository](https://github.com/logseq/logseq/), `cd logseq`, `yarn install`, `yarn watch` (check log output - it lists multiple IPs/addresses to open)
 		-
 		  #+BEGIN_TIP
 		  If the Logseq page stays blank, open the dashboard URL (e.g. `http://localhost:9630/dashboard`) and click on `Force recompile` for the Electron app
 		  #+END_TIP
 	- ## [[Plugins API]]
+	- ## [[Static Export]]
 - # Logseq vs. Similar Apps
   collapsed:: true
 	- See [[Infinite Outliners]]
