@@ -7,14 +7,14 @@ alias:: command
 	- [[Task Management]]
 	- [[Queries/Advanced Queries]]
 	- [[Zotero]]
-		- TODO add
+		- TODO Add content
 	- Query table functions
-		- TODO add
+		- TODO Add content
 	- Calculator
-		- TODO add
+		- TODO Add content
 	- Drawings
-		- TODO add
+		- TODO Add content
 	- Embedded videos or tweets from Twitter
-		- TODO add
+		- TODO Add content
 	- [[Spaced Repetition]] cards and clozes
-		- TODO add
+		- TODO Add content
