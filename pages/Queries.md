@@ -2,13 +2,14 @@
 - There are two types of queries: [[Queries/Simple Queries]] and [[Queries/Advanced Queries]] .
 -
   #+BEGIN_TIP
-  Whenever your queries do not seem to return the right result, you can debug them and check for syntax errors - open the Developer Tools in your browser, go to the Console tab and look for `$APP.Tl` (click on it)
+  Whenever your queries do not seem to return the right result, you can debug them and check for syntax errors - open the _Developer Tools_ in your browser, go to the _Console_ tab and look for `$APP.Tl` (click on it)
   ![image.png](../assets/image_1625748582353_0.png){:height 280, :width 464}
   #+END_TIP
 -
+- TODO ==Anything below is work in progress!==
 - Advanced queries
 	-
-	  ```datalog
+	  ```clojure
 	  #+BEGIN_QUERY
 	  {:title "All pages with tag myTagA"
 	   :query [:find (pull ?b [*])
@@ -30,8 +31,8 @@
 	       [?b :block/ref-pages ?p]]
 	  :collapsed? true}
 	  #+END_QUERY
-	- TODO Titles 
-	  ```
+	- TODO Describe how titles are used
+	  ```clojure
 	  #+BEGIN_QUERY
 	      {:title [:h2 "My books"]
 	        :query [...]}
@@ -96,13 +97,15 @@
 	          :collapsed? false}
 	  #+END_QUERY
 	- Add links
-	  ```datalog
+	  ```clojure
 	  (let [nickname (second (:url (second (first title))))]
 	                           [:a {:href (str "page/" nickname)}
 	                            nickname])
 	  ```
 	- Querying tasks
-		- {:title            "🔨 NOW"
+		-
+		  ```clojure
+		  {:title            "🔨 NOW"
 		      :query            [:find (pull ?h [*])
 		                         :in $ ?start ?today
 		                         :where
@@ -132,6 +135,7 @@
 		                   [(< ?d ?next)]]
 		      :inputs     [:today :7d-after]
 		      :collapsed? false}
+		  ```
 	- Not working - limited to current page ... https://discuss.logseq.com/t/query-todos-on-current-page/1481 https://discord.com/channels/725182569297215569/743670484863811649/816094510223589396
 		- LATER Test
 		  SCHEDULED: <2021-08-01 Sun>
