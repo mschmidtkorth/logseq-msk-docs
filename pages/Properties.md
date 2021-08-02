@@ -47,7 +47,7 @@ alias:: Property
 			  {{query (property parts)}}
 			- We can also use [[Queries/Advanced Queries]]:
 				-
-				   #+BEGIN_SRC clojure
+				  #+BEGIN_SRC clojure
 				   #+BEGIN_QUERY
 				   {:title [:h2 "My books"]
 				    :query [:find (pull ?b [*])
@@ -79,7 +79,7 @@ alias:: Property
 		- `template-including-parent` (1) (in previous versions `include-parent`) specifies whether the parent level content of the selected block should be included when using a template
 		- `collapsed` (1) specifies whether a block is collapsed.
 		- `alias` (N) define synonyms for a page.
-		- `id` (1) specifies an Id for org mode.
+		- `id` (1) specifies an [Id](https://discuss.logseq.com/t/what-are-id-links-vs-block-ids-vs-page-ids/1318/2) for org mode.
 		- `title` (1) overrides the title of a page to be different from the file name.
 		- `created-at` (1) and `updated-at` (in previous versions `last-modified-at`) (1) define the date/time stamps in [Unix time](https://en.wikipedia.org/wiki/Unix_time); block-level only.
 		- `parent` (1) references the parent block (could be a page).

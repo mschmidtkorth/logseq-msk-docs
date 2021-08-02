@@ -1,4 +1,4 @@
-alias:: images
+alias:: images, file
 
 - Information is not just text you add yourself. You may want to reference other documents.
 - **USAGE**

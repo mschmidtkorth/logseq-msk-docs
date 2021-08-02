@@ -6,7 +6,7 @@
   #+BEGIN_TIP
   * **You have never used an [[Infinite Outliner]] application?** Feel free to play around - click on links with brackets `[[]]` (you may also hover over them!) to be taken to another section of content, hover over the bullet on the left side to expand/collapse content or click on it to open it in its own view.
   * Press `t` then `w` (like typing `tw`) to increase the page width.
-  * Use the search at the top left of the screen.
+  * Use the [[search]] at the top left of the screen.
   #+END_TIP
 # Introduction
 heading:: true
@@ -15,12 +15,11 @@ heading:: true
 	  Logseq is still in a beta phase. Use a version history tool such as git or even cloud storage providers like Dropbox. When using git, commit your changes regularly (you may use `git diff --stat` to confirm no file has been accidentally cleared) (to show changes of previous commits, use `git show --stat` or `git log --stat`)
 	  #+END_WARNING
 	- ## What is Logseq?
-	  collapsed:: true
 		-
 		  #+BEGIN_TIP
 		  You are looking at it right now - this page was built with Logseq!
 		  #+END_TIP
-		- [Logseq](https://github.com/logseq/logseq) (\[lɒɡsiːk\], from _logical sequence_) ([documentation](https://logseq.github.io/#/page/Contents)) is an alternative to publishing or knowledge management tools like [VuePress](https://vuepress.vuejs.org/guide/) or [Roam Research](https://roamresearch.com/).
+		- [Logseq](https://github.com/logseq/logseq) (\[lɒɡsiːk\], from _logbook sequence_) ([documentation](https://logseq.github.io/#/page/Contents)) is an alternative to publishing or knowledge management tools like [VuePress](https://vuepress.vuejs.org/guide/) or [Roam Research](https://roamresearch.com/).
 		- Logseq is an [[Infinite Outliner]] app for organizing knowledge - it does not work with documents but with [[pages]] and [[blocks]] that have references to each other.
 		- Core principle is a [[Graph]]-based approach, i.e. [[pages]] and [[blocks]] (sections of pages) are linked to each other, which allows you to quickly see where related information is stored. By being made aware of how your knowledge is _connected_ you can come to new insights:
 		  ![image.png](../assets/image_1625607156086_0.png)
@@ -30,6 +29,7 @@ heading:: true
 		  1. **Privacy-first and offline access:** Your data does not leave your computer and you do not need to be online to use Logseq. It offers an optional [[Github login]] that uses a thin backend server for authentication and image upload (deprecated). You are able to encrypt your data ([[Features/Encryption]]).
 		  1. **Community-driven:** The Logseq team is heavily interacting with the community by making the frontend code [open-source](https://github.com/logseq/logseq) (not the backend code) and engaging with users on [Discord](https://discord.gg/KpN4eHY) in a very transparent way ([roadmap](https://trello.com/b/8txSM12G/roadmap)).
 		  1. **Free:** The current features are (and supposedly remain) free. The Logseq team is planning to introduce advanced features, such as collaboration, that may possibly be paid in order to provide for future development. **You are able to [donate](https://opencollective.com/logseq) to the team which I can only recommend.**
+		- [More about Logseq's business model.](https://discuss.logseq.com/t/what-is-logseqs-business-model/389)
 	- ## Setting up Logseq
 	  collapsed:: true
 		- Logseq can be used in multiple ways ([further information](https://github.com/logseq/logseq/#how-can-i-use-it)):
@@ -105,7 +105,7 @@ heading:: true
 			- `cmd+c b` Show hide brackets around links
 		- Task Management
 			- `cmd+enter` Change todo status (works for single line only)
-		- Search
+		- [[Search]]
 			- `cmd+u` Search all pages/create page
 			- `cmd+shift+u` Search in current page
 		- Other
@@ -254,9 +254,9 @@ heading:: true
 			  1. Go to _Settings > Clear Cache_ or use `Cmd+Shift+R` to reload without cache
 - # Resources
   heading:: true
-  collapsed:: true
 	- DOING Go through official Logseq documentation
 	- [Awesome Logseq](https://github.com/logseq/awesome-logseq)
+	- [Migrating from Roam Research](https://discuss.logseq.com/t/tips-for-former-roam-users/1228)
 	- [Great videos around](https://www.youtube.com/channel/UC525q2RIufHjnaHOuIUFY9A) [[PKM]]
 		- [Learn anything fast with Roam](https://www.youtube.com/watch?v=df-Pufz0OBc)
 	- Introduction videos: [1](https://www.youtube.com/watch?v=Vw-x7yTTO0s&t=496s), [2](https://www.youtube.com/watch?v=43PKm0TfyNk), [3](https://www.youtube.com/watch?v=43PKm0TfyNk), [4](https://www.youtube.com/watch?v=280hiGGM1Yg)
