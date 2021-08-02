@@ -44,14 +44,14 @@ html[data-theme=light] {
 	--ls-slide-background-color: #fff;
 	--ls-block-bullet-border-color: #00b3ff;
 	--ls-block-bullet-color: #3d405b;
-	--ls-block-highlight-color: #c0e6fd;
+	--ls-block-highlight-color: var(--selection);
 	--ls-selection-background-color: #e4f2ff;
 	--ls-page-checkbox-color: var(--ls-active-primary-color);
 	--ls-page-checkbox-border-color: #8c8c8c;
 	--ls-page-blockquote-color: var(--ls-primary-text-color);
 	--ls-page-blockquote-bg-color: transparent;
 	--ls-page-blockquote-border-color: var(--ls-active-primary-color);
-	--ls-page-inline-code-bg-color: #ecf1f2;
+	--ls-page-inline-code-bg-color: #f4f1de;
 	--ls-page-inline-code-color: var(--orange);
 	--ls-scrollbar-foreground-color: rgba(253, 253, 253, .1);
 	--ls-scrollbar-background-color: rgba(0, 0, 0, 0.05);
@@ -85,9 +85,9 @@ html[data-theme=light] {
 	--datepicker-available-hoverbgcolor: #192731;
 	--text-accent: #789eb0;
 	--text-accentLight: #789eb038;
-	--text-highlight: #f64933;
-	--inverted-text: #81b29a;
-	--highlight-light: #81b29a;
+	--text-highlight: var(--yellow);
+	--inverted-text: #FFF;
+	--highlight-light: #080808;
 	--ls-block-ref-link-text-color: #74ced8;
 	--admo-text-important: #fa4320;
 	--admo-bg-important: #171717;
@@ -96,7 +96,7 @@ html[data-theme=light] {
 	--lighter-background: #424450;
 	--dark-background: #21222c;
 	--darker-background: #191a21;
-	--foreground: #f8f8f2;
+	--foreground: var(--orange);
 	--current-line: #44475a;
 	--comment: #777;
 	--white: #fff;
@@ -174,7 +174,7 @@ html[data-theme=dark] {
 	--datepicker-available-hoverbgcolor: #192731;
 	--text-accent: #789eb0;
 	--text-accentLight: #789eb038;
-	--text-highlight: #f64933;
+	--text-highlight: var(--yellow);
 	--inverted-text: #262626;
 	--highlight-light: #0b0a0bf0;
 	--ls-block-ref-link-text-color: #74ced8;
@@ -185,7 +185,7 @@ html[data-theme=dark] {
 	--lighter-background: #424450;
 	--dark-background: #21222c;
 	--darker-background: #191a21;
-	--foreground: #f8f8f2;
+	--foreground: #fff;
 	--current-line: #44475a;
 	--comment: #777;
 	--white: #fff;
@@ -455,7 +455,7 @@ a.chosen {
 /*==================================================*/
 
 mark {
-	background: var(--yellow);
+	background: var(--text-highlight);
 	color: var(--inverted-text);
 	padding: 0 4px;
 	border-radius: 5px;
@@ -474,8 +474,9 @@ mark a:hover {
 }
 
 #ui__ac mark {
-	background: var(--highlight-light);
-	color: var(--text-highlight);
+	/* background: var(--highlight-light); */
+	background: var(--text-highlight);
+	/* color: var(--frontend); */
 	padding: 0 0px;
 	border-radius: 3px;
 	font-weight: 700;
@@ -528,6 +529,12 @@ mark a:hover {
 
 .form-checkbox:checked {
 	background-color: var(--ls-page-checkbox-border-color) !important;
+}
+
+/* Context menu */
+
+.ui__ac-group-name {
+	color: var(--ls-link-text-color) !important;
 }
 
 
@@ -1619,9 +1626,10 @@ a.external-link:after {
 .important .text-lg .is-paragraph:first-line {
 	/* font-size: 1rem; */
 	line-height: 1.75rem;
-	color: var(--admo-text-important);
+	font-weight: bold;
+	/* color: var(--admo-text-important); */
 	/* Cannot style just single line */
-	color: #FFF;
+	/* color: var(--text-inverted); */
 	/* border-radius: 3px;
 	padding: 3px;
 	display: block; */
@@ -1660,6 +1668,10 @@ content .admonitionblock {
 
 .content .admonitionblock .admonition-icon svg.caution {
 	color: #e08d5c;
+}
+
+.content .admonitionblock .admonition-icon svg.warning {
+	fill: var(--orange);
 }
 
 .content .admonitionblock .admonition-icon svg.tip {
@@ -1824,7 +1836,7 @@ a.external-link:after {
 	content: "*";
 	/* width: 21px; */
 	/* height: 16px; */
-	color: #FFF;
+	color: var(--foreground);
 	/* background: transparent 50% 200%/54% url('https://svgshare.com/i/SWJ.svg') no-repeat; */
 	/* filter: invert(3%) sepia(100%) saturate(1920%) hue-rotate(0deg) brightness(1419%) contrast(249%); */
 }
@@ -1842,7 +1854,7 @@ a.external-link:after {
 /*====== option: (:hover) to (:focus-whithin) =======*/
 
 .ls-block .bullet {
-	background-color: #FFF;
+	background-color: var(--foreground);
 }
 
 
