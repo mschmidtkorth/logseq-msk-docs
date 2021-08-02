@@ -28,7 +28,7 @@ tags:: myPageTag
 			- {{query (and [[myTagA]] [[myTagB]] (not [[myTagC]])) }}
 		- Get all pages with a certain tag (via the page-property `tags`):
 		  {{query (page-tags myPageTag)}}
-		- TODO Does not work
+		- TODO This is not working for me
 	- ## Tasks
 		- Get all todos that are in status `Now` (`todo` must be added as a prefix)
 			- {{query (todo now)}}

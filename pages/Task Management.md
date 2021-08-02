@@ -14,12 +14,12 @@ alias:: tasks
   Tasks have to be on their own block (not a new line).
   #+END_TIP
 - **EXAMPLES**
-	- TODO A simple task
+	- TODO A simple task #sample
 	- DONE A completed task
 	- WAITING A task I am waiting for
-	- TODO A task with a deadline 
+	- TODO A task with a deadline #sample
 	  DEADLINE: <2021-08-01 Sun>
-	- TODO A scheduled task 
+	- TODO A scheduled task #sample
 	  SCHEDULED: <2021-08-01 Sun>
-	- DOING  [#A] A high priority task I am working on
+	- DOING  [#A] A high priority task I am working on #sample
 	- LATER  [#C] A low priority task I am going to be working on
