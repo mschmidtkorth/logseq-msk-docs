@@ -1,6 +1,6 @@
 -
   #+BEGIN_NOTE
-  This documentation is written by Logseq fan and not the Logseq team. You can find the official documentation [here](https://logseq.github.io/#/page/Contents).
+  This documentation is written by a Logseq fan and not the Logseq team. You can find the official documentation [here](https://logseq.github.io/#/page/Contents).
   #+END_NOTE
 -
   #+BEGIN_TIP
@@ -8,8 +8,8 @@
   * Press `t` then `w` (like typing `tw`) to increase the page width.
   * Use the search at the top left of the screen.
   #+END_TIP
-- # Introduction
-  heading:: true
+# Introduction
+heading:: true
 	-
 	  #+BEGIN_WARNING
 	  Logseq is still in a beta phase. Use a version history tool such as git or even cloud storage providers like Dropbox. When using git, commit your changes regularly (you may use `git diff --stat` to confirm no file has been accidentally cleared) (to show changes of previous commits, use `git show --stat` or `git log --stat`)
@@ -70,6 +70,12 @@
 		  #+BEGIN_TIP
 		  Edit keyboard shortcuts via _Settings > Customize shortcuts_ or by editing the `config.edn` file (requires restarting or reindexing your graph).
 		  #+END_TIP
+		-
+		  #+BEGIN_NOTE
+		  **How to read keyboard shortcuts:**
+		  * `a+b` Press both the `a` and `b` key at the same time
+		  * `a b` Press the `a` key first, let it go and then press the `b` key
+		  #+END_NOTE
 		- `Esc` to leave editing mode in order to highlight multiple blocks via mouse drag, drag & drop blocks and more
 		- Block Management
 			- `t o` or `ctrl+a/y` Collapse/expand block (put cursor into/highest block level or click left of document (whitespace) to collapse/expanse all - or just `a/y`, ctrl not necessary!! And press multiple times
@@ -90,10 +96,11 @@
 			- [#A] `cmd+o` when focus is within square brackets to open page in the sidebar
 			- [#A] `shift+click` or `cmd+shift+o` when focus is within square brackets to open a page in the sidebar (also works for search results!)
 		- User Interface
-			- `t w` Toggle wide mode
+			- `t w` Toggle *w*ide mode
 			- `t r` Toggle *r*ight sidebar
-			- `t f` Toggle contents/favorites in sidebar
-			- `t s` Toggle settings
+			- `t f` Toggle contents/*f*avorites in sidebar
+			- `t s` Toggle *s*ettings
+			- `t d` Toggle [[Document Mode]]
 			- `?` Toggle help
 			- `cmd+c b` Show hide brackets around links
 		- Task Management
@@ -163,8 +170,8 @@
 	- Logseq offers your typical word processing features such as formatting text, adding images or links with the added touch of functionality found in [[Infinite Outliners]].
 	- The following information is intended to both introduce you to features and to show you how to use them in Logseq.
 	- ## Text Editing - your bread and butter
-		- ## [[Footnotes]]
 		- ## [[Tables]]
+		- ## [[Footnotes]]
 		- ## [[HTML]]
 		- ## [[Comments]] (invisible text)
 	- ## Graphs, References and Aliases - your home and friends
@@ -189,6 +196,7 @@
 		- ## [[Spaced Repetition]] (Flashcards)
 		- ## Querying Data ([[Queries]])
 - # Development
+  collapsed:: true
 	- To contribute to Logseq, clone the [git repository](https://github.com/logseq/logseq/), `cd logseq`, `yarn install`, `yarn watch` (check log output - it lists multiple IPs/addresses to open)
 		-
 		  #+BEGIN_TIP
@@ -247,8 +255,9 @@
 - # Resources
   heading:: true
   collapsed:: true
+	- DOING Go through official Logseq documentation
 	- [Awesome Logseq](https://github.com/logseq/awesome-logseq)
 	- [Great videos around](https://www.youtube.com/channel/UC525q2RIufHjnaHOuIUFY9A) [[PKM]]
 		- [Learn anything fast with Roam](https://www.youtube.com/watch?v=df-Pufz0OBc)
 	- Introduction videos: [1](https://www.youtube.com/watch?v=Vw-x7yTTO0s&t=496s), [2](https://www.youtube.com/watch?v=43PKm0TfyNk), [3](https://www.youtube.com/watch?v=43PKm0TfyNk), [4](https://www.youtube.com/watch?v=280hiGGM1Yg)
-- DOING Go through official Logseq documentation
+# [[Contributing]] to This Documentation
