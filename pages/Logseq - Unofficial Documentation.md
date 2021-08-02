@@ -189,7 +189,6 @@
 		- ## [[Spaced Repetition]] (Flashcards)
 		- ## Querying Data ([[Queries]])
 - # Development
-  collapsed:: true
 	- To contribute to Logseq, clone the [git repository](https://github.com/logseq/logseq/), `cd logseq`, `yarn install`, `yarn watch` (check log output - it lists multiple IPs/addresses to open)
 		-
 		  #+BEGIN_TIP
@@ -197,6 +196,7 @@
 		  #+END_TIP
 	- ## [[Plugins API]]
 	- ## [[Static Export]]
+	- ## [[Logseq Publish]]
 - # Logseq vs. Similar Apps
   collapsed:: true
 	- See [[Infinite Outliners]]
