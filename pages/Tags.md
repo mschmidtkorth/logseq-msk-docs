@@ -2,10 +2,14 @@
 - **USAGE & EXAMPLES**
 	-
 	  #+BEGIN_TIP
-	          Technically tags and pages are the same, both create a new page. However, I use tags with a different _semantic_ meaning compared to pages. From a Logseq view, tags can be _styled_ differently via [[Custom CSS]] and page-level tags can be queried for. With [[Custom CSS]] you can highlight certain tags differently.
+	          Technically tags and pages are the same, both create a new page. However, personally I use tags with a different _semantic_ meaning compared to pages. From a Logseq view, tags can be _styled_ differently via [[Custom CSS]] and page-level tags can be queried for. With [[Custom CSS]] you can highlight certain tags differently.
 	          #+END_TIP
 	- Tags can be added to blocks #myTag or pages by adding a page-level [[property]] as `tags:: myTag, myOtherTag`
 		- _Note:_ You could also put [[myTag]] on the page as tags and pages are the same
+		-
+		  #+BEGIN_TIP
+		  You can use _page names_ for tags (or rather: ) to emphasize them visually or for providing context to a block - including page names with spaces: `#[[my page name]]`
+		  #+END_TIP
 	- You can click on a tag to find all references - or open its page to check references (remember, a tag is the same as a page!).
 	- To use tags with spaces, either use them `[[as a page]]` or `use-dashes` (note that the dash will be part of the page name). #my-other-tag
 	- Blocks may have multiple tags #myTagA #myTagB

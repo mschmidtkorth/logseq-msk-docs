@@ -10,3 +10,7 @@ alias:: images, file
 	  #+BEGIN_TIP
 	  If paste is not working, click outside the block, then focus it again and paste once more.
 	  #+END_TIP
+	- You can use links to reference files and open them via click:
+		- `[filename](file://../assets/document.pdf)` - for web or desktop application
+		- `[filename](../assets/document.pdf)` - for desktop application
+		- `[filename](file:///Users/yourname/document.pdf)` - for files outside of your graph folder, only for desktop application

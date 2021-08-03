@@ -13,7 +13,8 @@
 	- This will create a _[[linked reference]]_ on page `smartphone` to page `mobile devices`. Linked references can be found at the bottom of pages.
 	- Even if you are not explicitly using square brackets - for example, `A smartphone is a mobile device` - a reference is created - an _[[unlinked reference]]_ which can also be found at the bottom of pages. It displays _potential_ backlinks i.e. items which refer to the page but do not have an explicit backlink present.
 	- This allows you to see how your knowledge is connected, and quickly get an overview of a certain topic. Explicitly linked references are also included in your [[graph]].
-	- You can *label* references: `[display text]([[page name]])` or `[display text](((block-uuid)))`
+	- You can *label* references: `[display text]([[page name]])` or `[display text](((block-uuid)))` (note the triple brackets)
+	  id:: 6109937d-d33f-4496-83e5-8469ecc51b54
 - ## Filters
 	- Items in the [[Linked References]] section can be filtered.
 	- Filters are a simple alternative to [[queries]].

@@ -100,6 +100,7 @@ heading:: true
 			- `t r` Toggle *r*ight sidebar
 			- `t f` Toggle contents/*f*avorites in sidebar
 			- `t s` Toggle *s*ettings
+			- `t t` Toggle _t_heme (dark/light)
 			- `t d` Toggle [[Document Mode]]
 			- `?` Toggle help
 			- `cmd+c b` Show hide brackets around links
@@ -111,24 +112,6 @@ heading:: true
 		- Other
 			- `alt+click` on file link to open in native application (e.g. PDF for fullscreen)
 			- `cmd-c cmd-s` to rebuild the search index without refreshing the browser
-	- ## Emojis
-	  collapsed:: true
-		- You can work with Emojis in Logseq - there are different options:
-			-
-			  1. Native OS emoji picker - `Cmd+Ctrl+Space` for Mac, `Windows+.` for Windows
-			  1. [Emoji picker](http://www.unicode.org/emoji/charts/full-emoji-list.html) [[plugin]] in Logseq
-			  1. Copy and paste from [Unicode emoji overview](http://www.unicode.org/emoji/charts/full-emoji-list.html)
-	- ## Working with Blocks
-	  collapsed:: true
-		- if you cannot delete an empty block, make sure it has no indented children - if it has, first outdent them to the same level as the empty line you want to delete
-	- ## Importing Markdown
-	  collapsed:: true
-		- Simply save the `.md` file in your Logseq [[Graph]] folder (sometimes you need to [[reindex]]).
-		- You may also update a `.md` file directly in any other editor - it will refresh in Logseq after a few seconds
-		-
-		  #+BEGIN_WARNING
-		  Markdown lists are only imported as blocks if prefixed with`-` instead of `*`.
-		  #+END_WARNING
 	- ## Journal vs. Pages
 	  collapsed:: true
 		- _Journal_ is for micro inputs (e.g. short articles, tweets, random thoughts, TODOs, note from irregular calls) ([OneStutteringMind](https://www.youtube.com/channel/UCz7EgrAosr5FRF3IErGV-yQ))
@@ -141,6 +124,9 @@ heading:: true
 			- Dense information
 			- Structured
 			- Processed thoughts (permanent)
+	- ## Working with Blocks
+	  collapsed:: true
+		- if you cannot delete an empty block, make sure it has no indented children - if it has, first outdent them to the same level as the empty line you want to delete
 	- ## Organizing Your Knowledge
 	  collapsed:: true
 		- ### [[Namespaces]]
@@ -161,9 +147,32 @@ heading:: true
 				- For the next meeting, copy the previous one and put reference to any items that just appeared in previous meeting. If no longer needed, remove from new meeting
 				- The disadvantage is that you lose _history_ i.e. you will not easily see how a certain item developed over multiple meetings (you just see the latest status).
 					- When using a local Git repository, you can go back in time.
+	- ## Emojis
+	  collapsed:: true
+		- You can work with Emojis in Logseq - there are different options:
+			-
+			  1. Native OS emoji picker - `Cmd+Ctrl+Space` for Mac, `Windows+.` for Windows
+			  1. [Emoji picker](http://www.unicode.org/emoji/charts/full-emoji-list.html) [[plugin]] in Logseq
+			  1. Copy and paste from [Unicode emoji overview](http://www.unicode.org/emoji/charts/full-emoji-list.html)
+	- ## Importing Markdown
+	  collapsed:: true
+		- Simply save the `.md` file in your Logseq [[Graph]] folder (sometimes you need to [[reindex]]).
+		- You may also update a `.md` file directly in any other editor - it will refresh in Logseq after a few seconds
+		-
+		  #+BEGIN_WARNING
+		  Markdown lists are only imported as blocks if prefixed with`-` instead of `*`.
+		  #+END_WARNING
 	- ## Prevent Pasted Text from being Automatically Formatted
 	  collapsed:: true
-		- To prevent use `cmd+shift+v` or type ` twice and put the pasted content in-between
+		- Text you copy and paste in Logseq will retain its block structure and formatting - you can use `cmd+shift+v` or type ` twice and put the pasted content in-between to prevent that
+	- ## Performance
+	  collapsed:: true
+		- Logseq is generally performant, but certain situations can lead to slowness:
+		  id:: 6109951e-1c4d-4491-8147-9c4072672d56
+			-
+			  1. Long pages with many blocks (more than 500) - try to add references to other blocks/pages instead of putting all the content on the same page
+			  2. Slow queries in the `config.edn` (are always executed) or opened pages
+			  3. Many source code blocks
 - Features
   heading:: true
   collapsed:: true
@@ -248,12 +257,16 @@ heading:: true
 	- Page is empty or does not show most recent content
 		- This is typically only a visual issue and your content is not lost. Confirm it by opening the Markdown file in a text editor
 		- To resolve
+			- Create a backup of your [[graph]] folder, then
 			-
 			  1. [[Reindex]] your [[graph]], or
 			  1. Restart Logseq, or
-			  1. Go to _Settings > Clear Cache_ or use `Cmd+Shift+R` to reload without cache
+			  1. Go to _Settings > Clear Cache_ or use `Cmd+Shift+R` to reload without cache (you will need to restore your settings)
+		- Another reason is that the reference does not link to the correct file - for example, you have a file `2021_01_01.md` but link to it via `[[2021-01-01]]` (note the dashes - and rename the file)
+		- If you use the desktop application and force quit it instead of closing it properly, the content displayed when opening it again may not reflect he actual content. Logseq saves its graph database (the meta information about your files) when being properly closed. [[Reindex]] your content to make it appear again.
 - # Resources
   heading:: true
+  collapsed:: true
 	- DOING Go through official Logseq documentation
 	- [Awesome Logseq](https://github.com/logseq/awesome-logseq)
 	- [Migrating from Roam Research](https://discuss.logseq.com/t/tips-for-former-roam-users/1228)

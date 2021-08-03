@@ -7,6 +7,22 @@
   #+END_TIP
 -
 - TODO ==Anything below is work in progress!==
+## Queries in [[Journal]] Pages
+	- You can add default queries to each new journal entry (displayed at the bottom) by editing the `logseq/config.edn` file in your [[Graph]] directory and adding them to this section:
+	  ```clojure
+	  :default-queries
+	  {:journals
+	    [
+	  ;; Your queries here:
+	  ;; {query1}
+	  ;; {query2}
+	    ]
+	  }
+	  ```
+	-
+	  #+BEGIN_WARNING
+	  Many default queries may slow down Logseq. (see [here](((6109951e-1c4d-4491-8147-9c4072672d56))))
+	  #+END_WARNING
 - Advanced queries
 	-
 	  ```clojure
