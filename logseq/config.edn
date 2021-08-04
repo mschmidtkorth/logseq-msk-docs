@@ -91,7 +91,7 @@
  ;;  :editor/down            ["ctrl+j" "down"]
  ;;  :editor/left            ["ctrl+h" "left"]
  ;;  :editor/right           ["ctrl+l" "right"]}
- :shortcuts {}
+ :shortcuts {:editor/paste-text-in-one-block-at-point "meta+ctrl+v"}
 
  ;; Whether to show command doc on hover
  :ui/show-command-doc? true
@@ -143,7 +143,12 @@
  ;; input "{{{poem red,blue}}}"
  ;; becomes
  ;; Rose is red, violet's blue. Life's ordered: Org assists you.
- :macros {}
+ :macros {
+	"docLink" "[Documentation](https://github.com/mschmidtkorth/logseq-msk-docs)"
+	"today" "Today is **<% today %>**"
+	"progress" "<progress value=\"50\" max=\"100\" />"
+	"compare" "$1 is better than $2 and $3."
+ }
 
  :markdown/version 2
 
