@@ -1,5 +1,4 @@
 alias:: Property
-test: [[Spaced Repetition]]
 
 - Properties are key-value pairs that allow you to annotate a block or page
 	- _Page properties_ are defined by putting them into the first block of the page (_[[frontmatter]]_)
@@ -12,7 +11,7 @@ test: [[Spaced Repetition]]
 	  ```
 		-
 		  parts:: motor, steering wheel, tyres
-	- When a property contains references, (`[]`), any values are going to be automatically linked:
+	- When a property contains references, (`[[]]`), any values are going to be automatically linked and backlinked:
 	  ```
 	  parts:: [[motor]] and other parts
 	  ```
@@ -78,7 +77,7 @@ test: [[Spaced Repetition]]
 		- `tags` (N) get listed in their own section "Pages tagged with X" below a page.
 		  #+BEGIN_TIP
 		  * This property is intended as a page-level property.
-		  * This is the only property where its value receive backlinks.
+		  * This is the only property where its value receive backlinks without being specified explicitly as a `[[reference]]`.
 		  * The `tags` property on blocks has no special purpose.
 		  #+END_TIP
 		- `template` (1) designates a page as a template.
