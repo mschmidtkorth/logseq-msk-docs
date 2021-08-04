@@ -1,4 +1,5 @@
 alias:: Property
+test: [[Spaced Repetition]]
 
 - Properties are key-value pairs that allow you to annotate a block or page
 	- _Page properties_ are defined by putting them into the first block of the page (_[[frontmatter]]_)
@@ -75,6 +76,11 @@ alias:: Property
 - ## Special Properties
 	- There are special properties that control Logseq functionality (the number in brackets indicates how many values you may define):
 		- `tags` (N) get listed in their own section "Pages tagged with X" below a page.
+		  #+BEGIN_TIP
+		  * This property is intended as a page-level property.
+		  * This is the only property where its value receive backlinks.
+		  * The `tags` property on blocks has no special purpose.
+		  #+END_TIP
 		- `template` (1) designates a page as a template.
 		- `template-including-parent` (1) (in previous versions `include-parent`) specifies whether the parent level content of the selected block should be included when using a template
 		- `collapsed` (1) specifies whether a block is collapsed.
