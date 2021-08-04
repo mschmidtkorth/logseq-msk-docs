@@ -12,7 +12,9 @@
 heading:: true
 	-
 	  #+BEGIN_WARNING
-	  Logseq is still in a beta phase. Use a version history tool such as git or even cloud storage providers like Dropbox. When using git, commit your changes regularly (you may use `git diff --stat` to confirm no file has been accidentally cleared) (to show changes of previous commits, use `git show --stat` or `git log --stat`)
+	  **Logseq is still in a beta phase. Regularly backup your files.**
+	  Use a version history tool such as git or even cloud storage providers like Dropbox. When using git, commit your changes regularly (you may use `git diff --stat` to confirm no file has been accidentally cleared; or show changes of previous commits with `git show --stat` or `git log --stat`). 
+	  As content is stored as plain Markdown files, you may use any backup tool of your choice.
 	  #+END_WARNING
 	- ## What is Logseq?
 		-
@@ -65,7 +67,6 @@ heading:: true
   collapsed:: true
 	- Keyboard Shortcuts
 	  heading:: true
-	  collapsed:: true
 		-
 		  #+BEGIN_TIP
 		  Edit keyboard shortcuts via _Settings > Customize shortcuts_ or by editing the `config.edn` file (requires restarting or reindexing your graph).
@@ -75,12 +76,13 @@ heading:: true
 		  **How to read keyboard shortcuts:**
 		  * `a+b` Press both the `a` and `b` key at the same time
 		  * `a b` Press the `a` key first, let it go and then press the `b` key
+		  * `a+b/c` Press both the `a` and `b` or `c` key at the same time
 		  #+END_NOTE
 		- `Esc` to leave editing mode in order to highlight multiple blocks via mouse drag, drag & drop blocks and more
 		- Block Management
 			- `t o` or `ctrl+a/y` Collapse/expand block (put cursor into/highest block level or click left of document (whitespace) to collapse/expanse all - or just `a/y`, ctrl not necessary!! And press multiple times
 			- [#A] `cmd./,` Zoom into/out of block, press `Esc` (switch to View Mode) to make it behave as back/forward buttons
-			- `cmd+shift+a` Select all blocks (cursor must have focus)
+			- `cmd+shift+a` Select all blocks (cursor must have focus) - use `cmd+up/down` to select multiple blocks from your current cursor position
 			- [#A] `alt+drag` on block to copy the reference to a block - very handy!
 			- [#A] `cmd+shift+r` to replace a block reference with its text (under cursor). Helps you to drag info out of other pages, then bring everything into one clean document without having to copy and paste text
 			- ~~`ctrl+x` Delete current block (like `cmd+x` in text editors but without copying)~~
@@ -100,7 +102,7 @@ heading:: true
 			- `t r` Toggle *r*ight sidebar
 			- `t f` Toggle contents/*f*avorites in sidebar
 			- `t s` Toggle *s*ettings
-			- `t t` Toggle _t_heme (dark/light)
+			- `t t` Toggle *t*heme (dark/light)
 			- `t d` Toggle [[Document Mode]]
 			- `?` Toggle help
 			- `cmd+c b` Show hide brackets around links
@@ -175,7 +177,6 @@ heading:: true
 			  3. Many source code blocks
 - Features
   heading:: true
-  collapsed:: true
 	- Logseq offers your typical word processing features such as formatting text, adding images or links with the added touch of functionality found in [[Infinite Outliners]].
 	- The following information is intended to both introduce you to features and to show you how to use them in Logseq.
 	- ## Text Editing - your bread and butter
@@ -204,8 +205,16 @@ heading:: true
 		- ## [[Macros]]
 		- ## [[Spaced Repetition]] (Flashcards)
 		- ## Querying Data ([[Queries]])
-- # Development
-  collapsed:: true
+		- ## Community Features
+		  collapsed:: true
+			- Check [Awesome Logseq](https://github.com/logseq/awesome-logseq) for features contributed by the community - either themes or layout features ([[Custom CSS]]) or plugins to provide additional functionality ([[Plugins API]])
+		- ## Deprecated Features
+		  collapsed:: true
+			- The following features are no longer available.
+			- ## Timestamps
+				- Timestamps allowed you to log the date you created or last modified a block. This worked by adding additional metadata to your Markdown file, which was hidden when viewing the file in Logseq. This feature has been deprecated as it proved to be prone to issues.
+# Development
+collapsed:: true
 	- To contribute to Logseq, clone the [git repository](https://github.com/logseq/logseq/), `cd logseq`, `yarn install`, `yarn watch` (check log output - it lists multiple IPs/addresses to open)
 		-
 		  #+BEGIN_TIP
