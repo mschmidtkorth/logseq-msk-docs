@@ -26,9 +26,8 @@ tags:: myPageTag
 			- {{query (and [[myTagA]] [[myTagB]])}}
 		- Get all blocks with _all_ tag of the list `myTagA, myTagB` but _not_ `myTagC`
 			- {{query (and [[myTagA]] [[myTagB]] (not [[myTagC]])) }}
-		- Get all pages with a certain tag (via the page-property `tags`):
-		  {{query (page-tags myPageTag)}}
-		- TODO This is not working for me
+		- Get all pages with a certain page-level tag (via the special page-property `tags`):
+		  {{query (page-tags [[myPageTag]])}}
 	- ## Tasks
 		- Get all todos that are in status `Now` (`todo` must be added as a prefix)
 			- {{query (todo now)}}
