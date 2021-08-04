@@ -8,7 +8,7 @@
 		- _Note:_ You could also put [[myTag]] on the page as tags and pages are the same
 		-
 		  #+BEGIN_TIP
-		  You can use _page names_ for tags (or rather: ) to emphasize them visually or for providing context to a block - including page names with spaces: `#[[my page name]]`
+		  You can use _page names_ for tags (or rather: blocks) to emphasize them visually or for providing context to a block - including page names with spaces: `#[[my page name]]`
 		  #+END_TIP
 	- You can click on a tag to find all references - or open its page to check references (remember, a tag is the same as a page!).
 	- To use tags with spaces, either use them `[[as a page]]` or `use-dashes` (note that the dash will be part of the page name). #my-other-tag
