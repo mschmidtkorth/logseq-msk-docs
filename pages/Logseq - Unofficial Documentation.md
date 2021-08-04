@@ -212,7 +212,7 @@ heading:: true
 		  collapsed:: true
 			- The following features are no longer available.
 			- ## Timestamps
-				- Timestamps allowed you to log the date you created or last modified a block. This worked by adding additional metadata to your Markdown file, which was hidden when viewing the file in Logseq. This feature has been deprecated as it proved to be prone to issues.
+				- Timestamps allowed you to log the date you created or last modified a block. This worked by adding additional metadata to your Markdown file - the date and the block's Id - (initially they were stored in Logseq's database), which was hidden when viewing the file in Logseq. This feature has been deprecated as it proved to be prone to issues.
 # Development
 collapsed:: true
 	- To contribute to Logseq, clone the [git repository](https://github.com/logseq/logseq/), `cd logseq`, `yarn install`, `yarn watch` (check log output - it lists multiple IPs/addresses to open)
