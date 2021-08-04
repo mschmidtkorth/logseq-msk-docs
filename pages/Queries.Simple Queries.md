@@ -5,15 +5,45 @@ tags:: myPageTag
 - **USAGE**
   section:: Usage
 	- You can create simple queries via the `/Query` [[Command]]
-	- The syntax for simple queries is `{{query (<details>)}}`
+	- The syntax for simple queries is `{{query <details>}}`
 - **EXAMPLES**
 	- ## General
+		- There are important operators:
+			- `(not x y ...)`
+			- `(and x y ...)`
+			- `(or x y ...)`
+			- `(between start end)`
+				-
+				  #+BEGIN_TIP
+				  `(between )` can only be used to query for [[Journal]] pages.
+				  #+END_TIP
+				- Possible values: `today, yesterday, tomorrow, now` ad relative values `+|-<number> y|m|w|d|h|min`
+				- Examples: `(between -7d +7d)` or `(between -2w today)`
 		- Limit the results to those part of the current page
 		  query-table:: false
 		  {{query (and (page <% current page %> block-property section Usage))}}
-		- Use multiple conditions (or) - only works for text
+		- Use multiple conditions to search for by separating them via space (_OR_) - only works for text
+			-
+			  #+BEGIN_NOTE
+			  Matching is not an exact match - note how `myTag` also matches `myTagA`. In this query tags are not treated as tags but simply as text.
+			  #+END_NOTE
 			- {{query myTag my-other-tag}}
 			  query-table:: true
+			  id:: 610afd9b-ae81-437f-a8c6-ca7830e3e5b3
+			  query-properties:: [:block]
+		-
+		  #+BEGIN_TIP
+		  * You could write the same query also with quotation marks - `{{query "myTag" "my-other-tag"}}`
+		  * Only wrap tags in `[[]]` if you query for a single tag - otherwise you need to use `(or )`/`(and )` instead of simply separating by space
+		  #+END_TIP
+		- We can also query specifically for tags:
+			- {{query (or [[myTagB]] [[myTagC]])}}
+			- {{query (and [[myTagB]] [[myTagC]])}}
+		- Or we can query for any other type such as todos - in this example, we limit it to todos from a specific page via `(and )`:
+		  {{query (and (todo now later done) [[queries]])}}
+		- We can exclude certain pages or matches for #myTagC via `(not )`:
+		  {{query (and [[myTagC]] (not [[some page]] [[another page]]))}}
+		-
 	- ## Tags
 		- Get all blocks with a specific tag `myTag`:
 			- {{query [[myTag]] }}

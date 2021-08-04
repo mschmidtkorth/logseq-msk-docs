@@ -116,7 +116,7 @@ heading:: true
 			- `cmd-c cmd-s` to rebuild the search index without refreshing the browser
 	- ## Journal vs. Pages
 	  collapsed:: true
-		- _Journal_ is for micro inputs (e.g. short articles, tweets, random thoughts, TODOs, note from irregular calls) ([OneStutteringMind](https://www.youtube.com/channel/UCz7EgrAosr5FRF3IErGV-yQ))
+		- The _[[Journal]]_ is for micro inputs (e.g. short articles, tweets, random thoughts, TODOs, note from irregular calls) ([OneStutteringMind](https://www.youtube.com/channel/UCz7EgrAosr5FRF3IErGV-yQ))
 			- Entered frequently
 			- Bite-sized information
 			- Unstructured

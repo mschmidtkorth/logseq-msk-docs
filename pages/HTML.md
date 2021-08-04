@@ -1,10 +1,12 @@
 - Sometimes Markdown is not enough to represent your content. You can use HTML to help you or embed external websites.
 - To insert custom HTML
+  id:: 610afd9a-4c78-4099-a333-82dddbddf008
   1. Directly write HTML code, or
   1. Use [hiccup](https://github.com/weavejester/hiccup/wiki/Syntax). This is a library, unrelated to Logseq, that allows you to describe HTML in a different syntax (it adds _syntax sugar_) and more concise way.
 - **USAGE**
 	- To write HTML code, type `/` and select the `Embed HTML` [[command]] or directly type `@@html: @@` - alternatively, you can type HTML code directly
 	- To use hiccup, directly type it
+	  id:: 610afd9a-4120-4085-a73d-b666b00f27fc
 - **EXAMPLES**
 	- HTML
 		- @@html: This text is written <sub>subscript</sub>@@ via HTML command

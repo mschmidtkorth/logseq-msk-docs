@@ -1,4 +1,6 @@
-- Namespaces are used to create hierarchies of information.
+alias:: Hierarchies
+
+- Namespaces are used to create hierarchies of information. With namespaces you can nest [[pages]] nested in a hierarchy, similar to files in folders and sub-folders.
 - **USAGE**
 	- Namespaces are created whenever you include a `/` in your page
 	- They allow you to organize knowledges, reuse general page titles and simplify searches by restricting until a certain level in the hierarchy.

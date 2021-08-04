@@ -7,9 +7,9 @@
   #+END_TIP
 -
 - TODO ==Anything below is work in progress!==
-## Queries in [[Journal]] Pages
-collapsed:: true
+- ## Queries in [[Journal]] Pages
 	- You can add default queries to each new journal entry (displayed at the bottom) by editing the [[config.edn]] file in your [[Graph]] directory and adding them to this section:
+	  id:: 610afd9a-36b6-475b-bdaa-e03c64ca3c0c
 	  ```clojure
 	  :default-queries
 	  {:journals
@@ -20,21 +20,49 @@ collapsed:: true
 	    ]
 	  }
 	  ```
-	-
-	  #+BEGIN_WARNING
-	  Many default queries may slow down Logseq. (see [here](((6109951e-1c4d-4491-8147-9c4072672d56))))
-	  #+END_WARNING
+		-
+		  #+BEGIN_WARNING
+		  Many default queries may slow down Logseq. (see [here](((6109951e-1c4d-4491-8147-9c4072672d56))))
+		  #+END_WARNING
 - Advanced queries
 	-
-	  #+BEGIN_QUERY
-	  {:title "All pages have a *programming* tag"
+	  #+BEGIN_TIP
+	  **Querying page names**
+	  When querying for page names always write them in _lowercase_ - this is how they are stored in Logseq's database.
+	  #+END_TIP
+	- ### How to Write Queries
+		- Advanced queries can get complex, but their format is always the same:
+		  ```
+		  {:title  [:strong "<Your query title with optional formatting>"]
+		   :query  [:find (pull ?b [*])
+		          :where <Your query filter>]
+		   :inputs [<Your query input>]
+		   :view             (fn [query-result] [:div <Your query result layout>])
+		   :result-transform (fn [query-result] <Your query transformation>)
+		   :collapsed? true
+		   <Your additional query toggles>
+		  }
+		  ```
+		-
+		  |Name|Description|Default|Optional|
+		  |`title`|Query title, supports [hiccup](((610afd9a-4c78-4099-a333-82dddbddf008))) ||`true`|
+		  |`query`|Datascript query||`false`|
+		  |`inputs`|Query inputs||`true`|
+		  |`view`|`(fn [query-result] <hiccup>)`||`true`|
+		  |`result-transform`|`(fn [query-result] <do something>)`||`true`|
+		  |`collapsed?`|Whether to collapse the result|`false`|`true`|
+		  |`:breadcrumb-show?`|Whether to show the breadcrumb path|`false`|`true`|
+		  [Source](https://logseq.github.io/#/page/advanced%20queries)
+	-
+	  #+BEGIN_QUERY 
+	  {:title "All pages that have a myPageTag tag"
 	   :query [:find ?name
 	         :in $ ?tag
 	         :where
 	         [?t :block/name ?tag]
 	         [?p :page/tags ?t]
 	         [?p :block/name ?name]]
-	   :inputs ["myTagA"]
+	   :inputs ["mypagetag"]
 	   :view (fn [result]
 	         [:div.flex.flex-col
 	          (for [page result]
@@ -54,10 +82,10 @@ collapsed:: true
 	  #+END_QUERY
 	-
 	  #+BEGIN_QUERY
-	  {:title "All pages with tag myTagA"
+	  {:title "All pages with tag myPageTag"
 	   :query [:find (pull ?b [*])
 	       :where
-	       [?p :page/name "myTagA"]
+	       [?p :page/name "mypagetag"]
 	       [?b :block/ref-pages ?p]]
 	  :collapsed? true}
 	  #+END_QUERY
@@ -67,7 +95,7 @@ collapsed:: true
 	  {:title "All pages with tag myTagA"
 	   :query [:find (pull ?b [*])
 	       :where
-	       [?p :page/name "myTagA"]
+	       [?p :page/name "mytaga"]
 	       [?b :block/ref-pages ?p]]
 	  :collapsed? true}
 	  #+END_QUERY
@@ -84,35 +112,39 @@ collapsed:: true
 	       [?b :block/ref-pages ?p]]
 	  :collapsed? true}
 	  #+END_QUERY
-	- TODO Describe how titles are used
-	  ```clojure
-	  #+BEGIN_QUERY
-	      {:title [:h2 "My books"]
-	        :query [...]}
-	      #+END_QUERY
-	  ```
-	- Query all pages part of a hierarchy
-	  updated-at:: 1626301594584
-	  created-at:: 1626301594584
-	  #+BEGIN_QUERY
-	  {:title "All pages starts with Home/Garden"
-	   :query [:find (pull ?p [*])
-	           :where
-	           [?p :block/name ?name]
-	           [(str/starts-with (?name) "Home/Garden")]
-	  ]}
-	  #+END_QUERY
-		- Alternative
-		  updated-at:: 1626301589734
-		  created-at:: 1626301588472
-		-
+	- ### Querying [[Hierarchies]]
+		- Query all pages part of a hierarchy
+		  updated-at:: 1626301594584
+		  created-at:: 1626301594584
 		  #+BEGIN_QUERY
-		  {:title "Home/Garden children pages"
+		  {:title "All pages that start with Home/Gardening"
 		   :query [:find (pull ?p [*])
 		           :where
-		           [?p :block/namespace ?namespace]
-		           [?namespace :block/name "Home/Garden"]]}
+		           [?p :block/name ?name]
+		           [(str/starts-with (?name) "home/gardening")]
+		  ]}
 		  #+END_QUERY
+			- Alternative
+			  updated-at:: 1626301589734
+			  created-at:: 1626301588472
+				-
+				  #+BEGIN_QUERY
+				  {:title "Home/Garden child pages"
+				   :query [:find (pull ?p [*])
+				           :where
+				           [?p :block/namespace ?namespace]
+				           [?namespace :block/name "home/gardening"]]}
+				  #+END_QUERY
+				-
+				  ```clojure
+				  #+BEGIN_QUERY
+				  {:title "Home/Garden child pages"
+				   :query [:find (pull ?p [*])
+				           :where
+				           [?p :block/namespace ?namespace]
+				           [?namespace :block/name "home/gardening"]]}
+				  #+END_QUERY
+				  ```
 	- <page_name> <keyword 1>, without <keyword 2> OR ["page" "keyword" "not this keyword"]
 	  #+BEGIN_QUERY
 	  {:query [:find (pull ?b [*])
