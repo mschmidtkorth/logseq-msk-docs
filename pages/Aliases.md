@@ -4,7 +4,7 @@ alias:: alias
 - **USAGE**
 	- Aliases must be defined in a [[properties]] [[block]] at the top of a [[page]].
 	- The syntax is similar to [frontmatter](https://www.gatsbyjs.com/docs/how-to/routing/adding-markdown-pages/#:~:text=%2D1.md%20.-,Frontmatter%20for%20metadata%20in%20Markdown%20files,and%20end%20of%20the%20block.) used in Markdown files.
-- **EXAMPLE**
+- **EXAMPLES**
 	- Let's assume you have a page with information about smartphones - called [[smartphone]]. You also want to bring up the same page when linking [[phone]] or [[mobile phone]].
 		- At the top of your `smartphone` page - your _original_  - you add a block with properties:
 		  alias:: phone, mobile phone

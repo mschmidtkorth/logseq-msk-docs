@@ -5,7 +5,7 @@ alias:: comment
 	- Comments can be added via
 	  1. The _Comment_ snippet by typing `<` and then `Comment`, or
 	  1. Via HTML code and typing `<!-- My comment -->`
-- **EXAMPLE**
+- **EXAMPLES**
 	- (As comments are invisible, there is no example)
 	-
 	  ```source

@@ -5,7 +5,7 @@
 	- Macros may contain Markdown or HTML syntax.
 	- If you update a macro, focus the line where you are using the macro to refresh it.
 	- To use a macro, type `{{{macroName}}}`. To pass parameters, type `{{{macroName param1, param2}}}`
-- **EXAMPLE**
+- **EXAMPLES**
 	- Define a macro to insert a link
 	  ```clojure
 	  :macros {

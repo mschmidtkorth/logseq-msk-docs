@@ -12,7 +12,7 @@ alias:: footnote
 	  * in a block below indented further (_child_)
 	  * in an unrelated block
 	  #+END_TIP
-- **EXAMPLE**
+- **EXAMPLES**
 	- The footnote itself is placed first.[^1] You can click on the number to jump to the footnote text.
 	- Then, the footnote text is placed where you want the long text to appear:
 	-
