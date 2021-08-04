@@ -1,6 +1,6 @@
 - Macros (sometimes called _snippets_) are used to quickly insert text when you type a certain keyword.
 - **USAGE**
-	- Macros have no UI to be defined, they are created by adding them to the `config.edn` file in your [[Graph]] folder - there is a dedicated section `:macros {}`.
+	- Macros have no UI to be defined, they are created by adding them to the [[config.edn]] file in your [[Graph]] folder - there is a dedicated section `:macros {}`.
 	- Each macro is placed on its own line.
 	- Macros may contain Markdown or HTML syntax.
 	- If you update a macro, focus the line where you are using the macro to refresh it.

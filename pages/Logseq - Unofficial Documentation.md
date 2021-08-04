@@ -69,7 +69,7 @@ heading:: true
 	  heading:: true
 		-
 		  #+BEGIN_TIP
-		  Edit keyboard shortcuts via _Settings > Customize shortcuts_ or by editing the `config.edn` file (requires restarting or reindexing your graph).
+		  Edit keyboard shortcuts via _Settings > Customize shortcuts_ or by editing the [[config.edn]] file (requires restarting or reindexing your graph).
 		  #+END_TIP
 		-
 		  #+BEGIN_NOTE
@@ -173,7 +173,7 @@ heading:: true
 		  id:: 6109951e-1c4d-4491-8147-9c4072672d56
 			-
 			  1. Long pages with many blocks (more than 500) - try to add references to other blocks/pages instead of putting all the content on the same page
-			  2. Slow queries in the `config.edn` (are always executed) or opened pages
+			  2. Slow queries in the [[config.edn]] (are always executed) or opened pages
 			  3. Many source code blocks
 - Features
   heading:: true

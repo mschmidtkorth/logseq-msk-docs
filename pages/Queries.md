@@ -8,7 +8,8 @@
 -
 - TODO ==Anything below is work in progress!==
 ## Queries in [[Journal]] Pages
-	- You can add default queries to each new journal entry (displayed at the bottom) by editing the `logseq/config.edn` file in your [[Graph]] directory and adding them to this section:
+collapsed:: true
+	- You can add default queries to each new journal entry (displayed at the bottom) by editing the [[config.edn]] file in your [[Graph]] directory and adding them to this section:
 	  ```clojure
 	  :default-queries
 	  {:journals
@@ -24,6 +25,42 @@
 	  Many default queries may slow down Logseq. (see [here](((6109951e-1c4d-4491-8147-9c4072672d56))))
 	  #+END_WARNING
 - Advanced queries
+	-
+	  #+BEGIN_QUERY
+	  {:title "All pages have a *programming* tag"
+	   :query [:find ?name
+	         :in $ ?tag
+	         :where
+	         [?t :block/name ?tag]
+	         [?p :page/tags ?t]
+	         [?p :block/name ?name]]
+	   :inputs ["myTagA"]
+	   :view (fn [result]
+	         [:div.flex.flex-col
+	          (for [page result]
+	            [:a {:href (str "/page/" page)} (clojure.string/capitalize page)])])}
+	  #+END_QUERY
+	-
+	  #+BEGIN_QUERY
+	  {:title "All page tags"
+	  :query [:find ?tag-name
+	          :where
+	          [?tag :tag/name ?tag-name]]
+	  :view (fn [tags]
+	          [:div#query-all-page-tags
+	           (for [tag (flatten tags)]
+	             [:a.tag.mr-1 {:href (str "/page/" tag)}
+	              (str "#" tag)])])}
+	  #+END_QUERY
+	-
+	  #+BEGIN_QUERY
+	  {:title "All pages with tag myTagA"
+	   :query [:find (pull ?b [*])
+	       :where
+	       [?p :page/name "myTagA"]
+	       [?b :block/ref-pages ?p]]
+	  :collapsed? true}
+	  #+END_QUERY
 	-
 	  ```clojure
 	  #+BEGIN_QUERY
