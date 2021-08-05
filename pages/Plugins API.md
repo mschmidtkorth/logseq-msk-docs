@@ -7,16 +7,33 @@ alias:: plugin, plugins
   #+BEGIN_WARNING
   Slash commands work differently if a block is opened in the sidebar - then, some functions like `logseq.Editor.getCurrentPage()` return `null`.
   #+END_WARNING
-## Initial Setup
+## Installing Plugins
+	- This section is about installing provided plugins to Logseq. If you want to develop your own plugin, see [below](((610afd9b-1224-453c-b753-b16cc3a88ad8))).
+	- Plugins are typically distributed via GitHub repositories. There are two options of installing such a plugin:
+	  1. Downloading a pre-compiled version from the _Releases_ section
+	  1. Compiling it yourself from the source code (requires some technical expertise)
+	- To install from source code
+		- Check the Readme for the plugin - it typically follows instructions listed [below](((610afd9b-1224-453c-b753-b16cc3a88ad8)))
+	- To install a downloaded plugin
+		- Open _Logseq > Settings: Enable Developer Mode_ to generally enable plugin functionality
+		- Restart Logseq
+		- Open _Logseq > Plugins > Load unpackaged plugin > Select folder_
+		- Restart Logseq if needed
+- ## Initial Setup for Development
+  id:: 610afd9b-1224-453c-b753-b16cc3a88ad8
 	- Clone [plugin repository](https://github.com/logseq/logseq-plugin-samples)
-	- Open _Logseq > Settings: Enable Developer Mode_
+	- Open _Logseq > Settings: Enable Developer Mode_ to generally enable plugin functionality
+	- Restart Logseq
 	- `cd` into cloned plugin folder, e.g. `logseq-hello-world`
 	- `npm i && npm run build` (depending on plugin Readme) to generate the `dist/` folder
 	  collapsed:: true
 		- `npm run build` generates `/dist/index.html` which is referenced by `package.json`
-	- Open _Logseq > Plugins Select folder_
+	- Open _Logseq > Plugins > Load unpackaged plugin > Select folder_
 	- Restart Logseq if needed
-	- Description, title etc. of plugin is taken from `package.json`
+	-
+	  #+BEGIN_TIP
+	  Description, title etc. of a plugin are taken from `package.json`.
+	  #+END_TIP
 ## Updates to code
 	- Update code and then run `npm run build` again to refresh `/dist`, then toggle the plugin in Logseq
 	- For newly registered slash commands, you have to restart Logseq once
