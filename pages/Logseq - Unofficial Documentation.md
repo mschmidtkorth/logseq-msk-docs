@@ -276,7 +276,7 @@ collapsed:: true
 - # Resources
   heading:: true
   collapsed:: true
-	- DOING Go through official Logseq documentation
+	- DOING Go through official Logseq documentation+changelog
 	- [Awesome Logseq](https://github.com/logseq/awesome-logseq)
 	- [Migrating from Roam Research](https://discuss.logseq.com/t/tips-for-former-roam-users/1228)
 	- [Great videos around](https://www.youtube.com/channel/UC525q2RIufHjnaHOuIUFY9A) [[PKM]]
