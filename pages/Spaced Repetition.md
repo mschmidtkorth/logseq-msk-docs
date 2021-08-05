@@ -7,7 +7,7 @@ alias:: SRS
 - Flashcards are used in spaced repetition to memorize information via repeated, distributed sessions.
 -
   #+BEGIN_TIP
-  Logseq uses the SuperMemo 5 ([SM5](https://www.supermemo.com/en/archives1990-2015/english/ol/sm5)) algorithm for their implementation of spaced repetition.
+  Logseq uses the SuperMemo 5 ([SM5](https://www.supermemo.com/en/archives1990-2015/english/ol/sm5)) algorithm for their implementation of spaced repetition. The results of your repetitions are stored in the `logseq/srs-of-matrix.edn` file.
   #+END_TIP
 - **USAGE**
 	- You can create _cards_  (i.e. flashcards) in Logseq. They can be combined with clozes.
