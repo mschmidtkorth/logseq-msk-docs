@@ -6,6 +6,12 @@
   ![image.png](../assets/image_1625748582353_0.png){:height 280, :width 464}
   #+END_TIP
 -
+- Technical details
+	- Queries are written in the _[Datalog](https://en.wikipedia.org/wiki/Datalog)_ progamming language.  There are various flavours/systems of Datalog. A common one is _DataScript_, written in Clojure, the programming language Logseq is written in (or rather ClojureScript). DataScript is an in-memory database running on either ClojureScript or Java (JVM). Another common one is _Datomic_, which is a commercial database.
+## Resources
+	- [Domain Modeling with Datalog](https://www.youtube.com/watch?v=oo-7mN9WXTw&t=1s) (Norbert Wojtowicz)
+	- [Learn Datalog Today](http://www.learndatalogtoday.org/)
+	- [Datascript 101](https://udayv.com/blog/2016-04-28-datascript101/)
 - TODO ==Anything below is work in progress!==
 - ## Queries in [[Journal]] Pages
 	- You can add default queries to each new journal entry (displayed at the bottom) by editing the [[config.edn]] file in your [[Graph]] directory and adding them to this section:
