@@ -6,22 +6,24 @@ tags:: myPageTag
   section:: Usage
 	- You can create simple queries via the `/Query` [[Command]]
 	- The syntax for simple queries is `{{query <details>}}`
+	- There are important operators:
+		- `(not x y ...)`
+		- `(and x y ...)`
+		- `(or x y ...)`
+		- `(between start end)`
+			-
+			  #+BEGIN_TIP
+			  `(between )` can only be used to query for [[Journal]] pages.
+			  #+END_TIP
+			- Possible values: `today, yesterday, tomorrow, now` and relative values `+|-<number> y|m|w|d|h|min`
+			- Examples: `(between -7d +7d)` or `(between -2w today)`
 - **EXAMPLES**
 	- ## General
-		- There are important operators:
-			- `(not x y ...)`
-			- `(and x y ...)`
-			- `(or x y ...)`
-			- `(between start end)`
-				-
-				  #+BEGIN_TIP
-				  `(between )` can only be used to query for [[Journal]] pages.
-				  #+END_TIP
-				- Possible values: `today, yesterday, tomorrow, now` ad relative values `+|-<number> y|m|w|d|h|min`
-				- Examples: `(between -7d +7d)` or `(between -2w today)`
-		- Limit the results to those part of the current page
+	  collapsed:: true
+		- Limiting the results to those part of the current page
 		  query-table:: false
-		  {{query (and (page <% current page %> block-property section Usage))}}
+			- You can use a [[macro]] to identify the current page.
+			- {{query (and (page <% current page %> block-property section usage))}}
 		- Use multiple conditions to search for by separating them via space (_OR_) - only works for text
 			-
 			  #+BEGIN_NOTE
@@ -36,15 +38,13 @@ tags:: myPageTag
 		  * You could write the same query also with quotation marks - `{{query "myTag" "my-other-tag"}}`
 		  * Only wrap tags in `[[]]` if you query for a single tag - otherwise you need to use `(or )`/`(and )` instead of simply separating by space
 		  #+END_TIP
-		- We can also query specifically for tags:
+		- We can query specifically for "any of the following" tags (via `(or )`):
 			- {{query (or [[myTagB]] [[myTagC]])}}
 			- {{query (and [[myTagB]] [[myTagC]])}}
-		- Or we can query for any other type such as todos - in this example, we limit it to todos from a specific page via `(and )`:
-		  {{query (and (todo now later done) [[queries]])}}
 		- We can exclude certain pages or matches for #myTagC via `(not )`:
-		  {{query (and [[myTagC]] (not [[some page]] [[another page]]))}}
-		-
+		  {{query (and [[myTagA]] [[myTagB]] (not [[myTagC]])) }}
 	- ## Tags
+	  collapsed:: true
 		- Get all blocks with a specific tag `myTag`:
 			- {{query [[myTag]] }}
 			  query-table:: false
@@ -59,18 +59,24 @@ tags:: myPageTag
 		- Get all pages with a certain page-level tag (via the special page-property `tags`):
 		  {{query (page-tags [[myPageTag]])}}
 	- ## Tasks
-		- Get all todos that are in status `Now` (`todo` must be added as a prefix)
+	  collapsed:: true
+		- TODO Task with deadline
+		  DEADLINE: <2021-08-07 Sat>
+		- We can query tasks via the `todo` keyword (`todo` must always be added as a prefix) - in this example, we limit it to tasks from a specific page via `(and )`:
+		  {{query (and (todo todo doing now later done) [[Task Management]])}}
+		- Get all tasks that are in status `Now`
 			- {{query (todo now)}}
-		- Get all todos that are in status `Done`
+		- Get all tasks that are in status `Done`
 			- {{query (todo done)}}
-		- Get all todos with a deadline
+		- Get all tasks with a deadline
 			- {{query (todo deadline)}}
-			- {{query (deadline)}}
-			- TODO How to limit only to task, not where text matches?
+			- TODO Not working
 	- ## Properties
+	  collapsed:: true
 		- Query for any block with a property
 			- {{query (property testproperty}}
 		- Query for any block with a property and specific value
 			- {{query (property testproperty "My value")}}
 	- ## Files
+	  collapsed:: true
 		- As any file or images is stored in the `/asset/` folder, you can simply access the [[Asset]] page to see all of your files in the [[Unlinked References]] section
