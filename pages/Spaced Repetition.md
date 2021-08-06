@@ -12,7 +12,7 @@ alias:: SRS
 - **USAGE**
 	- You can create _cards_  (i.e. flashcards) in Logseq. They can be combined with clozes.
 		- _Cards_ are question-answer cards.
-		- _Clozes_ (cloze item, cloze question, cloze deletion) can be used to generate fill-in-the-blank-forms (German: Lückentexte) for easier learning. They can be used within cards. (^^or in general?^^)
+		- _Clozes_ (cloze item, cloze question, cloze deletion) can be used to generate fill-in-the-blank-forms (German: Lückentexte) for easier learning. They can be used within cards and blocks without cards.
 			- _Example:_
 			  > Logseq is an (...) application.
 			  > [Outliner]
