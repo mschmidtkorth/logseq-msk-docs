@@ -15,14 +15,14 @@ alias:: plugin, plugins
 	- To install from source code
 		- Check the Readme for the plugin - it typically follows instructions listed [below](((610afd9b-1224-453c-b753-b16cc3a88ad8)))
 	- To install a downloaded plugin
-		- Open _Logseq > Settings: Enable Developer Mode_ to generally enable plugin functionality
+		- Open _Logseq > [[Settings]]: Enable Developer Mode_ to generally enable plugin functionality
 		- Restart Logseq
 		- Open _Logseq > Plugins > Load unpackaged plugin > Select folder_
 		- Restart Logseq if needed
 - ## Initial Setup for Development
   id:: 610afd9b-1224-453c-b753-b16cc3a88ad8
 	- Clone [plugin repository](https://github.com/logseq/logseq-plugin-samples)
-	- Open _Logseq > Settings: Enable Developer Mode_ to generally enable plugin functionality
+	- Open _Logseq > [[Settings]]: Enable Developer Mode_ to generally enable plugin functionality
 	- Restart Logseq
 	- `cd` into cloned plugin folder, e.g. `logseq-hello-world`
 	- `npm i && npm run build` (depending on plugin Readme) to generate the `dist/` folder

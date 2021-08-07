@@ -1,15 +1,19 @@
 - You can provide your Logseq knowledge base as a statically hosted website which can be hosted on GitHub pages or any other hosting provider.
+-
+  #+BEGIN_TIP
+  Static exports require the desktop app.
+  #+END_TIP
 - A static export is precompiled and does not require a full web server as it is only HTML, Javascript, CSS and assets.
 - **USAGE**
-	- Open your [[graph]] in Logseq
-	- Decide whether you want to export _all_ of your pages or only _some_
-		- You want to export _all_ pages: Enable *Settings > Export all pages public when publishing*
-		- You want to export _specific pages_ only: Add a page [[property]] `public:: true` to each page you want to export. Do _not_ enable the setting above
-	- Go to _three dots menu > Export > Export Public Pages_
-	- Upload the result to your hosting provider
+	- Open your [[graph]] in Logseq.
+	- Decide whether you want to export _all_ of your pages or only _some_.
+		- You want to export _all_ pages: Enable *[[Settings]] > Export all pages public when publishing.*
+		- You want to export _specific pages_ only: Add a page [[property]] `public:: true` to each page you want to export. Do _not_ enable the setting above.
+	- Go to _three dots menu > Export > Export Public Pages_.
+	- Upload the result to your hosting provider or open them in your local server e.g. via `python -m SimpleHTTPServer` or `npm run serve`. As it is a static export you may open the resulting `index.html` file already locally to verify it.
 	-
 	  #+BEGIN_TIP
-	  As it is a static export you may open the resulting `index.html` file already locally to verify it.
+	  Static exports are read-only.
 	  #+END_TIP
 	-
 	  #+BEGIN_WARNING

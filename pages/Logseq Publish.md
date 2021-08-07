@@ -1,2 +1,2 @@
-- [Logseq Publish](https://github.com/logseq/publish) is an in-development feature to publish your knowledge base as a static site.
+- [Logseq Publish](https://github.com/logseq/publish) is an in-development feature to publish your knowledge base as a static website.
 - As it is in very early development it is lacking features and is rather slow - for now, stick to [[Static Export]].

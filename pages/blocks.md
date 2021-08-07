@@ -6,7 +6,7 @@ filters:: {}
 	- Whenever you hit `Return` a new block is created. You can create a new line within the same block by hitting `Shift+Return`.
 	- Blocks can have any number of (nested) sub-blocks. The root of a block is always a page (which is simply a block itself).
 	- Blocks are used to group closely related units of information and the major differences to traditional word processing tools.
-	- Blocks can be _embedded_ in another location (directly editable, will update everywhere) or _referenced_ (view only).
+	- Blocks can be _embedded_ in another location (directly editable, will update everywhere) or _referenced_ (view only). Use the `/Block Embed` and `/Block Reference` [[commands]].
 	- You can easily move blocks via drag & drop
 		- You can use `opt+drag` to create a reference to a block.
 	-
