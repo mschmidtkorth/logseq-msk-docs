@@ -1,31 +1,62 @@
 alias:: command
 
-- Commands are used for Logseq-specific features and can be accessed by typing `/`.
+- Commands are used for Logseq-specific features.
+- ## Basic Commands
+	- Basic commands can be accessed by typing `/`.
 	- [[References]]
 	- Text formatting
+		- `/Underline`
 	- [[Files]]
 	- [[Task Management]]
+	- Admonitions (preformatted text blocks)
+		- `<Tip`
+		- `<Important`
+		- `<Caution`
+		- `<Warning`
 	- [[Queries/Advanced Queries]]
 	- [[Zotero]]
 		- TODO Add content
 	- Query table functions
 		- TODO Add content
+	- [[Slides]]
 	- Calculator
 		- Type `/Calculator` to enter any calculations.
 		-
 		  ```calc
 		  42+3.141^2
 		  ```
-	- Drawings
-		- Type `/Draw`
-		- You can right-click a specific element to export
-		- You can right-click the page to export the diagram
-		- You can select different tools by clicking or via keyboard (`1,2,3,...` and more, hover over the buttons)
-		- You can zoom in as for any website via your scrolling wheel or `Cmd/Ctrl + +/-`
-		- Drawings are stored in your [[graph]] directory at `draws/`
-		- [[draws/2021-08-05-21-43-35.excalidraw]]
+	- [[Drawings]]
 	- Embedded videos or tweets from Twitter
 		- TODO Add content
 		- You can embed tweets via `{{tweet https://twitter.com/barackobama/status/896523232098078720}}`
 		- {{tweet https://twitter.com/barackobama/status/896523232098078720}}
 	- [[Spaced Repetition]] cards and clozes
+	- ## Advanced Commands
+		- Advanced commands are added via `<`.
+		- `<Src` for source code blocks; use `#+BEGIN_SRC javascript` to specify the language
+		- Admonitions (preformatted text blocks)
+			- `<Tip`
+			  #+BEGIN_TIP
+			  A tip.
+			  #+END_TIP
+			- `<Important`
+			  #+BEGIN_IMPORTANT
+			  Important.
+			  #+END_IMPORTANT
+			- `<Caution`
+			  #+BEGIN_CAUTION
+			  Caution.
+			  #+END_CAUTION
+			- `<Warning`
+			  #+BEGIN_WARNING
+			  Warning.
+			  #+END_WARNING
+			- `<Example` preserves whitespace
+			  #+BEGIN_EXAMPLE
+			  Example.
+			  #+END_EXAMPLE
+			- `<Verse` preserves newlines
+			  #+BEGIN_VERSE
+			  A verse.
+			  Another verse.
+			  #+END_VERSE
