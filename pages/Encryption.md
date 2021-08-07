@@ -1,7 +1,7 @@
 - You are able to encrypt your notes at rest i.e. on your hard disk.
 - **USAGE**
 	- Logseq native encryption
-		- _Settings > Enable encryption feature_ - once you restart, you can set your encryption key
+		- _[[Settings]] > Enable encryption feature_ - once you restart, you can set your encryption key
 		- Whenever you modify a file it is stored encrypted (on-the-fly).
 			-
 			  #+BEGIN_TIP
