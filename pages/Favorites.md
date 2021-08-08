@@ -5,4 +5,7 @@ alias:: Contents
 - **USAGE**
 	- Access the Favorites panel in your sidebar or by typing `t f`
 	- You may use Favorites as a scratchpad for ideas, as a list of todos or important queries or as a way of listing your most important pages.
+	- Add new pages to your Favorites by
+	  1. Using the three dots menu on a page and selecting _Add to Favorites_
+	  1. Manually referencing the page in your Favorites pane
 	-
