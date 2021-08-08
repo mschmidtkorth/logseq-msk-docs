@@ -1,6 +1,5 @@
 - Advanced queries allow you to specify more detailed, more specific and explicitly formatted queries compared to [[Queries/Simple Queries]].
 - ## How to Write Advanced Queries
-  collapsed:: true
 	- Advanced queries are written via [[Datalog]]
 	- Advanced queries can get complex, but their format is always the same:
 	  ```
@@ -24,6 +23,10 @@
 	  |`collapsed?`|Whether to collapse the result|`false`|`true`|
 	  |`:breadcrumb-show?`|Whether to show the breadcrumb path|`false`|`true`|
 	  [Source](https://logseq.github.io/#/page/advanced%20queries)
+	-
+	  #+BEGIN_TIP
+	  You can also write simple queries with advanced query syntax: `{:title "My query" :query (todo todo done)}`
+	  #+END_TIP
 - ## Query Toggles
 	- There are certain properties that allow you to control the output of advanced queries.
 	- **USAGE**
