@@ -12,7 +12,7 @@ section:: Usage
 -
   #+BEGIN_TIP
   **Querying page names or properties**
-  When querying for page names or properties always write them in _lowercase_ - this is how they are stored in Logseq's database 
+  When querying for page names or properties always write them in _lowercase_ - this is how they are stored in Logseq's database
   #+END_TIP
 -
   #+BEGIN_TIP
@@ -93,7 +93,7 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 - Advanced queries
 	- Query all tasks part of a specific group from your journal entries
 	-
-	  #+BEGIN_QUERY 
+	  #+BEGIN_QUERY
 	  query-table:: false
 	  {:title "All pages that have a myPageTag tag"
 	   :query [:find ?name
@@ -131,7 +131,7 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 	  #+BEGIN_QUERY
 	  {:query [:find (pull ?b [*])
 	       :where
-	       [?p :block/name "praise"]
+	       [?p :block/name "myTagA"]
 	       [?b :block/ref-pages ?p]]
 	  :collapsed? true}
 	  #+END_QUERY
@@ -215,7 +215,7 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 		                          (sort-by (fn [h]
 		                                     (get h :block/priority "Z")) result))
 		      :collapsed?       false}
-		  
+
 		  {:title      "📅 NEXT"
 		      :query      [:find (pull ?h [*])
 		                   :in $ ?start ?next
