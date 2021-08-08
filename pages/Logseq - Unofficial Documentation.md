@@ -21,9 +21,9 @@ heading:: true
 		  #+BEGIN_TIP
 		  You are looking at it right now - this page was built with Logseq!
 		  #+END_TIP
-		- [Logseq](https://github.com/logseq/logseq) (\[lɒɡsiːk\], from _logbook sequence_) ([documentation](https://logseq.github.io/#/page/Contents)) is an alternative to publishing or knowledge management tools like [VuePress](https://vuepress.vuejs.org/guide/) or [Roam Research](https://roamresearch.com/).
+		- [Logseq](https://github.com/logseq/logseq) (\[lɒɡsiːk\], from _logbook sequence_) ([documentation](https://logseq.github.io/#/page/Contents)) is an alternative to knowledge management tools like [VuePress](https://vuepress.vuejs.org/guide/) or [Roam Research](https://roamresearch.com/) or even a set of Microsoft Word documents.
 		- Logseq is an [[Infinite Outliner]] app for organizing knowledge - it does not work with documents but with [[pages]] and [[blocks]] that have references to each other.
-		- Core principle is a [[Graph]]-based approach, i.e. [[pages]] and [[blocks]] (sections of pages) are linked to each other, which allows you to quickly see where related information is stored. By being made aware of how your knowledge is _connected_ you can come to new insights:
+		- Its core principle is a [[Graph]]-based approach where [[pages]] and [[blocks]] (sections of pages) are _linked_ to each other, which allows you to quickly see where related information is stored and how your knowledge is _connected_  - gaining new insights. By understanding how your knowledge is connected - its paths - you gain wisdom:
 		  ![image.png](../assets/image_1625607156086_0.png)
 		  Source: [OneStutteringMind](https://youtu.be/8cZdHIgwPro?t=610)
 		- Logseq is built on a few fundamental features:
@@ -194,21 +194,20 @@ heading:: true
 	- ## Non-textual information
 		- ## [[Files]] and [[Images]]
 	- ## Advanced Features
-		- ## [[Predefined Components]]
+		- ## [[Components]]
 		- ## [[Commands]]
-		- ## Customization: [[Custom CSS]] & [[Plugins API]]
-		  collapsed:: true
-			- To change the _appearance_ of Logseq you can add your own [CSS](https://en.wikipedia.org/wiki/CSS) rules. These are defined in Logseq's [[custom CSS]] file.
-			- To change the _functionality_ of Logseq you can write your own plugin via the [[Plugins API]].
-		- ## [[Encryption]]
 		- ## [[Properties]]
-		- ## [[Task Management]]
 		- ## [[Templates]]
-		- ## [[Dynamic Variables]]
 		- ## [[Macros]]
+		- ## [[Dynamic Variables]]
+		- ## [[Task Management]]
 		- ## [[Spaced Repetition]] (Flashcards)
 		- ## [[PDF Annotations]]
+		- ## [[Encryption]]
 		- ## Querying Data ([[Queries]])
+		- ## Customization: [[Custom CSS]] & [[Plugins API]]
+			- To change the _appearance_ of Logseq you can add your own [CSS](https://en.wikipedia.org/wiki/CSS) rules. These are defined in Logseq's [[custom CSS]] file.
+			- To change the _functionality_ of Logseq you can write your own plugin via the [[Plugins API]].
 		- ## Community Features
 		  collapsed:: true
 			- Check [Awesome Logseq](https://github.com/logseq/awesome-logseq) for features contributed by the community - either themes or layout features ([[Custom CSS]]) or plugins to provide additional functionality ([[Plugins API]])
@@ -217,8 +216,8 @@ heading:: true
 			- The following features are no longer available.
 			- ## Timestamps
 				- Timestamps allowed you to log the date you created or last modified a block. This worked by adding additional metadata to your Markdown file - the date and the block's Id - (initially they were stored in Logseq's database), which was hidden when viewing the file in Logseq. This feature has been deprecated as it proved to be prone to issues.
-# Development
-collapsed:: true
+- # Development
+  collapsed:: true
 	- To contribute to Logseq, clone the [git repository](https://github.com/logseq/logseq/), `cd logseq`, `yarn install`, `yarn watch` (check log output - it lists multiple IPs/addresses to open)
 		-
 		  #+BEGIN_TIP
@@ -266,7 +265,6 @@ collapsed:: true
 			- Logseq/Obsidian-specific features like block references will not be parsed
 			- Adds an additional attack vendor for your sensitive information
 - # Errors
-  collapsed:: true
 	- Page is empty or does not show most recent content
 		- This is typically only a visual issue and your content is not lost. Confirm it by opening the Markdown file in a text editor
 		- To resolve
@@ -276,7 +274,7 @@ collapsed:: true
 			  1. Restart Logseq, or
 			  1. Go to _[[Settings]] > Clear Cache_ or use `Cmd+Shift+R` to reload without cache (you will need to restore your settings)
 		- Another reason is that the reference does not link to the correct file - for example, you have a file `2021_01_01.md` but link to it via `[[2021-01-01]]` (note the dashes - and rename the file)
-		- If you use the desktop application and force quit it instead of closing it properly, the content displayed when opening it again may not reflect he actual content. Logseq saves its graph database (the meta information about your files) when being properly closed. [[Reindex]] your content to make it appear again.
+		- If you use the desktop application and force quit it instead of closing it properly, the content displayed when opening it again may not reflect the actual content. Logseq saves its [[graph]] database (the meta information about your files) only when being properly closed. However, no actual content is lost. [[Reindex]] your content to make it appear again.
 - # Resources
   heading:: true
   collapsed:: true
