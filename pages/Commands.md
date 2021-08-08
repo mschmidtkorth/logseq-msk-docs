@@ -16,8 +16,7 @@ alias:: command
 	- [[Queries/Advanced Queries]]
 	- [[Zotero]]
 		- TODO Add content
-	- Query table functions
-		- TODO Add content
+	- [Query table functions](((610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d)))
 	- [[Slides]]
 	- Calculator
 		- Type `/Calculator` to enter any calculations.

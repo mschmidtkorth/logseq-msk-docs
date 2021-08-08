@@ -15,6 +15,12 @@ section:: Usage
   When querying for page names or properties always write them in _lowercase_ - this is how they are stored in Logseq's database 
   #+END_TIP
 -
+  #+BEGIN_TIP
+  **Queries as tables & sorting**
+  * You can render query results as tables (click on the toggle) and select which fields/columns to include.
+  * You can sort table by clicking on a column name.
+  #+END_TIP
+-
   #+BEGIN_NOTE
   **Technical details**
   Queries are written in the [[Datalog]] progamming language ([Wikipedia](https://en.wikipedia.org/wiki/Datalog)).  There are various flavours/systems of Datalog. A common one is _DataScript_, written in Clojure, the programming language Logseq is written in (or rather ClojureScript). DataScript is an in-memory database running on either ClojureScript or Java (JVM). Another common one is _Datomic_, which is a commercial database.
@@ -36,6 +42,48 @@ section:: Usage
 		  #+BEGIN_WARNING
 		  Many default queries may slow down Logseq (see [here](((6109951e-1c4d-4491-8147-9c4072672d56)))).
 		  #+END_WARNING
+## Query Table Functions
+id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
+	- You can use _functions_ to process a query table's output.
+	- Functions allow you to perform aggregations such as calculating the sum or average value (`sum`, `average`, minimum (`min`), maximum (`max`), `total`) or by performing an arbitrary function written in Clojure.
+		- Aggregations always have the format of `{{function (<aggregation type> :<property keyword>)}}`
+	- **USAGE**
+		-
+		  1. Create a query in table view
+		  1. Define a function in this query's child block
+	- **EXAMPLES**
+		- Let's create a few block properties.
+		  type:: query-table-block
+		  name:: my-first-block
+		  index:: 1
+		  number-of-sentences:: 1
+		- And here is another block.
+			- This block is also going to have block properties.
+			  type:: query-table-block
+			  name:: my-second-block
+			  index:: 2
+			  number-of-sentences:: 2
+		- And lastly, a third block.
+			- Similar to the other two blocks, we are going to add some properties.
+			- This block is also going to have a new property.
+			- This is going to be the last block.
+			  type:: query-table-block
+			  name:: my-third-block
+			  index:: 3
+			  number-of-sentences:: 4
+			  is-last-block:: true
+		- {{query (property type query-table-block)}}
+		  query-table:: true
+		  query-properties:: [:name :index :number-of-sentences :is-last-block]
+			- Now, let's calculate
+				- the average number of sentences: {{function (average :number-of-sentences)}} (`{{function (average :number-of-sentences)}}`)
+				- the highest number of sentences: {{function (max :number-of-sentences)}} (`{{function (max :number-of-sentences)}}`)
+				- the number of all sentences: {{function (sum :number-of-sentences)}} (`{{function (total :number-of-sentences)}}`)
+				- something arbitrary like multiplying the index of each block with its number of sentences (like a weighting), and taking the sum of all: {{function (sum (map (fn [x] (* (:index x) (:number-of-sentences x))) result))}} `{{function (sum (map (fn [x] (* (:index x) (:number-of-sentences x))) result))}}`
+			-
+			  #+BEGIN_WARNING
+			  The function has to be a child of the query table.
+			  #+END_WARNING
 ## Resources
 	- TODO Check
 	- [Domain Modeling with Datalog](https://www.youtube.com/watch?v=oo-7mN9WXTw&t=1s) (Norbert Wojtowicz)
