@@ -13,7 +13,7 @@ heading:: true
 	-
 	  #+BEGIN_WARNING
 	  **Logseq is still in a beta phase. Regularly backup your files.**
-	  Use a version history tool such as git or even cloud storage providers like Dropbox. When using git, commit your changes regularly (you may use `git diff --stat` to confirm no file has been accidentally cleared; or show changes of previous commits with `git show --stat` or `git log --stat`). 
+	  Use a version history tool such as git or even cloud storage providers like Dropbox. When using git, commit your changes regularly (you may use `git diff --stat` to confirm no file has been accidentally cleared; or show changes of previous commits with `git show --stat` or `git log --stat`).
 	  As content is stored as plain Markdown files, you may use any backup tool of your choice.
 	  #+END_WARNING
 	- ## What is Logseq?
@@ -62,6 +62,9 @@ heading:: true
 			  * For people who still need the GitHub integration, we will open source our existing backend code this month so that you can self-host yourself.
 			  #+END_QUOTE
 			  #+END_WARNING
+	- ## Getting Started
+	  collapsed:: true
+		- See the [official Getting Started documentation](https://logseq.github.io/#/page/getting%20started)
 - # General Usage
   heading:: true
   collapsed:: true
@@ -69,14 +72,14 @@ heading:: true
 	  heading:: true
 		-
 		  #+BEGIN_TIP
-		  Edit keyboard shortcuts via _Settings > Customize shortcuts_ or by editing the [[config.edn]] file (requires restarting or reindexing your graph).
+		  Edit keyboard shortcuts via _[[Settings]] > Customize shortcuts_ or by editing the `:shortcuts` section in the [[config.edn]] file (requires restarting or [[reindexing]] your [[graph]]).
 		  #+END_TIP
 		-
 		  #+BEGIN_NOTE
 		  **How to read keyboard shortcuts:**
 		  * `a+b` Press both the `a` and `b` key at the same time
 		  * `a b` Press the `a` key first, let it go and then press the `b` key
-		  * `a+b/c` Press both the `a` and `b` or `c` key at the same time
+		  * `a+b/c` Press both the `a` and `b` or `a` and `c` key at the same time
 		  #+END_NOTE
 		- `Esc` to leave editing mode in order to highlight multiple blocks via mouse drag, drag & drop blocks and more
 		- Block Management
@@ -204,6 +207,7 @@ heading:: true
 		- ## [[Dynamic Variables]]
 		- ## [[Macros]]
 		- ## [[Spaced Repetition]] (Flashcards)
+		- ## [[PDF Annotations]]
 		- ## Querying Data ([[Queries]])
 		- ## Community Features
 		  collapsed:: true
@@ -270,13 +274,14 @@ collapsed:: true
 			-
 			  1. [[Reindex]] your [[graph]], or
 			  1. Restart Logseq, or
-			  1. Go to _Settings > Clear Cache_ or use `Cmd+Shift+R` to reload without cache (you will need to restore your settings)
+			  1. Go to _[[Settings]] > Clear Cache_ or use `Cmd+Shift+R` to reload without cache (you will need to restore your settings)
 		- Another reason is that the reference does not link to the correct file - for example, you have a file `2021_01_01.md` but link to it via `[[2021-01-01]]` (note the dashes - and rename the file)
 		- If you use the desktop application and force quit it instead of closing it properly, the content displayed when opening it again may not reflect he actual content. Logseq saves its graph database (the meta information about your files) when being properly closed. [[Reindex]] your content to make it appear again.
 - # Resources
   heading:: true
   collapsed:: true
-	- DOING Go through official Logseq documentation+changelog
+	- DOING Go through official Logseq changelog
+	- TODO Go through [OneStutteringMind](https://www.youtube.com/channel/UCz7EgrAosr5FRF3IErGV-yQ)'s resources
 	- [Awesome Logseq](https://github.com/logseq/awesome-logseq)
 	- [Migrating from Roam Research](https://discuss.logseq.com/t/tips-for-former-roam-users/1228)
 	- [Great videos around](https://www.youtube.com/channel/UC525q2RIufHjnaHOuIUFY9A) [[PKM]]
