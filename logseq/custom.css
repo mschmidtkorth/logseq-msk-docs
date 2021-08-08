@@ -450,6 +450,14 @@ a.chosen {
 	background-color: var(--ls-secondary-background-color);
 }
 
+.white-theme .ui__button {
+	background-color: var(--orange);
+}
+
+.dark-theme .ui__button {
+	background-color: var(--cyan-hover);
+}
+
 
 /*==================================================*/
 
