@@ -1,4 +1,4 @@
-alias:: SRS
+alias:: SRS, cards
 
 -
   > Spaced repetition (SRS) is an evidence-based learning technique that is usually performed with flashcards. It is based on learning over a longer period time with distributed sessions. Newly introduced and more difficult flashcards are shown more frequently, while older and less difficult flashcards are shown less frequently in order to exploit the psychological _spacing effect_.[^1] The use of spaced repetition has been proven to increase rate of learning. [Wikipedia](https://en.wikipedia.org/wiki/Spaced_repetition) 
@@ -45,6 +45,11 @@ alias:: SRS
 	- To show a specific card, right click the block that has the card reference and select _Preview Card_
 	  ![image.png](../assets/image_1628191119279_0.png)
 	- To create a cloze, use the `/Cloze` [[Command]].
+	-
+	  #+BEGIN_TIP
+	  **Card content**
+	  The content of a card can either be a block or a page. To use a page, embed the page in a block you have tagged with `#card` - for example, `{{embed [[myPage]]}}`.
+	  #+END_TIP
 - **EXAMPLES**
 	- This is a card. #card
 	  card-last-interval:: -1
