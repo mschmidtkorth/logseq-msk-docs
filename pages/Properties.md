@@ -1,3 +1,4 @@
+myHiddenProperty:: You cannot see me
 alias:: Property
 
 - Properties are key-value pairs that allow you to annotate a block or page
@@ -36,6 +37,12 @@ alias:: Property
 	  author:: [[sönke ahrens]]
 	  publication_date:: [[february 21, 2017]]
 	  ```
+	-
+	  #+BEGIN_TIP
+	  You can hide properties so they are only shown upon editing the property section. Add the name of any property you want to hide to your [[config.edn]] into the `:block-hidden-properties` section (create if it does not exist). To remove or update the property, you need to use a text editor.
+	  
+	  For example, you can hide the created/updated at properties and a custom property: `:block-hidden-properties #{:created-at :updated-at :myHiddenProperty}`
+	  #+END_TIP
 	- Properties have two **use cases**
 		- Selecting ([[querying]]) specific pages/blocks:
 			- For example, let's query all the blocks with the property `parts` and the value `steering wheel`:
