@@ -15,7 +15,6 @@ alias:: command
 		- `<Warning`
 	- [[Queries/Advanced Queries]]
 	- [[Zotero]]
-		- TODO Add content
 	- [Query table functions](((610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d)))
 	- [[Slides]]
 	- Calculator
@@ -26,7 +25,6 @@ alias:: command
 		  ```
 	- [[Drawings]]
 	- Embedded videos or tweets from Twitter
-		- TODO Add content
 		- You can embed tweets via `{{tweet https://twitter.com/barackobama/status/896523232098078720}}`
 		- {{tweet https://twitter.com/barackobama/status/896523232098078720}}
 	- [[Spaced Repetition]] cards and clozes
