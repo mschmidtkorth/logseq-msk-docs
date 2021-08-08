@@ -19,7 +19,6 @@ tags:: myPageTag
 			- Examples: `(between -7d +7d)` or `(between -2w today)`
 - **EXAMPLES**
 	- ## General
-	  collapsed:: true
 		- Limiting the results to those part of the current page
 		  query-table:: false
 			- You can use a [[macro]] to identify the current page.
@@ -30,24 +29,32 @@ tags:: myPageTag
 			  Matching is not an exact match - note how `myTag` also matches `myTagA`. In this query tags are not treated as tags but simply as text.
 			  #+END_NOTE
 			- {{query myTag my-other-tag}}
-			  query-table:: true
+			  query-table:: false
 			  id:: 610afd9b-ae81-437f-a8c6-ca7830e3e5b3
 			  query-properties:: [:block]
-		-
-		  #+BEGIN_TIP
-		  * You could write the same query also with quotation marks - `{{query "myTag" "my-other-tag"}}`
-		  * Only wrap tags in `[[]]` if you query for a single tag - otherwise you need to use `(or )`/`(and )` instead of simply separating by space
-		  #+END_TIP
+			-
+			  #+BEGIN_TIP
+			  * You could write the same query also with quotation marks - `{{query "myTag" "my-other-tag"}}`
+			  * Only wrap tags in `[[]]` if you query for a single tag - otherwise you need to use `(or )`/`(and )` instead of simply separating by space
+			  #+END_TIP
 		- We can query specifically for "any of the following" tags (via `(or )`):
 			- {{query (or [[myTagB]] [[myTagC]])}}
+		- We can query for all of the tags (via `(and )`)
+		  #+BEGIN_TIP
+		  When querying for multiple matches, a check is considered a match also if it is a parent block. For example, `(and [[myTagA]] (todo now))` will _also_ query those blocks where the block's _parents_ have a reference to `myTagA` (and a `NOW` marker).
+		  #+END_TIP
 			- {{query (and [[myTagB]] [[myTagC]])}}
 		- We can exclude certain pages or matches for #myTagC via `(not )`:
 		  {{query (and [[myTagA]] [[myTagB]] (not [[myTagC]])) }}
+	- ## Pages
+		- Query all pages with name 
+		  {{query (page [[properties]])}}
 	- ## Tags
-	  collapsed:: true
 		- Get all blocks with a specific tag `myTag`:
 			- {{query [[myTag]] }}
 			  query-table:: false
+			  query-sort-by:: block
+			  query-sort-desc:: false
 			- {{query(and [[myTag]]) }}
 			- This will return all blocks that are linked to `myTag` - any blocks using `[[myTag]]` or `#myTag`
 		- Get all blocks with _any_ tag of the list `myTag, my-other-tag`
@@ -60,7 +67,7 @@ tags:: myPageTag
 		  {{query (page-tags [[myPageTag]])}}
 	- ## Tasks
 	  collapsed:: true
-		- TODO Task with deadline
+		- TODO Task with deadline #sample
 		  DEADLINE: <2021-08-07 Sat>
 		- We can query tasks via the `todo` keyword (`todo` must always be added as a prefix) - in this example, we limit it to tasks from a specific page via `(and )`:
 		  {{query (and (todo todo doing now later done) [[Task Management]])}}
