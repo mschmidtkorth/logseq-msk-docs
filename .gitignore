@@ -1,1 +1,4 @@
 *.code-workspace
+pages-metadata.edn
+.recycle/*
+.recycle*
