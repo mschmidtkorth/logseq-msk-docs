@@ -8,7 +8,7 @@
 	- To create a template
 		-
 		  1. Right click a block bullet and select `Make template`, or 
-		  2. Add a page-level [[property]] `template: myTemplate` (on the current page or another)
+		  2. Add a page-level [[property]] `template:: myTemplate` (on the current page or another)
 		- You can choose to include the parent block (via `template-including-parent:: true` [[property]]).
 		-
 		  #+BEGIN_TIP
@@ -24,12 +24,20 @@
 	  Deleting a template page will not delete or modify any of the instances where you have used the template.
 	  #+END_TIP
 - **EXAMPLES**
-	- This is the first line. I will be included in the template.
+	- This is the first line. It will be included in the template.
 	  template:: my-test-template
 		- This is a child line.
 			- This is a grandchild line.
-	- This is the first line. I will _not_ be included in the template.
+	- This is the first line. It will _not_ be included in the template.
 	  template:: my-other-test-template
 	  template-including-parent:: false
 		- This is a child line.
 			- This is a grandchild line.
+## Default Templates in [[Journals]]
+	- You can specify a default template for newly created [[Journal]] pages.
+	- Change the `default-templates` section in [[config.edn]] to reference your template.
+	- For example, you can create a template with `template:: my-default-template`, and change [[config.edn]] to:
+	  ```clojure
+	  :default-templates
+	   {:journals "my-default-template"}
+	  ```
