@@ -1,0 +1,1 @@
+- The cache is where Logseq stores temporary search and database items. You can safely clear it without losing any data. It is going to be rebuilt automatically.
