@@ -1,7 +1,7 @@
 -
   #+BEGIN_PINNED
   This section is about exporting a static HTML/CSS/JavaScript version of your content to be hosted on a web server. You can also export 
-  * all of your pages as Markdown, OPML, or JSON by going to to _three dots menu > Export_
+  * all of your pages (your [[graph]]) as Markdown, OPML, or JSON by going to to _three dots menu > Export_
   * a single page as Markdown or OPML by going to _three dots page menu > Export _
   * a single block as Text, OPML, or HTML by right-clicking a block and selecting _Copy as_
   #+END_PINNED
