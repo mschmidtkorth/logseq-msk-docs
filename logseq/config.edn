@@ -17,7 +17,7 @@
  ;; Example for Markdown users: "[[Work]]\n  -\n- [[Family]]\n  -\n"
  ;; Example for Org mode users: "** [[Work]]\n***\n** [[Family]]\n***\n"
  :default-templates
- {:journals ""}
+ {:journals "my-default-template"}
 
  ;; Whether to enable hover on tooltip preview feature
  ;; Default is true, you can also toggle this via setting page
@@ -131,6 +131,9 @@
     :inputs     [:today :7d-after]
     :collapsed? false}]}
 
+:block-hidden-properties
+#{:created-at :updated-at :myHiddenProperty}
+
  ;; Add your own commands to speedup.
  ;; E.g. [["js" "Javascript"]]
  :commands
@@ -166,6 +169,7 @@
  :feature/enable-journals? false
  :feature/enable-timetracking? false
  :default-home {:page "Logseq - Unofficial Documentation"}
+ :zotero/settings {:type-id "8327322", :prefer-citekey? true}
 
  ;; any number between 0 and 1 (the greater it is the faster the changes of the next-interval of card reviews) (default 0.5)
  ;; :srs/learning-fraction 0.5
