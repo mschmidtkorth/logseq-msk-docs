@@ -37,6 +37,8 @@
  ;; Example:
  ;; :publishing/all-pages-public? true
 
+:name/favorites "Homepage"
+
  ;; Specify default home page and sidebar status for Logseq
  ;; If not specified, Logseq default opens journals page on startup
  ;; value for `:page` is name of page
@@ -170,6 +172,7 @@
  :feature/enable-timetracking? false
  :default-home {:page "Logseq - Unofficial Documentation"}
  :zotero/settings {:type-id "8327322", :prefer-citekey? true}
+ :editor/logical-outdenting? true
 
  ;; any number between 0 and 1 (the greater it is the faster the changes of the next-interval of card reviews) (default 0.5)
  ;; :srs/learning-fraction 0.5
