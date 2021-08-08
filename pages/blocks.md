@@ -13,6 +13,7 @@ filters:: {}
 	  #+BEGIN_WARNING
 	  You cannot convert a block to a page.
 	  #+END_WARNING
+	- You can convert blocks to headings or add a highlight color by right-clicking the block bullet.
 - **EXAMPLES**
 	- This is a block.
 	  This is still the same block.
@@ -23,3 +24,7 @@ filters:: {}
 	- This is a reference: ((6106b8e8-2a72-402f-8de1-ed319bbf0110))
 	- This is an embedded block:
 	  {{embed ((6106b8e8-2a72-402f-8de1-ed319bbf0110)) }}
+	- This is a heading block
+	  heading:: true
+	- This is a highlighted block
+	  background-color:: #793e3e
