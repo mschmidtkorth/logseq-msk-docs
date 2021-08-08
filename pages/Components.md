@@ -33,11 +33,19 @@
 		  To quickly edit code, put the cursor within the code box and press `Esc`.
 		  #+END_TIP
 	- [[Queries/Advanced Queries]]
-	- LaTex
+	- $\LaTeX$
 	-
 	  #+BEGIN_EXPORT latex
 	  a^2+b^2=c^2
 	  #+END_EXPORT
+		-
+		  #+BEGIN_TIP
+		  You can also write LaTeX via
+		  `$a^2+b^2=c^2$`
+		  $a^2+b^2=c^2$
+		  or `$$a^2+b^2=c^2$$` (will center)
+		  $$a^2+b^2=c^2$$
+		  #+END_TIP
 	-
 	  ```source
 	  # +BEGIN_EXPORT latex
