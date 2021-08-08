@@ -1,4 +1,4 @@
-alias:: Journaling, Roaman Journaling
+alias:: Journaling, Roaman Journaling, Journals
 
 - You can use your journal to document _daily_ or _dated_ information.
 - Examples for _trigger questions_ to ask yourself daily are:
