@@ -1,9 +1,16 @@
+-
+  #+BEGIN_PINNED
+  This section is about exporting a static HTML/CSS/JavaScript version of your content to be hosted on a web server. You can also export 
+  * all of your pages as Markdown, OPML, or JSON by going to to _three dots menu > Export_
+  * a single page as Markdown or OPML by going to _three dots page menu > Export _
+  * a single block as Text, OPML, or HTML by right-clicking a block and selecting _Copy as_
+  #+END_PINNED
 - You can provide your Logseq knowledge base as a statically hosted website which can be hosted on GitHub pages or any other hosting provider.
 -
   #+BEGIN_TIP
   Static exports require the desktop app.
   #+END_TIP
-- A static export is precompiled and does not require a full web server as it is only HTML, Javascript, CSS and assets.
+- A static export is precompiled and does not require a full web server as it is only HTML, CSS, Javascript and assets.
 - **USAGE**
 	- Open your [[graph]] in Logseq.
 	- Decide whether you want to export _all_ of your pages or only _some_.
