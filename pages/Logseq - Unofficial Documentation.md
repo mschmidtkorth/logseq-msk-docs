@@ -30,8 +30,8 @@ heading:: true
 		  1. **You own your data:** Logseq uses plain Markdown files to store any of your content (it uses additional syntax ([example](https://discuss.logseq.com/t/headings-where-they-at/391/12)) - you will always be able to retrieve your data or look at it with any text editor. It uses an additional database it generates from your Markdown files used to store metadata.
 		  1. **Privacy-first and offline access:** Your data does not leave your computer and you do not need to be online to use Logseq. It offers an optional [[Github login]] that uses a thin backend server for authentication and image upload (deprecated). You are able to encrypt your data ([[Features/Encryption]]).
 		  1. **Community-driven:** The Logseq team is heavily interacting with the community by making the frontend code [open-source](https://github.com/logseq/logseq) (not the backend code) and engaging with users on [Discord](https://discord.gg/KpN4eHY) in a very transparent way ([roadmap](https://trello.com/b/8txSM12G/roadmap)).
-		  1. **Free:** The current features are (and supposedly remain) free. The Logseq team is planning to introduce advanced features, such as collaboration, that may possibly be paid in order to provide for future development. **You are able to [donate](https://opencollective.com/logseq) to the team which I can only recommend.**
-		- [More about Logseq's business model.](https://discuss.logseq.com/t/what-is-logseqs-business-model/389)
+		  1. **Free:** The current features are (and supposedly remain) free. The Logseq team is planning to introduce advanced features, such as collaboration, that may possibly be paid in order to provide for future development. **You are able to [donate](https://opencollective.com/logseq) to the team which I can only recommend.** You can also help them to improve features by allowing to send usage data and diagnostics (enable in [[Settings]], uses [sentry.io](https://sentry.io/))
+		- Read more about Logseq's [[Business Model]].
 	- ## Setting up Logseq
 	  collapsed:: true
 		- Logseq can be used in multiple ways ([further information](https://github.com/logseq/logseq/#how-can-i-use-it)):
@@ -83,7 +83,8 @@ heading:: true
 		  #+END_NOTE
 		- `Esc` to leave editing mode in order to highlight multiple blocks via mouse drag, drag & drop blocks and more
 		- Block Management
-			- `t o` or `ctrl+a/y` Collapse/expand block (put cursor into/highest block level or click left of document (whitespace) to collapse/expanse all - or just `a/y`, ctrl not necessary!! And press multiple times
+			- `t o` Collapse/expand block (put cursor into/highest block level or click left/right of document to collapse/expand all (can be used multiple times)
+			- `cmd+up/down` Collapse/expand all blocks (can be used multiple times)
 			- [#A] `cmd./,` Zoom into/out of block, press `Esc` (switch to View Mode) to make it behave as back/forward buttons
 			- `cmd+shift+a` Select all blocks (cursor must have focus) - use `cmd+up/down` to select multiple blocks from your current cursor position
 			- [#A] `alt+drag` on block to copy the reference to a block - very handy!
@@ -265,6 +266,7 @@ heading:: true
 			- Logseq/Obsidian-specific features like block references will not be parsed
 			- Adds an additional attack vendor for your sensitive information
 - # Errors
+  collapsed:: true
 	- Page is empty or does not show most recent content
 		- This is typically only a visual issue and your content is not lost. Confirm it by opening the Markdown file in a text editor
 		- To resolve
@@ -272,7 +274,7 @@ heading:: true
 			-
 			  1. [[Reindex]] your [[graph]], or
 			  1. Restart Logseq, or
-			  1. Go to _[[Settings]] > Clear Cache_ or use `Cmd+Shift+R` to reload without cache (you will need to restore your settings)
+			  1. Go to _[[Settings]] > Clear [[Cache]]_ or use `Cmd+Shift+R` to reload without cache (you will need to restore your settings)
 		- Another reason is that the reference does not link to the correct file - for example, you have a file `2021_01_01.md` but link to it via `[[2021-01-01]]` (note the dashes - and rename the file)
 		- If you use the desktop application and force quit it instead of closing it properly, the content displayed when opening it again may not reflect the actual content. Logseq saves its [[graph]] database (the meta information about your files) only when being properly closed. However, no actual content is lost. [[Reindex]] your content to make it appear again.
 - # Resources
