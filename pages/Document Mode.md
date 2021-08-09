@@ -2,5 +2,5 @@
 - Longer documents typically consist of fewer blocks and instead use line breaks more often
 - Logseq's document mode can be toggled by pressing `t d`. It is indicated by `D` in the window toolbar (you may also click on it to disable it and switch back to dot mode).
 - While in document mode
-	- Bullet indicators are hidden
+	- [[Bullet]] indicators are hidden
 	- The `Enter` key is swapped to add a line break instead of block and `Shift+Enter` to add a new block instead of line break

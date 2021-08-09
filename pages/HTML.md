@@ -33,7 +33,7 @@
 		  (3) With input[type="range"]
 		  [:input {:type "range" :value "3" :max "15"}]
 		  ```
-		- You can create buttons (without further functionality) and could add invisible metadata to it (part of the code, but not visible unless in edit mode) [:button.border.px-1 {:data "Invisible metadata"} "My button"]
+		- You can create buttons (without further functionality) and could add invisible metadata to it (part of the code, but not visible unless in [[edit mode]]) [:button.border.px-1 {:data "Invisible metadata"} "My button"]
 		- You can even embed external websites as iFrames
 		  ```clojure
 		  [:iframe {:src "https://logseq.github.io" :style {:height 800 :width 615}}]
