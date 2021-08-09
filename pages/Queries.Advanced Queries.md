@@ -94,94 +94,119 @@
 			  	  :breadcrumb-show? true}
 			  #+END_QUERY
 			  ```
-		- ## Formatting Queries
-			- TODO Add content
-			- ### Query Titles
-				- You can name your queries by defining a title. Titles can receive different formatting.
-				- **EXAMPLES**
-					- Bold text (and plain text)
-						-
-						  #+BEGIN_QUERY
-						  {:title [["All pages that have a "] [:strong "myTagA"] [" tag"]] }
-						  #+END_QUERY
-						-
-						  ```clojure
-						  #+BEGIN_QUERY
-						  {:title [["All pages that have a "] [:strong "myTagA"] [" tag"]] }
-						  #+END_QUERY
-						  ```
-					- Text styled as a heading
-						-
-						  #+BEGIN_QUERY
-						  {:title [:h3 "My pages"] }
-						  #+END_QUERY
-						-
-						  ```clojure
-						  #+BEGIN_QUERY
-						  {:title [:h3 "My pages"] }
-						  #+END_QUERY
-						  ```
-		- ## Sorting Results
-			- TODO Add content
-			- You can use the `sort-by` function to sort results.
-		- ## Examples
-			- ### Tags
+- ## Formatting Queries
+	- TODO Add content
+	- ### Query Titles
+		- You can name your queries by defining a title. Titles can receive different formatting.
+		- **EXAMPLES**
+			- Bold text (and plain text)
 				-
 				  #+BEGIN_QUERY
-				  query-table:: false
-				  {:title "All pages with tag myPageTag"
-				   :query [:find (pull ?b [*])
-				       :where
-				       [?p :page/name "mypagetag"]
-				       [?b :block/ref-pages ?p]]
-				  :collapsed? true}
+				  {:title [["All pages that have a "] [:strong "myTagA"] [" tag"]] }
 				  #+END_QUERY
-					-
-					  collapsed:: true
-					  ```clojure
-					  #+BEGIN_QUERY
-					  {:title "All pages with tag myPageTag"
-					   :query [:find (pull ?b [*])
-					       :where
-					       [?p :page/name "mypagetag"]
-					       [?b :block/ref-pages ?p]]
-					  :collapsed? true}
-					  #+END_QUERY
-					  ```
-			- ### Tasks
-				- TODO Add content
-			- ### Querying [[Hierarchies]]
-				- Query all pages part of a hierarchy
-				  updated-at:: 1626301594584
-				  created-at:: 1626301594584
+				-
+				  ```clojure
 				  #+BEGIN_QUERY
-				  {:title "All pages that start with Home/Gardening"
+				  {:title [["All pages that have a "] [:strong "myTagA"] [" tag"]] }
+				  #+END_QUERY
+				  ```
+			- Text styled as a heading
+				-
+				  #+BEGIN_QUERY
+				  {:title [:h3 "My pages"] }
+				  #+END_QUERY
+				-
+				  ```clojure
+				  #+BEGIN_QUERY
+				  {:title [:h3 "My pages"] }
+				  #+END_QUERY
+				  ```
+## Sorting Results
+	- TODO Add content
+	- You can use the `sort-by` function to sort results.
+## Regular Expressions
+	- You can use regular expressions (RegEx) for matching:
+	-
+	  #+BEGIN_QUERY
+	  {:title "All pages starting with 'Queries'"
+	   :query [:find (pull ?b [*])
+	         :where
+	         [?b :page/name ?name]
+	         [(str "Queries.*") ?regs]
+	         [(re-pattern ?regs) ?regx]
+	         [(re-matches ?regx ?name)]]
+	  }
+	  #+END_QUERY
+	-
+	  ```clojure
+	  #+BEGIN_QUERY
+	  {:title "All pages starting with 'Queries'"
+	   :query [:find (pull ?b [*])
+	         :where
+	         [?b :page/name ?name]
+	         [(str "Queries.*") ?regs]
+	         [(re-pattern ?regs) ?regx]
+	         [(re-matches ?regx ?name)]]
+	  }
+	  #+END_QUERY
+	  ```
+## Examples
+	- ### Tags
+		-
+		  #+BEGIN_QUERY
+		  {:title "All pages with tag myPageTag"
+		   :query [:find (pull ?b [*])
+		       :where
+		       [?p :page/name "mypagetag"]
+		       [?b :block/ref-pages ?p]]
+		  :collapsed? true}
+		  #+END_QUERY
+			-
+			  collapsed:: true
+			  ```clojure
+			  #+BEGIN_QUERY
+			  {:title "All pages with tag myPageTag"
+			   :query [:find (pull ?b [*])
+			       :where
+			       [?p :page/name "mypagetag"]
+			       [?b :block/ref-pages ?p]]
+			  :collapsed? true}
+			  #+END_QUERY
+			  ```
+	- ### Tasks
+		- TODO Add content
+	- ### Querying [[Hierarchies]]
+		- Query all pages part of a hierarchy
+		  updated-at:: 1626301594584
+		  created-at:: 1626301594584
+		  #+BEGIN_QUERY
+		  {:title "All pages that start with Home/Gardening"
+		   :query [:find (pull ?p [*])
+		           :where
+		           [?p :block/name ?name]
+		           [(str/starts-with (?name) "home/gardening")]
+		  ]}
+		  #+END_QUERY
+			- Alternative
+			  updated-at:: 1626301589734
+			  created-at:: 1626301588472
+				-
+				  #+BEGIN_QUERY
+				  {:title "Home/Garden child pages"
 				   :query [:find (pull ?p [*])
 				           :where
-				           [?p :block/name ?name]
-				           [(str/starts-with (?name) "home/gardening")]
-				  ]}
+				           [?p :block/namespace ?namespace]
+				           [?namespace :block/name "home/gardening"]]}
 				  #+END_QUERY
-					- Alternative
-					  updated-at:: 1626301589734
-					  created-at:: 1626301588472
-						-
-						  #+BEGIN_QUERY
-						  {:title "Home/Garden child pages"
-						   :query [:find (pull ?p [*])
-						           :where
-						           [?p :block/namespace ?namespace]
-						           [?namespace :block/name "home/gardening"]]}
-						  #+END_QUERY
-						-
-						  ```clojure
-						  #+BEGIN_QUERY
-						  {:title "Home/Garden child pages"
-						   :query [:find (pull ?p [*])
-						           :where
-						           [?p :block/namespace ?namespace]
-						           [?namespace :block/name "home/gardening"]]}
-						  #+END_QUERY
-						  ```
+				-
+				  ```clojure
+				  #+BEGIN_QUERY
+				  {:title "Home/Garden child pages"
+				   :query [:find (pull ?p [*])
+				           :where
+				           [?p :block/namespace ?namespace]
+				           [?namespace :block/name "home/gardening"]]}
+				  #+END_QUERY
+				  ```
 ## Resources
 	- [Documentation](https://logseq.github.io/page/Queries#/page/advanced%20queries)
