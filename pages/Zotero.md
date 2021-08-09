@@ -5,8 +5,8 @@
   **Requirements**
   The Zotero integration requires using the _Zotero Sync_. This free functionality stores your library items on Zotero server.
   If you are not using Zotero Sync enabled, you could use 
-  1. [logseq x zetero](https://github.com/aljedaxi/logseq-zotero/), a 3rd-party plugin for Logseq. The plugin is going to access your local Zotero library and store it in Markdown files. You can then simply reference these Markdown files as you would any other Logseq page.
-  1. [Zotero-mdnotes](https://argentinaos.com/zotero-mdnotes/), a 3rd-party app to export your Zotero metadata to Markdown files. You can then simply reference these Markdown files as you would any other Logseq page.
+  1. [logseq x zetero](https://github.com/aljedaxi/logseq-zotero/), a third-party [[plugin]] for Logseq. The plugin is going to access your local Zotero library and store it in Markdown files. You can then simply reference these Markdown files as you would any other Logseq page.
+  1. [Zotero-mdnotes](https://argentinaos.com/zotero-mdnotes/), a third-party app to export your Zotero metadata to Markdown files. You can then simply reference these Markdown files as you would any other Logseq page.
   #+END_WARNING
 - **USAGE**
 	- One-time setup
@@ -29,13 +29,17 @@
 		  1. Import _all_ of your Zotero library items at _[[Settings] > Add all Zotero items: Add all_
 		-
 		  #+BEGIN_NOTE
-		  If you add the same item twice, Logseq will append the data to the same page instead of overwriting your existing metadata. To replace it, you first have to delete the corresponding Markdown page.
+		  If you add/reference the same item twice/again, Logseq will append the data to the same page instead of overwriting your existing metadata. To replace it, you first have to delete the corresponding Markdown page.
 		  #+END_NOTE
 		-
 		  #+BEGIN_TIP
-		  You do not need to manually sync Logseq with Zotero, this happens automatically after a few seconds.
+		  **Zotero metadata updates**
+		  If metadata is updated in Zotero, it will _not_ reflect automatically in Logseq. Only if you reference the same source again via `/Zotero` - this will append a new block to the initial [[page]] for the library item. In that way, the bottom block always reflects the most recently cited version of your Zotero library item. Previously cited items will not be updated. You may remove or keep them in your page.
+		  #+END_TIP
+		-
+		  #+BEGIN_TIP
+		  You do not need to manually sync Logseq with Zotero, this happens when you search for another item.
 		  #+END_TIP
 		- Logseq will add a prefix to all imported Zotero items to easily search for them. The default prefix is `@`, you can change it in _[[Settings]] > Zotero settings_. You can also put any Zotero reference as a child-page by creating a hierarchy via `Zotero/`.
 		- As usual, because the items are going to be created as pages, you can reference them wherever you would like to indicate the library item as a source. Of course, you can also add your own content or additional properties to the page.
-		- [[@IEEE Style Manual]]
-		- TODO Test what happens if metadata updated in Zotero
+			- [[@IEEE Style Manual]]
