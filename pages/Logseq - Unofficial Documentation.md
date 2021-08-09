@@ -81,7 +81,10 @@ heading:: true
 		  * `a b` Press the `a` key first, let it go and then press the `b` key
 		  * `a+b/c` Press both the `a` and `b` or `a` and `c` key at the same time
 		  #+END_NOTE
-		- `Esc` to leave editing mode in order to highlight multiple blocks via mouse drag, drag & drop blocks and more
+		- `Esc` to leave editing mode and enter non-edit mode/block navigation mode in order to highlight multiple blocks via mouse drag, drag & drop blocks and more
+		  #+BEGIN_TIP
+		  Press `up/down` after entering non-edit mode to select your blocks. If you reached the end of your page, you will continue in the sidebar.
+		  #+END_TIP
 		- Block Management
 			- `t o` Collapse/expand block (put cursor into/highest block level or click left/right of document to collapse/expand all (can be used multiple times)
 			- `cmd+up/down` Collapse/expand all blocks (can be used multiple times)
@@ -172,13 +175,17 @@ heading:: true
 	  collapsed:: true
 		- Text you copy and paste in Logseq will retain its block structure and formatting - you can use `cmd+shift+v` or type ` twice and put the pasted content in-between to prevent that
 	- ## Performance
-	  collapsed:: true
 		- Logseq is generally performant, but certain situations can lead to slowness:
 		  id:: 6109951e-1c4d-4491-8147-9c4072672d56
 			-
 			  1. Long pages with many blocks (more than 500) - try to add references to other blocks/pages instead of putting all the content on the same page
-			  2. Slow queries in the [[config.edn]] (are always executed) or opened pages
-			  3. Many source code blocks
+			  2. Slow queries in the [[config.edn]][^1] (are always executed) or opened pages
+			  3. Many source code blocks 
+			  [^1]: A workaround is to put the queries into a separate page and a link to it in the [[Favorites]] pane.
+			-
+			  #+BEGIN_TIP
+			  Queries part of collapsed blocks will not be automatically executed. (Use the Developer Tools to confirm the raw Datalog queries)
+			  #+END_TIP
 - Features
   heading:: true
 	- Logseq offers your typical word processing features such as formatting text, adding images or links with the added touch of functionality found in [[Infinite Outliners]].
