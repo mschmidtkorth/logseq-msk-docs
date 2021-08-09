@@ -2,8 +2,9 @@ alias:: Hierarchies
 
 - Namespaces are used to create hierarchies of information. With namespaces you can nest [[pages]] nested in a hierarchy, similar to files in folders and sub-folders.
 - **USAGE**
-	- Namespaces are created whenever you include a `/` in your page
+	- Namespaces are created whenever you include a `/` in your page.
 	- They allow you to organize knowledges, reuse general page titles (avoid name conflicts) and simplify searches by restricting until a certain level in the hierarchy.
+	- There is no limit to the level of hierarchies.
 - **EXAMPLE**
 	- Creating two pages named [[Home/Gardening/Spring]] and [[Home/Gardening/Summer]] will allow you to
 		- organize your knowledge in a hierarchy - `Gardening` is an activity you do at `Home` and both during `Spring` and `Summer`
@@ -19,3 +20,7 @@ alias:: Hierarchies
 		  #+BEGIN_NOTE
 		  Order of the hierarchy entries is not guaranteed and cannot be influenced.
 		  #+END_NOTE
+		-
+		  #+BEGIN_TIP
+		  Creating a page `Gardening/Winter` would create a _separate_ hierarchy. To use the previous one, name it `Home/Gardening/Winter`.
+		  #+END_TIP
