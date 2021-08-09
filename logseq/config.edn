@@ -37,7 +37,7 @@
  ;; Example:
  ;; :publishing/all-pages-public? true
 
-:name/favorites "Homepage"
+ :name/favorites "Homepage"
 
  ;; Specify default home page and sidebar status for Logseq
  ;; If not specified, Logseq default opens journals page on startup
@@ -103,38 +103,27 @@
  ;; the "NEXT" query asks the future tasks.
  :default-queries
  {:journals
-  [{:title            "🔨 NOW"
-    :query            [:find (pull ?h [*])
-                       :in $ ?start ?today
-                       :where
-                       [?h :block/marker ?marker]
-                       [(contains? #{"NOW" "DOING"} ?marker)]
-                       [?h :block/page ?p]
-                       [?p :block/journal? true]
-                       [?p :block/journal-day ?d]
-                       [(>= ?d ?start)]
-                       [(<= ?d ?today)]]
-    :inputs           [:14d :today]
-    :result-transform (fn [result]
-                        (sort-by (fn [h]
-                                   (get h :block/priority "Z")) result))
-    :collapsed?       false}
-   {:title      "📅 NEXT"
-    :query      [:find (pull ?h [*])
-                 :in $ ?start ?next
-                 :where
-                 [?h :block/marker ?marker]
-                 [(contains? #{"NOW" "LATER" "TODO"} ?marker)]
-                 [?h :block/ref-pages ?p]
-                 [?p :block/journal? true]
-                 [?p :block/journal-day ?d]
-                 [(> ?d ?start)]
-                 [(< ?d ?next)]]
-    :inputs     [:today :7d-after]
-    :collapsed? false}]}
+  [
+  	      {:title "🟢 ACTIVE TASKS (NOW, DOING)"
+          :query [:find (pull ?h [*])
+                  :in $ ?start ?today
+                  :where
+                  [?h :block/marker ?marker]
+                  [?h :block/page ?p]
+                  [?p :page/journal? true]
+                  [?p :page/journal-day ?d]
+                  [(>= ?d ?start)]
+                  [(<= ?d ?today)]
+                  [(contains? #{"NOW" "DOING"} ?marker)]]
+          :inputs [:14d :today]
+          :result-transform (fn [result]
+                              (sort-by (fn [h]
+                                 (get h :block/priority "Z")) result))
+          :collapsed? false}
+  	]}
 
-:block-hidden-properties
-#{:created-at :updated-at :myHiddenProperty}
+ :block-hidden-properties
+ #{:created-at :updated-at :myHiddenProperty}
 
  ;; Add your own commands to speedup.
  ;; E.g. [["js" "Javascript"]]
@@ -148,13 +137,11 @@
  ;; input "{{{poem red,blue}}}"
  ;; becomes
  ;; Rose is red, violet's blue. Life's ordered: Org assists you.
- :macros {
-	"docLink" "[Documentation](https://github.com/mschmidtkorth/logseq-msk-docs)"
-	"today" "Today is **<% today %>**"
-	"progress" "<progress value=\"50\" max=\"100\" />"
-	"compare" "$1 is better than $2 and $3."
-	"gissue" "[Issue $1](https://github.com/mschmidtkorth/logseq-msk-docs/issues/$1)"
-}
+ :macros {"docLink" "[Documentation](https://github.com/mschmidtkorth/logseq-msk-docs)"
+          "today" "Today is **<% today %>**"
+          "progress" "<progress value=\"50\" max=\"100\" />"
+          "compare" "$1 is better than $2 and $3."
+          "gissue" "[Issue $1](https://github.com/mschmidtkorth/logseq-msk-docs/issues/$1)"}
 
  :markdown/version 2
 
