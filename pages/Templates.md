@@ -7,7 +7,7 @@
 - **USAGE**
 	- To create a template
 		-
-		  1. Right click a block bullet and select `Make template`, or 
+		  1. Right click a block [[bullet]] and select `Make template`, or 
 		  2. Add a page-level [[property]] `template:: myTemplate` (on the current page or another)
 		- You can choose to include the parent block (via `template-including-parent:: true` [[property]]).
 		-

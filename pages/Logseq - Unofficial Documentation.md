@@ -4,7 +4,7 @@
   #+END_NOTE
 -
   #+BEGIN_TIP
-  * **You have never used an [[Infinite Outliner]] application?** Feel free to play around - click on links with brackets `[[]]` (you may also hover over them!) to be taken to another section of content, hover over the bullet on the left side to expand/collapse content or click on it to open it in its own view.
+  * **You have never used an [[Infinite Outliner]] application?** Feel free to play around - click on links with brackets `[[]]` (you may also hover over them!) to be taken to another section of content, hover over the [[bullet]] on the left side to expand/collapse content or click on it to open it in its own view.
   * Press `t` then `w` (like typing `tw`) to increase the page width.
   * Use the [[search]] at the top left of the screen.
   #+END_TIP
@@ -23,7 +23,7 @@ heading:: true
 		  #+END_TIP
 		- [Logseq](https://github.com/logseq/logseq) (\[lɒɡsiːk\], from _logbook sequence_) ([documentation](https://logseq.github.io/#/page/Contents)) is an alternative to knowledge management tools like [VuePress](https://vuepress.vuejs.org/guide/) or [Roam Research](https://roamresearch.com/) or even a set of Microsoft Word documents.
 		- Logseq is an [[Infinite Outliner]] app for organizing knowledge - it does not work with documents but with [[pages]] and [[blocks]] that have references to each other.
-		- Its core principle is a [[Graph]]-based approach where [[pages]] and [[blocks]] (sections of pages) are _linked_ to each other, which allows you to quickly see where related information is stored and how your knowledge is _connected_  - gaining new insights. By understanding how your knowledge is connected - its paths - you gain wisdom:
+		- Its core principle is a [[Graph]]-based approach where [[pages]] and [[blocks]] (sections of pages) are _linked_ to each other, which allows you to quickly see where related information is stored and how your knowledge is _connected_ - gaining new insights. By understanding how your knowledge is connected - its paths - you gain wisdom:
 		  ![image.png](../assets/image_1625607156086_0.png)
 		  Source: [OneStutteringMind](https://youtu.be/8cZdHIgwPro?t=610)
 		- Logseq is built on a few fundamental features:
@@ -81,9 +81,9 @@ heading:: true
 		  * `a b` Press the `a` key first, let it go and then press the `b` key
 		  * `a+b/c` Press both the `a` and `b` or `a` and `c` key at the same time
 		  #+END_NOTE
-		- `Esc` to leave editing mode and enter non-edit mode/block navigation mode in order to highlight multiple blocks via mouse drag, drag & drop blocks and more
+		- `Esc` to leave editing mode and enter [[non-edit mode]] in order to highlight multiple blocks via mouse drag, drag & drop blocks and more
 		  #+BEGIN_TIP
-		  * Press `up/down` after entering non-edit mode to select your blocks. If you reached the end of your page, you will continue in the sidebar.
+		  * Press `up/down` after entering [[non-edit mode]] to select your blocks. If you reached the end of your page, you will continue in the sidebar.
 		  * Focus a block first before pressing `Esc` to place the focus on your current block.
 		  #+END_TIP
 		- Block Management
