@@ -13,12 +13,13 @@ tags:: myPageTag
 		- `(between start end)`
 			-
 			  #+BEGIN_TIP
-			  `(between )` can only be used to query for [[Journal]] pages.
+			  `(between )` can only be used to query for [[Journal]] pages or [[Tasks]].
 			  #+END_TIP
 			- Possible values: `today, yesterday, tomorrow, now` and relative values `+|-<number> y|m|w|d|h|min`
 			- Examples: `(between -7d +7d)` or `(between -2w today)`
 - **EXAMPLES**
 	- ## General
+	  collapsed:: true
 		- Limiting the results to those part of the current page
 		  query-table:: false
 			- You can use a [[macro]] to identify the current page.
@@ -47,9 +48,11 @@ tags:: myPageTag
 		- We can exclude certain pages or matches for #myTagC via `(not )`:
 		  {{query (and [[myTagA]] [[myTagB]] (not [[myTagC]])) }}
 	- ## Pages
+	  collapsed:: true
 		- Query all pages with name 
 		  {{query (page [[properties]])}}
 	- ## Tags
+	  collapsed:: true
 		- Get all blocks with a specific tag `myTag`:
 			- {{query [[myTag]] }}
 			  query-table:: false
@@ -78,6 +81,14 @@ tags:: myPageTag
 		- Get all tasks with a deadline
 			- {{query (todo deadline)}}
 			- TODO Not working
+		- Get tasks that are on journal entries between certain dates
+			- LATER Test
+			  SCHEDULED: <2021-08-09 Mon>
+			- {{query (and (todo todo later now) (between <% this year %> <% next year %>))}}
+			- TODO Make this a fantastic journal entry  #sample
+			  SCHEDULED: <2021-08-02 Mon>
+			- {{query (and (task later) (between <% this monday %> <% this friday %>))}}
+			- {{query (and (todo later) (between <% today %> <% 5 weeks from now %>))}}
 	- ## Properties
 	  collapsed:: true
 		- Query for any block with a property

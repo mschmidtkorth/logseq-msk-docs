@@ -1,5 +1,9 @@
 - Advanced queries allow you to specify more detailed, more specific and explicitly formatted queries compared to [[Queries/Simple Queries]].
-- ## How to Write Advanced Queries
+-
+  #+BEGIN_TIP
+  Get familiar with [Logseq's database schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs).
+  #+END_TIP
+## How to Write Advanced Queries
 	- Advanced queries are written via [[Datalog]]
 	- Advanced queries can get complex, but their format is always the same:
 	  ```
@@ -124,6 +128,27 @@
 ## Sorting Results
 	- TODO Add content
 	- You can use the `sort-by` function to sort results.
+	- NOW  Test
+	  SCHEDULED: <2021-08-03 Tue>
+	- Sort by priority
+	  query-table:: true
+	  SCHEDULED: <2021-08-11 Wed>
+	  #+BEGIN_QUERY
+	        {:title "🟢 ACTIVE"
+	          :query [:find (pull ?h [*])
+	                  :in $ ?start ?today
+	                  :where
+	                  [?h :block/marker ?marker]
+	                  [?h :block/page ?p]
+	                  [(>= ?d ?start)]
+	                  [(<= ?d ?today)]
+	                  [(contains? #{"NOW" "DOING"} ?marker)]]
+	          :inputs [:14d :today]
+	          :result-transform (fn [result]
+	                              (sort-by (fn [h]
+	                                         (get h :block/priority "Z")) result))
+	          :collapsed? false}
+	  #+END_QUERY
 ## Regular Expressions
 	- You can use regular expressions (RegEx) for matching:
 	-
@@ -174,8 +199,60 @@
 			  #+END_QUERY
 			  ```
 	- ### Tasks
-		- TODO Add content
-	- ### Querying [[Hierarchies]]
+		- Querying all `NOW` tasks
+			-
+			  #+BEGIN_QUERY
+			  {:title "🔨 NOW"
+			      :query         [:find (pull ?h [*])
+			                        :in $ ?start ?today
+			                        :where
+			                        [?h :block/marker ?marker]
+			                        [(contains? #{"TODO" "NOW" "DOING"} ?marker)]
+			                        [?h :block/page ?p]
+			                        [?p :block/journal? true]
+			                        [?p :block/journal-day ?d]
+			                        [(>= ?d ?start)]
+			                        [(<= ?d ?today)]]
+			      :inputs        [:14d :today]
+			      :result-transform (fn [result]
+			                          (sort-by (fn [h]
+			                              (get h :block/priority "Z")) result))
+			      :collapsed? false}
+			  #+END_QUERY
+			-
+			  ```clojure
+			  {:title            "🔨 NOW"
+			      :query            [:find (pull ?h [*])
+			                         :in $ ?start ?today
+			                         :where
+			                         [?h :block/marker ?marker]
+			                         [(contains? #{"NOW" "DOING"} ?marker)]
+			                         [?h :block/page ?p]
+			                         [?p :block/journal? true]
+			                         [?p :block/journal-day ?d]
+			                         [(>= ?d ?start)]
+			                         [(<= ?d ?today)]]
+			      :inputs           [:14d :today]
+			      :result-transform (fn [result]
+			                          (sort-by (fn [h]
+			                                     (get h :block/priority "Z")) result))
+			      :collapsed?       false}
+			  
+			  {:title      "📅 NEXT"
+			      :query      [:find (pull ?h [*])
+			                   :in $ ?start ?next
+			                   :where
+			                   [?h :block/marker ?marker]
+			                   [(contains? #{"NOW" "LATER" "TODO"} ?marker)]
+			                   [?h :block/ref-pages ?p]
+			                   [?p :block/journal? true]
+			                   [?p :block/journal-day ?d]
+			                   [(> ?d ?start)]
+			                   [(< ?d ?next)]]
+			      :inputs     [:today :7d-after]
+			      :collapsed? false}
+			  ```
+	- ### [[Hierarchies]]
 		- Query all pages part of a hierarchy
 		  updated-at:: 1626301594584
 		  created-at:: 1626301594584
@@ -208,5 +285,65 @@
 				           [?namespace :block/name "home/gardening"]]}
 				  #+END_QUERY
 				  ```
+	- ### Journal Queries
+	  id:: 6110fe96-79ce-4818-b790-79cf5e7c81d8
+		- You may add the following queries to your `:default-queries` section in [[config.edn]]. They are going to be displayed on today's journal entry.
+		- **USAGE**
+			-
+			  ```clojure
+			  {:title            "🔨 CURRENT TASKS (NOW)"
+			      :query            [:find (pull ?h [*])
+			                         :in $ ?start ?today
+			                         :where
+			                         [?h :block/marker ?marker]
+			                         [(contains? #{"NOW" "DOING"} ?marker)]
+			                         [?h :block/page ?p]
+			                         [?p :block/journal? true]
+			                         [?p :block/journal-day ?d]
+			                         [(>= ?d ?start)]
+			                         [(<= ?d ?today)]]
+			      :inputs           [:14d :today]
+			      :result-transform (fn [result]
+			                          (sort-by (fn [h]
+			                                     (get h :block/priority "Z")) result))
+			      :collapsed?       false}
+			  ```
+			-
+			  ```clojure
+			  {:title      "📅 NEXT TASKS (NOW, LATER, TODO)"
+			      :query      [:find (pull ?h [*])
+			                   :in $ ?start ?next
+			                   :where
+			                   [?h :block/marker ?marker]
+			                   [(contains? #{"NOW" "LATER" "TODO"} ?marker)]
+			                   [?h :block/ref-pages ?p]
+			                   [?p :block/journal? true]
+			                   [?p :block/journal-day ?d]
+			                   [(> ?d ?start)]
+			                   [(< ?d ?next)]]
+			      :inputs     [:today :7d-after]
+			      :collapsed? false}
+			  ```
+			-
+			  ```clojure
+			  {:title "🟢 ACTIVE TASKS (NOW, DOING)"
+			            :query [:find (pull ?h [*])
+			                    :in $ ?start ?today
+			                    :where
+			                    [?h :block/marker ?marker]
+			                    [?h :block/page ?p]
+			                    [?p :page/journal? true]
+			                    [?p :page/journal-day ?d]
+			                    [(>= ?d ?start)]
+			                    [(<= ?d ?today)]
+			                    [(contains? #{"NOW" "DOING"} ?marker)]]
+			            :inputs [:14d :today]
+			            :result-transform (fn [result]
+			                                (sort-by (fn [h]
+			                                   (get h :block/priority "Z")) result))
+			            :collapsed? false}
+			  ```
+		- **EXAMPLES**
+			- ![image.png](../assets/image_1628503970802_0.png)
 ## Resources
 	- [Documentation](https://logseq.github.io/page/Queries#/page/advanced%20queries)

@@ -26,7 +26,7 @@ section:: Usage
   Queries are written in the [[Datalog]] progamming language ([Wikipedia](https://en.wikipedia.org/wiki/Datalog)).  There are various flavours/systems of Datalog. A common one is _DataScript_, written in Clojure, the programming language Logseq is written in (or rather ClojureScript). DataScript is an in-memory database running on either ClojureScript or Java (JVM). Another common one is _Datomic_, which is a commercial database.
   #+END_NOTE
 ## Queries in [[Journal]] Pages
-	- You can add default queries to each new journal entry (displayed at the bottom) by editing the [[config.edn]] file in your [[Graph]] directory and adding them to this section:
+	- You can add default queries to today's journal entry (displayed at the bottom) by editing the [[config.edn]] file in your [[Graph]] directory and adding them to the `:default-queries` section:
 	  id:: 610afd9a-36b6-475b-bdaa-e03c64ca3c0c
 	  ```clojure
 	  :default-queries
@@ -38,10 +38,11 @@ section:: Usage
 	    ]
 	  }
 	  ```
-		-
-		  #+BEGIN_WARNING
-		  Many default queries may slow down Logseq (see [here](((6109951e-1c4d-4491-8147-9c4072672d56)))).
-		  #+END_WARNING
+	-
+	  #+BEGIN_WARNING
+	  Many default queries may slow down Logseq (see [here](((6109951e-1c4d-4491-8147-9c4072672d56)))).
+	  #+END_WARNING
+	- See [examples](((6110fe96-79ce-4818-b790-79cf5e7c81d8))).
 ## Query Table Functions
 id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 	- You can use _functions_ to process a query table's output.
@@ -90,11 +91,9 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 	- [Learn Datalog Today](http://www.learndatalogtoday.org/)
 	- [Datascript 101](https://udayv.com/blog/2016-04-28-datascript101/)
 - TODO ==Anything below is work in progress!==
-- Advanced queries
 	- Query all tasks part of a specific group from your journal entries
 	-
 	  #+BEGIN_QUERY
-	  query-table:: false
 	  {:title "All pages that have a myPageTag tag"
 	   :query [:find ?name
 	         :in $ ?tag
@@ -124,17 +123,6 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 	             [:a.tag.mr-1 {:href (str "/page/" tag)}
 	              (str "#" tag)])])}
 	  #+END_QUERY
-- (not sure if true)`:block/name` is the block's name; note that there is [no `:page/name`](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs) - a page is simply a special block -> no, there is
-	-
-	  created-at:: 1626300859256
-	  updated-at:: 1626300859256
-	  #+BEGIN_QUERY
-	  {:query [:find (pull ?b [*])
-	       :where
-	       [?p :block/name "myTagA"]
-	       [?b :block/ref-pages ?p]]
-	  :collapsed? true}
-	  #+END_QUERY
 	- <page_name> <keyword 1>, without <keyword 2> OR ["page" "keyword" "not this keyword"]
 	  #+BEGIN_QUERY
 	  {:query [:find (pull ?b [*])
@@ -152,94 +140,10 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 	   :inputs ["page" "keyword" "not this keyword"]
 	   }
 	  #+END_QUERY
-	- Sort by priority
-	  #+BEGIN_QUERY
-	        {:title "🟢 ACTIVE"
-	          :query [:find (pull ?h [*])
-	                  :in $ ?start ?today
-	                  :where
-	                  [?h :block/marker ?marker]
-	                  [?h :block/page ?p]
-	                  [?p :page/journal? true]
-	                  [?p :page/journal-day ?d]
-	                  [(>= ?d ?start)]
-	                  [(<= ?d ?today)]
-	                  [(contains? #{"NOW" "DOING"} ?marker)]]
-	          :inputs [:14d :today]
-	          :result-transform (fn [result]
-	                              (sort-by (fn [h]
-	                                         (get h :block/priority "Z")) result))
-	          :collapsed? false}
-	  #+END_QUERY
+		-
 	- Add links
 	  ```clojure
 	  (let [nickname (second (:url (second (first title))))]
 	                           [:a {:href (str "page/" nickname)}
 	                            nickname])
 	  ```
-	- Querying tasks
-		-
-		  #+BEGIN_QUERY
-		  {:title "🔨 NOW"
-		      :query         [:find (pull ?h [*])
-		                         :in $ ?start ?today
-		                         :where
-		                         [?h :block/marker ?marker]
-		                         [(contains? #{"TODO "NOW" "DOING"} ?marker)]
-		                         [?h :block/page ?p]
-		                         [?p :block/journal? true]
-		                         [?p :block/journal-day ?d]
-		                         [(>= ?d ?start)]
-		                         [(<= ?d ?today)]]
-		      :inputs        [:14d :today]
-		      :result-transform (fn [result]
-		                          (sort-by (fn [h]
-		                                         (get h :block/priority "Z")) result))
-		      :collapsed? false}
-		  #+END_QUERY
-		-
-		  ```clojure
-		  {:title            "🔨 NOW"
-		      :query            [:find (pull ?h [*])
-		                         :in $ ?start ?today
-		                         :where
-		                         [?h :block/marker ?marker]
-		                         [(contains? #{"NOW" "DOING"} ?marker)]
-		                         [?h :block/page ?p]
-		                         [?p :block/journal? true]
-		                         [?p :block/journal-day ?d]
-		                         [(>= ?d ?start)]
-		                         [(<= ?d ?today)]]
-		      :inputs           [:14d :today]
-		      :result-transform (fn [result]
-		                          (sort-by (fn [h]
-		                                     (get h :block/priority "Z")) result))
-		      :collapsed?       false}
-
-		  {:title      "📅 NEXT"
-		      :query      [:find (pull ?h [*])
-		                   :in $ ?start ?next
-		                   :where
-		                   [?h :block/marker ?marker]
-		                   [(contains? #{"NOW" "LATER" "TODO"} ?marker)]
-		                   [?h :block/ref-pages ?p]
-		                   [?p :block/journal? true]
-		                   [?p :block/journal-day ?d]
-		                   [(> ?d ?start)]
-		                   [(< ?d ?next)]]
-		      :inputs     [:today :7d-after]
-		      :collapsed? false}
-		  ```
-	- Not working - limited to current page ... https://discuss.logseq.com/t/query-todos-on-current-page/1481 https://discord.com/channels/725182569297215569/743670484863811649/816094510223589396
-		- LATER Test
-		  SCHEDULED: <2021-08-01 Sun>
-		  DEADLINE: <2021-08-02 Mon>
-		- {{query (todo later)}}
-		- {{query (and (todo todo later now) (between today tomorrow))}}
-		- {{query (and (todo todo later now) (between <% today %> <% tomorrow %>))}}
-		- {{query (and (task later) (between <% this monday %> <% this friday %>))}}
-		- {{query (and (todo later) (between <% today %> <% 5 weeks from now %>))}}
-		- {{query (and ([[mine]]) (page-property parent <% current page %>))}}
-		- {{query (page-property parent <% current page %>)}}
-		  query-table:: false
-		- {{query (page-property parent <% current page %>)}}
