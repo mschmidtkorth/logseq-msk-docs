@@ -39,12 +39,14 @@ alias:: macro
 	  	"today" "Today is **<% today %>**"
 	  	"progress" "<progress value=\"50\" max=\"100\" />"
 	  	"compare" "This is better than $1 and $2."
+	  	"gissue" "[Issue $1](https://github.com/mschmidtkorth/logseq-msk-docs/issues/$1)"
 	  }
 	  ```
 	- {{{today}}}
 	  {{{docLink}}}
 	  {{{progress}}}
 	  {{{compare Logseq, Roam Research, Obsidian}}}
+	  {{{gissue 1}}}
 	-
 	  ```source
 	  {{{today}}}
