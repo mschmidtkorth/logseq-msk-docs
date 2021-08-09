@@ -1,3 +1,5 @@
+alias:: reference, backlink, backlinks
+
 - [[Blocks]] and [[pages]] can be referenced - use `[[]]` for page references and `(())` for block references.
 - `click` on a reference to access it or `shift-click` to open it in the sidebar. This also works for [[search]] results.
 -
@@ -10,7 +12,10 @@
   #+END_CAUTION
 - **USAGE**
 	- When you have a page `smartphone` you can reference it from page `mobile devices` simply by using square brackets - `A [[smartphone]] is a mobile device`.
-	- This will create a _[[linked reference]]_ on page `smartphone` to page `mobile devices`. Linked references can be found at the bottom of pages.
+	- This will create a _[[linked reference]]_ (a _backlink_) on page `smartphone` to page `mobile devices`. Linked references can be found at the bottom of pages.
+		- Backlinks are automatically created by Logseq if you reference a [[block]]/[[page]] from another [[block]]/[[page]].
+		- Opening a backlink to a page which does not currently exist will _create_ a new page with the backlink text as its title.
+	- The [[Unlinked References]] list located below [[Linked References]] on a page displays potential backlinks, files which refer to the page but do not have a relevant backlink present.
 	- Even if you are not explicitly using square brackets - for example, `A smartphone is a mobile device` - a reference is created - an _[[unlinked reference]]_ which can also be found at the bottom of pages. It displays _potential_ backlinks i.e. items which refer to the page but do not have an explicit backlink present.
 	- This allows you to see how your knowledge is connected, and quickly get an overview of a certain topic. Explicitly linked references are also included in your [[graph]].
 	- You can *label* references: `[display text]([[page name]])` or `[display text](((block-uuid)))` (note the triple brackets)
