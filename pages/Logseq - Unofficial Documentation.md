@@ -83,7 +83,8 @@ heading:: true
 		  #+END_NOTE
 		- `Esc` to leave editing mode and enter non-edit mode/block navigation mode in order to highlight multiple blocks via mouse drag, drag & drop blocks and more
 		  #+BEGIN_TIP
-		  Press `up/down` after entering non-edit mode to select your blocks. If you reached the end of your page, you will continue in the sidebar.
+		  * Press `up/down` after entering non-edit mode to select your blocks. If you reached the end of your page, you will continue in the sidebar.
+		  * Focus a block first before pressing `Esc` to place the focus on your current block.
 		  #+END_TIP
 		- Block Management
 			- `t o` Collapse/expand block (put cursor into/highest block level or click left/right of document to collapse/expand all (can be used multiple times)
