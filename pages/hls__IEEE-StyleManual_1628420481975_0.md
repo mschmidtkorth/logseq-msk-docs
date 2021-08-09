@@ -1,7 +1,7 @@
 - hls__IEEE-StyleManual_1628420481975_0
-- This style manual provides editorial guidelines for IEEE Transactions, Journals, and Letters.
-  ls-type:: annotation
+- This style manual provides editorial guidelines for **IEEE** Transactions, Journals, and Letters.
   hl-page:: 1
+  ls-type:: annotation
   id:: 610fb9ae-e65d-44c8-a6a3-03e6bffcd86a
 - [:span]
   ls-type:: annotation
