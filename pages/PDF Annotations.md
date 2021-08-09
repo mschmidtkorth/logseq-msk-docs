@@ -11,12 +11,16 @@
 	- You can also display an outline of the PDF.
 	-
 	  #+BEGIN_NOTE
-	  Highlights will be stored in an `.edn` file with the same name as your PDF file.
+	  Annotations will be stored in an `.edn` file with the same name as your PDF file. References will be stored in a Markdown file (`hls__<name>.md`) with the same name as your PDF file.
 	  #+END_NOTE
+	-
+	  #+BEGIN_TIP
+	  `Shift-click` a reference to open it in your sidebar (it is simply another Markdown file). You can change its formatting there which will be taken over by any block references.
+	  #+END_TIP
 	-
 	  #+BEGIN_CAUTION
 	  **Renaming PDF files**
-	  When you rename your file, the corresponding metadata file that stores your highlights is not going to be renamed. You need to do this yourself.
+	  When you rename your file, the corresponding metadata file that stores your highlights is not going to be renamed. You need to do this yourself to prevent broken annotations.
 	  #+END_CAUTION
 - **EXAMPLES**
 	- ![IEEE-StyleManual.pdf](../assets/IEEE-StyleManual_1628420481975_0.pdf) (click the link!)
