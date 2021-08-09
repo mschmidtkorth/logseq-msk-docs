@@ -41,3 +41,7 @@
 	  :default-templates
 	   {:journals "my-default-template"}
 	  ```
+	-
+	  #+BEGIN_TIP
+	  The name is the one you specify after `template::` and _not_ the page title.
+	  #+END_TIP
