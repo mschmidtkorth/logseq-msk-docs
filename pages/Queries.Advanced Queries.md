@@ -187,8 +187,8 @@
 		  :collapsed? true}
 		  #+END_QUERY
 			-
-			  collapsed:: true
 			  ```clojure
+			  collapsed:: true
 			  #+BEGIN_QUERY
 			  {:title "All pages with tag myPageTag"
 			   :query [:find (pull ?b [*])
@@ -198,6 +198,25 @@
 			  :collapsed? true}
 			  #+END_QUERY
 			  ```
+		-
+		  #+BEGIN_QUERY
+		  {:title "All pages that have a myPageTag tag"
+		   :query [:find ?name
+		         :in $ ?tag
+		         :where
+		         [?t :block/name ?tag]
+		         [?p :page/tags ?t]
+		         [?p :block/name ?name]]
+		   :inputs ["mypagetag"]
+		   :view (fn [result]
+		         [:div.flex.flex-col
+		          (for [page result]
+		            [:a {:href (str "/page/" page)} (clojure.string/capitalize page)])])}
+		  #+END_QUERY
+			-
+			  #+BEGIN_NOTE
+			  This query returns manually generated links - the navigation will be different than what you are used to in Logseq (not recommended for Desktop app).
+			  #+END_NOTE
 	- ### Tasks
 		- Querying all `NOW` tasks
 			-

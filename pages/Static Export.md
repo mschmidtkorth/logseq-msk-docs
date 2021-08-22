@@ -29,6 +29,7 @@
 - **TROUBLESHOOTING**
 	- When clicking _Export_ files are generated but no success message is displayed. When opening `index.html` a blank page is opened or it loads forever.
 		- If no success message is shown something went wrong.
+		- Check your browser's developer tools for any JavaScript errors (console).
 		- Make sure that any _assets_ you have referenced - images, PDFs etc. - actually exist in your `/assets/` folder. If not, remove the reference or add the missing binary file.
 		- In order to identify the root cause, you may use _binary troubleshooting_ - move half of your `.md` files to a safe place and try exporting again. Repeat until the export is successful, then start adding back files one by one.
 	-

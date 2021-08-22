@@ -48,7 +48,7 @@ alias:: command
 			  #+BEGIN_WARNING
 			  Warning.
 			  #+END_WARNING
-			- `<Example` preserves whitespace
+			- `<Example` preserves whitespace and prevents Markup formatting, typically used for source code
 			  #+BEGIN_EXAMPLE
 			  Example.
 			  #+END_EXAMPLE

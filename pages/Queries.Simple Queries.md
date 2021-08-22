@@ -2,6 +2,10 @@ testproperty:: My value
 tags:: myPageTag
 
 - [Documentation](https://logseq.github.io/page/Queries#/page/queries)
+-
+  #+BEGIN_TIP
+  Simple queries are in effect just advanced queries - you can check your browser's Developer Console to see how the simple query is converted into an advanced query.
+  #+END_TIP
 - **USAGE**
   section:: Usage
 	- You can create simple queries via the `/Query` [[Command]]
@@ -24,6 +28,7 @@ tags:: myPageTag
 		  query-table:: false
 			- You can use a [[macro]] to identify the current page.
 			- {{query (and (page <% current page %> block-property section usage))}}
+			- {{query (and (todo todo) (page <% current page %>))}}
 		- Use multiple conditions to search for by separating them via space (_OR_) - only works for text
 			-
 			  #+BEGIN_NOTE
@@ -69,7 +74,6 @@ tags:: myPageTag
 		- Get all pages with a certain page-level tag (via the special page-property `tags`):
 		  {{query (page-tags [[myPageTag]])}}
 	- ## Tasks
-	  collapsed:: true
 		- TODO Task with deadline #sample
 		  DEADLINE: <2021-08-07 Sat>
 		- We can query tasks via the `todo` keyword (`todo` must always be added as a prefix) - in this example, we limit it to tasks from a specific page via `(and )`:
@@ -91,10 +95,15 @@ tags:: myPageTag
 			- {{query (and (todo later) (between <% today %> <% 5 weeks from now %>))}}
 	- ## Properties
 	  collapsed:: true
+		-
+		  testproperty:: My value
+		  tags:: myPageTag
 		- Query for any block with a property
 			- {{query (property testproperty}}
 		- Query for any block with a property and specific value
 			- {{query (property testproperty "My value")}}
+		- Query for any block with a page property and specific value
+			- {{query (page-property testproperty "My value")}}
 	- ## Files
 	  collapsed:: true
 		- As any file or images is stored in the `/asset/` folder, you can simply access the [[Asset]] page to see all of your files in the [[Unlinked References]] section

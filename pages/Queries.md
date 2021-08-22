@@ -11,6 +11,11 @@ section:: Usage
   #+END_TIP
 -
   #+BEGIN_TIP
+  **Exploring available properties of a block or page**
+  You can show the properties of a block (i.e. also a page) by enabling _Settings > Advanced > Developer Mode_ and right-clicking a block bullet or using the three dots page menu and selecting _(Dev) Show page/block data_.
+  #+END_TIP
+-
+  #+BEGIN_TIP
   **Querying page names or properties**
   When querying for page names or properties always write them in _lowercase_ - this is how they are stored in Logseq's database
   #+END_TIP
@@ -80,7 +85,7 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 				- the average number of sentences: {{function (average :number-of-sentences)}} (`{{function (average :number-of-sentences)}}`)
 				- the highest number of sentences: {{function (max :number-of-sentences)}} (`{{function (max :number-of-sentences)}}`)
 				- the number of all sentences: {{function (sum :number-of-sentences)}} (`{{function (total :number-of-sentences)}}`)
-				- something arbitrary like multiplying the index of each block with its number of sentences (like a weighting), and taking the sum of all: {{function (sum (map (fn [x] (* (:index x) (:number-of-sentences x))) result))}} `{{function (sum (map (fn [x] (* (:index x) (:number-of-sentences x))) result))}}`
+				- something arbitrary like multiplying the index of each block with its number of sentences (like a weighting), and taking the sum of all: ({{function (sum (map (fn [x] (* (:index x) (:number-of-sentences x))) result))}} `{{function (sum (map (fn [x] (* (:index x) (:number-of-sentences x))) result))}}`)
 			-
 			  #+BEGIN_WARNING
 			  The function has to be a child of the query table.
@@ -91,26 +96,6 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 	- [Learn Datalog Today](http://www.learndatalogtoday.org/)
 	- [Datascript 101](https://udayv.com/blog/2016-04-28-datascript101/)
 - TODO ==Anything below is work in progress!==
-	- Query all tasks part of a specific group from your journal entries
-	-
-	  #+BEGIN_QUERY
-	  {:title "All pages that have a myPageTag tag"
-	   :query [:find ?name
-	         :in $ ?tag
-	         :where
-	         [?t :block/name ?tag]
-	         [?p :page/tags ?t]
-	         [?p :block/name ?name]]
-	   :inputs ["mypagetag"]
-	   :view (fn [result]
-	         [:div.flex.flex-col
-	          (for [page result]
-	            [:a {:href (str "/page/" page)} (clojure.string/capitalize page)])])}
-	  #+END_QUERY
-		-
-		  #+BEGIN_NOTE
-		  This query returns manually generated links - the navigation will be different than what you are used to in Logseq (not recommended for Desktop app).
-		  #+END_NOTE
 	-
 	  #+BEGIN_QUERY
 	  {:title "All page tags"
@@ -140,10 +125,3 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 	   :inputs ["page" "keyword" "not this keyword"]
 	   }
 	  #+END_QUERY
-		-
-	- Add links
-	  ```clojure
-	  (let [nickname (second (:url (second (first title))))]
-	                           [:a {:href (str "page/" nickname)}
-	                            nickname])
-	  ```

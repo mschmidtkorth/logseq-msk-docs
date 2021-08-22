@@ -1,3 +1,4 @@
 - If you would like to contribute to this documentation, please check out the [develop](https://github.com/mschmidtkorth/logseq-msk-docs/tree/develop) branch on GitHub for the Markdown source files and create a pull request - any feedback or contribution is appreciated!
 - See here for some open tasks you could contribute to:
+	- TODO Release >=0.3.2
 	- {{query (and (todo todo doing scheduled deadline) (not [[sample]])) }}

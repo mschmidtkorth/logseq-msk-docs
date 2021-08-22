@@ -5,5 +5,5 @@
 - Are you going to open-source the future server-side backend?
   > We have no plans for that. But we're considering providing a free self-host sync option for non-profit organizations or researchers in the future, the sync service for our own storage is not started yet.
 ## Resources
-	- [FAQ](https://github.com/logseq/logseq#faq)
+	- [FAQ](https://logseq.github.io/#/page/faq)
 	- [Forum thread](https://discuss.logseq.com/t/what-is-logseqs-business-model/389)

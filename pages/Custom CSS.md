@@ -6,3 +6,7 @@
   #+BEGIN_TIP
   Open the Developer Tools to identify the CSS selectors.
   #+END_TIP
+-
+  #+BEGIN_NOTE
+  You can also [load themes as plugins](((61225f50-3c64-4b85-beed-fb87f65655ee))).
+  #+END_NOTE

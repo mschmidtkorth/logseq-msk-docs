@@ -17,10 +17,13 @@ alias:: plugin, plugins
 			- Check the Readme for the plugin - it typically follows instructions listed [below](((610afd9b-1224-453c-b753-b16cc3a88ad8)))
 		- To install a downloaded plugin
 			- Open _Logseq > [[Settings]]: Enable Developer Mode_ to generally enable plugin functionality
+			  id:: 61111d75-0a16-4911-8934-dafed3a0fa67
 			- Restart Logseq
-			- Open _Logseq > Plugins > Load unpackaged plugin > Select folder_
+			  id:: 61111d75-0ead-4fb6-ae2b-172cffee16ae
+			- Open _Logseq > three dots menu > Plugins > Load unpackaged plugin > Select folder_
+			  id:: 61111d75-063e-4410-935f-d9f5e5c55f71
 			- Restart Logseq if needed
-## Developing Your Own Plugins
+- ## Developing Your Own Plugins
 	- ### Initial Setup for Development
 	  id:: 610afd9b-1224-453c-b753-b16cc3a88ad8
 		- Clone [plugin repository](https://github.com/logseq/logseq-plugin-samples)
@@ -90,3 +93,36 @@ alias:: plugin, plugins
 		  #+BEGIN_WARNING
 		  Slash commands work differently if a block is opened in the sidebar - then, some functions like `logseq.Editor.getCurrentPage()` return `null`.
 		  #+END_WARNING
+- ## Custom Themes
+  id:: 61225f50-3c64-4b85-beed-fb87f65655ee
+	- Themes can either be used by updating your `custom.css` file or as a plugin.
+	-
+	  #+BEGIN_TIP
+	  Use either your `custom.css` file or a loaded plugin, otherwise you may have conflicting styling.
+	  #+END_TIP
+	- **USAGE**
+		- ((61111d75-0a16-4911-8934-dafed3a0fa67))
+		- ((61111d75-0ead-4fb6-ae2b-172cffee16ae))
+		- ((61111d75-063e-4410-935f-d9f5e5c55f71))
+		- Choose the theme at _three dots menu > Themes_
+		- To develop a theme plugin, all you need to do is create a `package.json`
+			-
+			  ```json
+			  {
+			      "name": "MSK Enhanced",
+			      "author": "Michael Schmidt-Korth",
+			      "version": "0.0.1",
+			      "description": "An enhanced version of the default theme.",
+			      "logseq": {
+			        "themes": [
+			          {
+			            "name": "MSK Enhanced",
+			            "url": "./msk-enhanced.css",
+			            "description": "An enhanced version of the default theme."
+			          }
+			        ],
+			        "id": "msk_theme-enhanced",
+			        "icon": "./msk-enhanced.png"
+			      }
+			    }
+			  ```
