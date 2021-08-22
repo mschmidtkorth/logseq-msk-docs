@@ -5,6 +5,7 @@
   --ls-page-title-size: 36px;
   --ls-font-family: 'Inter';
   --ls-main-content-max-width: 740px;
+  --ls-main-content-max-width-wide: 100%;
   --ls-border-radius-low: 4px;
   --ls-border-radius-medium: 8px;
 }
@@ -929,6 +930,10 @@ span.warning, div.warning:not(.admonitionblock), p.warning {
   padding: 0.1em 0.4em;
   border-radius: var(--ls-border-radius-low);
   color: #fff;
+}
+
+.warning-text {
+  color: #f56565;
 }
 
 a.error,
