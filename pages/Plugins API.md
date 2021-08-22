@@ -3,7 +3,7 @@ alias:: plugin, plugins
 - [Documentation](https://logseq.github.io/plugins/index.html)
 - Logseq's functionality can be enhanced via community-provided plugins.
 - Technically, a plugin is just a web page using some Logseq-provided functions via its interface (API). You can use _any language_, programming framework, or tool, as long as they can be used to build a webpage.
-## Using third-party Plugins
+## Using Third-Party Plugins
 	-
 	  #+BEGIN_CAUTION
 	  Be careful with third-party plugins and only use those from trusted sources. 
