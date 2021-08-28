@@ -71,6 +71,8 @@ heading:: true
 	- Keyboard Shortcuts
 	  heading:: true
 		-
+		  alias:: keyboard shortcut, keyboard shortcuts
+		-
 		  #+BEGIN_TIP
 		  Edit keyboard shortcuts via _[[Settings]] > Customize shortcuts_ or by editing the `:shortcuts` section in the [[config.edn]] file (requires restarting or [[reindexing]] your [[graph]]).
 		  #+END_TIP
