@@ -20,7 +20,7 @@
 }
 /* Not yet supported by CSS - wanted to do blurred background */
 body:has(.search-ac) {
-	background: #FFF;
+	background: #000;
 	content: " xx";
 	width: 100vw;
 	height: 100vh;
