@@ -65,13 +65,13 @@ height: 2.5em;
 margin-top: 1em;
 }
 #ui__ac-inner:after {
-	content: "xxxxx";
+	content: "";
 	background: url("/Users/mschmidtkorth/Github/MSK/logseq-msk-secret-theme/searchSide.png") no-repeat !important;
 	padding-bottom: 1em;
 	margin-left: 0;
 	position: absolute;
 	top: 0;
-	left: 50%;
+	left: 60%;
 	min-width: 50em;
 	width: 50em;
 	min-height: 150em;
