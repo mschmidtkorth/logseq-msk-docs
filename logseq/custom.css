@@ -35,6 +35,9 @@
 	color: rgb(92, 100, 112) !important;
 	font-weight: bold;
 }
+.search-ac p span {
+	color: rgb(141, 149, 161) !important;
+}
 
 /* Not yet supported by CSS - wanted to do blurred background */
 /* body:has(.search-ac) {
