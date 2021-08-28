@@ -13,10 +13,11 @@
 	/* right: 50vw !important; */
 	width: 80vw !important;
 	min-width: 80vw;
-	max-width: 624px !important;
+	max-width: 700px !important;
 	height: 70vh !important;
 	box-shadow: 0 5px 55px -3px rgb(0 0 0 / 85%), 0 4px 6px -2px rgb(0 0 0 / 50%) !important;
 	border: 1px solid #BBB;
+	margin: auto;
 }
 
 .search-results #ui__ac-inner div:hover {
