@@ -15,7 +15,7 @@
 	min-width: 80vw;
 	max-width: 700px !important;
 	height: 70vh !important;
-	box-shadow: 0 0px 400px 0px #FFF, 0 0px 400px 0px #FFF !important;
+	box-shadow: 0 0px 100% 0px #FFF, 0 0px 100% 0px #FFF !important;
 	border: 1px solid #BBB;
 }
 .search-ac,
