@@ -83,11 +83,14 @@ margin-top: 1em;
 	position: relative;
 	padding: 3em;
 	top: 1em;
-	left: 1em;
+	left: 0em;
 	min-width: 50em;
 	width: 50em;
 	min-height: 4em;
 	height: 4em;
+}
+#ui__ac-inner>div:first {
+	margin-top: 3em;
 }
 
 /* Not yet supported by CSS - wanted to do blurred background */
