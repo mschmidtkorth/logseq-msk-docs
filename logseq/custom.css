@@ -19,14 +19,14 @@
 	border: 1px solid #BBB;
 }
 /* Not yet supported by CSS - wanted to do blurred background */
-body:has(.search-ac) {
+/* body:has(.search-ac) {
 	background: #000;
 	content: " xx";
 	width: 100vw;
 	height: 100vh;
 	min-width: 100vw;
 	min-height: 100vh;
-}
+} */
 
 .search-results #ui__ac-inner div:hover {
 	cursor: pointer;
