@@ -18,7 +18,7 @@
 	/* box-shadow: 0 5px 55px -3px rgb(0 0 0 / 85%), 0 4px 6px -2px rgb(0 0 0 / 50%) !important; */
 	border: 1px solid #BBB;
 }
-.search-ac:before {
+.search-wrapper:before {
 	background: #FFF;
 	content: " xx";
 	width: 100vw;
