@@ -80,7 +80,7 @@ margin-top: 1em;
 }
 #ui__ac-inner:before {
 	content: "Recent";
-	position: relative;
+	position: absolute;
 	padding: 0em;
 	top: 3em;
 	left: 0em;
