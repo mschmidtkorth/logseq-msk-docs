@@ -1,6 +1,7 @@
 -
   #+BEGIN_NOTE
   This documentation is written by a Logseq fan and not the Logseq team. You can find the official documentation [here](https://logseq.github.io/#/page/Contents).
+  **Last update for:** v0.3.6
   #+END_NOTE
 -
   #+BEGIN_TIP
