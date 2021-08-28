@@ -78,7 +78,7 @@ margin-top: 1em;
 	height: 150em;
 	margin-top: 1em;
 }
-#ui__ac-inner:before:after {
+/* #ui__ac-inner:before {
 	content: "Recent";
 	position: absolute;
 	padding: 0em;
@@ -90,7 +90,7 @@ margin-top: 1em;
 	height: 1em;
 	max-height: 1em;
 	background-color: transparent;
-}
+} */
 /* Input */
 #ui__ac-inner:before {
 	content: "Search for docs, chats, authors, people...";
@@ -102,6 +102,7 @@ margin-top: 1em;
 	width: 50em;
 	min-height: 4em;
 	height: 4em;
+	color: #DDD;
 }
 #ui__ac-inner>div:first-child {
 	margin-top: 3em !important;
