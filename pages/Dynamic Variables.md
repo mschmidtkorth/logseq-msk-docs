@@ -21,5 +21,5 @@
 		- `current page` => [[Current page]]
 	- Usage in queries
 		-
-		- NOW Understand how dynamic variables work
+		- NOW I want to understand how dynamic variables work #sample
 		- {{query (and (page <% current page %>) (todo now))}}
