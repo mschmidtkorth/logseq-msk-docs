@@ -111,7 +111,7 @@ margin-top: 1em;
 }
 #ui__ac-inner>div:first-child {
 	margin-top: 3em !important;
-	background: #000 !important;
+	/* background: #000 !important; */
 }
 /* #ui__ac-inner>div:first-child a div:before {
 	content: "Recent";
