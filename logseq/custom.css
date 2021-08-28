@@ -78,31 +78,7 @@ margin-top: 1em;
 	height: 150em;
 	margin-top: 1em;
 }
-/* Input */
 #ui__ac-inner:before {
-	content: "Search for docs, chats, authors, people...";
-	position: relative;
-	padding: 3em;
-	top: 1em;
-	left: 0em;
-	min-width: 50em;
-	width: 50em;
-	min-height: 4em;
-	height: 4em;
-	z-index: 5;
-}
-#ui__ac-inner>div:first-child {
-	margin-top: 3em !important;
-}
-/* #ui__ac-inner>div:first-child a div:before {
-	content: "Recent";
-	font-weight: bold;
-	margin-top: -em !important;
-	font-size: .9em;
-	position: absolute;
-} */
-#ui__ac-inner:before {
-	z-index: 2;
 	content: "Recent";
 	position: relative;
 	padding: 0em;
@@ -115,6 +91,29 @@ margin-top: 1em;
 	max-height: 1em;
 	background-color: transparent;
 }
+/* Input */
+#ui__ac-inner:before {
+	content: "Search for docs, chats, authors, people...";
+	position: relative;
+	padding: 3em;
+	top: 1em;
+	left: 0em;
+	min-width: 50em;
+	width: 50em;
+	min-height: 4em;
+	height: 4em;
+}
+#ui__ac-inner>div:first-child {
+	margin-top: 3em !important;
+}
+/* #ui__ac-inner>div:first-child a div:before {
+	content: "Recent";
+	font-weight: bold;
+	margin-top: -em !important;
+	font-size: .9em;
+	position: absolute;
+} */
+
 
 /* Not yet supported by CSS - wanted to do blurred background */
 /* body:has(.search-ac) {
