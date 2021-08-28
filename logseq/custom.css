@@ -113,8 +113,7 @@ margin-top: 1em;
 	margin-top: 3em !important;
 	background: #000 !important;
 }
-#ui__ac-inner>div {
-	margin-top: 3em !important;
+#ui__ac-inner>div>a:first-child {
 	background: #000 !important;
 }
 /* #ui__ac-inner>div:first-child a div:before {
