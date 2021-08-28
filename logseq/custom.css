@@ -93,10 +93,10 @@ margin-top: 1em;
 #ui__ac-inner>div:first-child {
 	margin-top: 3em !important;
 }
-#ui__ac-inner>div:first-child a div:before {
+#ui__ac-inner>div:first-child a div span:before {
 	content: "Recent";
 	font-weight: bold;
-	margin-top: -1em !important;
+	margin-top: -em !important;
 	font-size: .9em;
 	position: absolute;
 }
