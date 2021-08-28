@@ -20,6 +20,7 @@
 }
 .search-ac:before {
 	background: #FFF;
+	content: " xx";
 }
 
 .search-results #ui__ac-inner div:hover {
