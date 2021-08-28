@@ -40,7 +40,8 @@
 	font-size: 0.9em;
 }
 /* Hide icon */
-div[title^="Block"] {
+div[title^="Block"],
+div[title^="File"] {
 	display: none;
 }
 /* Display custom icon */
