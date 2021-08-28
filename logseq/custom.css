@@ -110,6 +110,7 @@ margin-top: 1em;
 	width: 50em;
 	min-height: 1em;
 	height: 1em;
+	max-height: 1em;
 	background-color: transparent;
 }
 
