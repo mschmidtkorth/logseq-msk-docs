@@ -108,6 +108,7 @@ heading:: true
 		  id:: 60f48a7d-9870-4b48-9bb1-95c99ae2f265
 			- [#A] `cmd+o` when focus is within square brackets to open page in the sidebar
 			- [#A] `shift+click` or `cmd+shift+o` when focus is within square brackets to open a page in the sidebar (also works for search results!)
+			-
 		- User Interface
 			- `t w` Toggle <ins>w</ins>ide mode
 			- `t r` Toggle <ins>r</ins>ight sidebar
@@ -123,7 +124,8 @@ heading:: true
 			- `cmd+u` Search all pages/create page
 			- `cmd+shift+u` Search in current page
 		- Version Management
-			-
+			- `c` Create new version (<ins>c</ins>ommit) of file
+			- `Cmd!+/Alt+!` Execute custom Git command
 		- Other
 			- `alt+click` on file link to open in native application (e.g. PDF for fullscreen)
 			- `cmd-c cmd-s` to rebuild the search index without refreshing the browser
