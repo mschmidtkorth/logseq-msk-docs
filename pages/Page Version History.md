@@ -25,7 +25,7 @@
 		  #+BEGIN_TIP
 		  Logseq is going to ask you for your name and email address when using Git. This information is only used to identify the author of changes to your Markdown/Org Mode files.
 		  #+END_TIP
-	- You can run any custom Git commands, for example `git push` to _push_ your changes - i.e. update your remote repository -, via `Cmd+!` or `Alt+!` [[keyboard shortcut]]
+	- You can run any custom Git commands, for example `git push` to _push_ your changes - i.e. update your remote repository -, via `Cmd+!` or `Alt+!` [keyboard shortcut](((612a3629-bfa5-4d51-9d6f-fb03237c43fe)))
 		- TODO Currently does not work for non-US keyboards and cannot be customized
 		- Logseq does not automatically push your changes. You have to do it manually or use means that are independent of Logseq, for example [git post-commit hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
 	- You can access your page history at the three dots menu of the page next to the page title at _Check page history_

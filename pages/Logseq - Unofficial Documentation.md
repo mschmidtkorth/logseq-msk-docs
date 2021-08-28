@@ -70,6 +70,7 @@ heading:: true
   collapsed:: true
 	- Keyboard Shortcuts
 	  heading:: true
+	  id:: 612a3629-bfa5-4d51-9d6f-fb03237c43fe
 		-
 		  alias:: keyboard shortcut, keyboard shortcuts
 		-
@@ -121,6 +122,8 @@ heading:: true
 		- [[Search]]
 			- `cmd+u` Search all pages/create page
 			- `cmd+shift+u` Search in current page
+		- Version Management
+			-
 		- Other
 			- `alt+click` on file link to open in native application (e.g. PDF for fullscreen)
 			- `cmd-c cmd-s` to rebuild the search index without refreshing the browser
