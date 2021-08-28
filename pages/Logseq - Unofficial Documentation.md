@@ -118,10 +118,10 @@ heading:: true
 			  :END:
 			- LATER Test
 			  SCHEDULED: <2021-08-28 Sat>
-			  :LOGBOOK:
+			  :MyDrawer:
 			  Test
 			  :END:
-			- <dr
+			-
 		- User Interface
 			- `t w` Toggle <ins>w</ins>ide mode
 			- `t r` Toggle <ins>r</ins>ight sidebar
