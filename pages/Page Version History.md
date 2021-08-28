@@ -3,7 +3,8 @@
 - Version history is optional. You can still use other ways to backup your data.
 -
   #+BEGIN_CAUTION
-  Do not use Logseq's Git version history (or Git in general) in conjunction with Dropbox, Google Drive or similar tools. Synchronization managed by these tools may conflict with Git's version management 
+  Do not use Logseq's Git version history (or Git in general) in conjunction with Dropbox, Google Drive or similar tools. Synchronization managed by these tools may conflict with Git's version management and may result in a broken Git version management (a broken repository).
+  If you must use the
   #+END_CAUTION
 -
   #+BEGIN_TIP
