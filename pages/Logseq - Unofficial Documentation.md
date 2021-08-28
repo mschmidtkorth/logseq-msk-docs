@@ -297,7 +297,6 @@ heading:: true
 - # Resources
   heading:: true
   collapsed:: true
-	- DOING Go through official Logseq changelog
 	- TODO Go through [OneStutteringMind](https://www.youtube.com/channel/UCz7EgrAosr5FRF3IErGV-yQ)'s resources
 	- [Awesome Logseq](https://github.com/logseq/awesome-logseq)
 	- [Migrating from Roam Research](https://discuss.logseq.com/t/tips-for-former-roam-users/1228)
