@@ -20,6 +20,7 @@
 	0 0px 500px 500px rgba(255, 255, 255, 0.65) !important;
 	border: 1px solid #DDD;
 }
+
 .search-ac,
 .search-results,
 #ui__ac-inner,
@@ -27,7 +28,7 @@
 .cp__header,
 #ui__ac-inner div,
 .white-theme a.menu-link {
-background-color: #FFF !important;
+	background-color: #FFF !important;
 }
 /* Not yet supported by CSS - wanted to do blurred background */
 /* body:has(.search-ac) {
