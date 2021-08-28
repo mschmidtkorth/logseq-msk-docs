@@ -93,6 +93,11 @@ margin-top: 1em;
 #ui__ac-inner>div:first-child {
 	margin-top: 3em !important;
 }
+#ui__ac-inner>div:first-child:before {
+	content: "Recent";
+	font-weight: bold;
+	margin-top: 3em !important;
+}
 
 /* Not yet supported by CSS - wanted to do blurred background */
 /* body:has(.search-ac) {
