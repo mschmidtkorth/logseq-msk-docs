@@ -2,6 +2,7 @@
 - Version history is managed via [Git](https://git-scm.com/) as a version control system. Logseq uses an internal Git client so you do not need to have it installed on your system.
 - Version history is optional. You can still use other ways to backup your data.
 -
+-
   #+BEGIN_TIP
   You do not need to know anything about Git to use Logseq's version history capability.
   #+END_TIP
