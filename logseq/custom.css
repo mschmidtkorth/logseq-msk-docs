@@ -33,6 +33,7 @@
 
 .search-ac a {
 	color: rgb(92, 100, 112) !important;
+	font-weight: bold;
 }
 
 /* Not yet supported by CSS - wanted to do blurred background */
