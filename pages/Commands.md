@@ -9,6 +9,7 @@ alias:: command
 	- [[Files]]
 	- [[Task Management]]
 	- Admonitions (preformatted text blocks)
+	  id:: 61111d75-fbc7-405e-a309-ac8a209ed9d9
 		- `<Tip`
 		- `<Important`
 		- `<Caution`
@@ -32,6 +33,7 @@ alias:: command
 		- Advanced commands are added via `<`.
 		- `<Src` for source code blocks; use `#+BEGIN_SRC javascript` to specify the language
 		- Admonitions (preformatted text blocks)
+		  id:: 61111d75-a7a0-4db7-aa57-1f697d5c5241
 			- `<Tip`
 			  #+BEGIN_TIP
 			  A tip.

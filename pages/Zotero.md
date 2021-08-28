@@ -18,15 +18,17 @@
 		  #+BEGIN_WARNING
 		  Do not share this API key with anyone.
 		  #+END_WARNING 
-		  1. Make sure to grant at least "Allow library access". If you want to include notes, make sure to grant "Allow notes access". You can keep any of the other default settings.
-		  Optional: 
-		  If you've got [Better BibTeX for Zotero](https://retorque.re/zotero-better-bibtex/installation) installed, Logseq will use citation key as your page name, otherwise, it'll just use default item title as your page name.
+		  5. Make sure to grant at least "Allow library access". If you want to include notes, make sure to grant "Allow notes access". You can keep any of the other default settings. 
+		  (optional) If you've got [Better BibTeX for Zotero](https://retorque.re/zotero-better-bibtex/installation) installed, Logseq will use citation key as your page name, otherwise, it'll just use default item title as your page name.
 		  Make sure to check [here](https://alix-lahuec.gitbook.io/zotero-roam/getting-started/prereqs) and follow the setup checklist to enable autoPinDelay and pin your existing citekeys. 
-		  1. In Logseq, go to _[[Settings]] > Zotero settings_ and add your API credentials.
+		  6. In Logseq, go to _[[Settings]] > Zotero settings_ and add your API credentials.
+		  #+BEGIN_TIP
+		  You can add multiple Zotero profiles in logseq, for example to separate between work and personal use or to use different devices or users (with different settings paths).
+		  #+END_TIP
 	- Using Zotero integration with Logseq
 		-
 		  1. Use the `/Zotero` [[command]] to search Zotero library items (by title, author, text, anything) and then add one as a Logseq page, or
-		  1. Import _all_ of your Zotero library items at _[[Settings] > Add all Zotero items: Add all_
+		  1. (optional) Import _all_ of your Zotero library items at _[[Settings] > Add all Zotero items: Add all_
 		-
 		  #+BEGIN_NOTE
 		  If you add/reference the same item twice/again, Logseq will append the data to the same page instead of overwriting your existing metadata. To replace it, you first have to delete the corresponding Markdown page.
@@ -38,8 +40,25 @@
 		  #+END_TIP
 		-
 		  #+BEGIN_TIP
-		  You do not need to manually sync Logseq with Zotero, this happens when you search for another item.
+		  You do **not** need to manually sync Logseq with Zotero, this happens when you search for another item.
+		  #+END_TIP
+		-
+		  #+BEGIN_TIP
+		  **Using Zofiles**
+		  You can also reference [ZotFiles](http://zotfile.com/) stored on your machine. To do that, set the Logseq base directory to the path where you store your files at _[[Settings]] > Editor > Zotero Settings > Linked Attachment Base Directory_.
+		  #+END_TIP
+		-
+		  #+BEGIN_TIP
+		  **Using attached files**
+		  You do **not** need to copy your files (e.g. a PDF document) to Logseq's `/asset/` directory - it is imported automatically when referencing a Logseq item.
+		  If you want to reference external PDFs, you can use the `/asset` [[command]].
+		  #+END_TIP.
+		-
+		  #+BEGIN_TIP
+		  **Using relative links**
+		  You can use relative links instead of absolute links by specifying the _Zotero Data Directory_ for imported attachments or _Linked Attachment Base Directory_ for linked attachments at _[[Settings]] > Editor > Zotero Settings (requires re-importing the Zotero item).
 		  #+END_TIP
 		- Logseq will add a prefix to all imported Zotero items to easily search for them. The default prefix is `@`, you can change it in _[[Settings]] > Zotero settings_. You can also put any Zotero reference as a child-page by creating a hierarchy via `Zotero/`.
 		- As usual, because the items are going to be created as pages, you can reference them wherever you would like to indicate the library item as a source. Of course, you can also add your own content or additional properties to the page.
 			- [[@IEEE Style Manual]]
+		- You can see all references for a specific highlight by right-clicking it in the PDF and selecting _Linked references_

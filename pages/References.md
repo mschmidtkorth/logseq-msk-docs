@@ -18,7 +18,7 @@ alias:: reference, backlink, backlinks
 	- The [[Unlinked References]] list located below [[Linked References]] on a page displays potential backlinks, files which refer to the page but do not have a relevant backlink present.
 	- Even if you are not explicitly using square brackets - for example, `A smartphone is a mobile device` - a reference is created - an _[[unlinked reference]]_ which can also be found at the bottom of pages. It displays _potential_ backlinks i.e. items which refer to the page but do not have an explicit backlink present.
 	- This allows you to see how your knowledge is connected, and quickly get an overview of a certain topic. Explicitly linked references are also included in your [[graph]].
-	- You can *label* references: `[display text]([[page name]])` or `[display text](((block-uuid)))` (note the triple brackets)
+	- You can *label* references: `[display text]([[page name]])`/`![display text](Task Management)` or `[display text](((block-uuid)))` (note the triple brackets) - see [here](((612a2437-103f-4c3f-bd99-2a98a462b6c2)))
 	  id:: 6109937d-d33f-4496-83e5-8469ecc51b54
 - ## Filters
 	- Items in the [[Linked References]] section can be filtered.
