@@ -46,7 +46,7 @@ div[title^="Page"] {
 	display: none;
 }
 /* Display custom icon */
-#ui__ac-inner div {
+#ui__ac-inner > div {
 	margin-left: 2em;
 }
 #ui__ac-inner div a:before {
