@@ -6,15 +6,14 @@
   You do not need to know anything about Git to use Logseq's version history capability. However, some of the explanations below are intended for people that are familiar with Git.
   #+END_TIP
 -
-  #+BEGIN_CAUTION
-  Do not use Logseq's Git version history (or Git in general) in conjunction with Dropbox, Google Drive or similar tools. Synchronization managed by these tools may conflict with Git's version management and may result in a broken Git version management (a broken repository). Git relies on metadata information stored in its (invisible) `.git` folder and very frequently makes modifications to it - something external tools like Dropbox have trouble with.
-  If you must use these services, make sure to add the `.git` folder to your ignore list for Dropbox, Google Drive etc.
-  #+END_CAUTION
--
   #+BEGIN_WARNING
   If you already have a manually created Git repository in your [[graph]] directory, Logseq's Git integration will create commits for your _existing_ repository. You can still push to your remote location if you have specified one, or use it locally only.
-  If you want to keep using your current repository, create your own repository for the [[graph]]'s _parent_ directory. This allows you to use Logseq's automatic version history and your own manual commits outside of Logseq's native functionality. Logseq will keep its Git-related files in a `.git` folder stored (on MacOS) in your Home folder at `~/.logseq/.git`.
+  If you want to keep using your current repository, create your own repository for the [[graph]]'s _parent_ directory. This allows you to use Logseq's automatic version history and your own manual commits outside of Logseq's native functionality. Logseq will keep its Git-related files in a `.git` folder stored (on MacOS) in your Home folder at `~/.logseq/.git`. 
   If you rely on descriptions of your changes (custom commit messages), disable the automatic commit in Logseq's settings and use `c` to commit manually.
+  #+BEGIN_CAUTION 
+  Do not use Dropbox, Google Drive or similar tools. Synchronization managed by these tools may conflict with Git's version management and may result in a broken Git version management (a broken repository). Git relies on metadata information stored in its (invisible) `.git` folder and very frequently makes modifications to it - something external tools like Dropbox have trouble with due to the locking of files etc.
+  If you must use these services, make sure to add the `.git` folder to your ignore list for Dropbox, Google Drive etc.
+  #+END_CAUTION
   #+END_WARNING
 - **USAGE**
 	- Version history is enabled at _[[Settings]] > Version Control_
