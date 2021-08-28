@@ -39,6 +39,9 @@
 	color: #A8AEB8 !important;
 	font-size: 0.9em;
 }
+div[title^="block"] {
+	display: none;
+}
 
 /* Not yet supported by CSS - wanted to do blurred background */
 /* body:has(.search-ac) {
