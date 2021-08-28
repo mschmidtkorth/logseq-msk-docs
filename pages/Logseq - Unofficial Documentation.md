@@ -106,11 +106,11 @@ heading:: true
 			- [#A] `cmd+o` when focus is within square brackets to open page in the sidebar
 			- [#A] `shift+click` or `cmd+shift+o` when focus is within square brackets to open a page in the sidebar (also works for search results!)
 		- User Interface
-			- `t w` Toggle *w*ide mode
-			- `t r` Toggle *r*ight sidebar
-			- `t f` Toggle contents/*f*avorites in sidebar
-			- `t s` Toggle *s*ettings
-			- `t t` Toggle *t*heme (dark/light)
+			- `t w` Toggle <ins>w</ins>ide mode
+			- `t r` Toggle <ins>r</ins>ight sidebar
+			- `t f` Toggle contents (i.e. <ins>f</ins>avorites) in sidebar
+			- `t s` Toggle <ins>s</ins>ettings
+			- `t t` Toggle <ins>t</ins>heme (dark/light)
 			- `t d` Toggle [[Document Mode]]
 			- `?` Toggle help
 			- `cmd+c b` Show hide brackets around links
@@ -192,6 +192,7 @@ heading:: true
 	- Logseq offers your typical word processing features such as formatting text, adding images or links with the added touch of functionality found in [[Infinite Outliners]].
 	- The following information is intended to both introduce you to features and to show you how to use them in Logseq.
 	- ## Text Editing - your bread and butter
+		- ## [[Formatting]]
 		- ## [[Tables]]
 		- ## [[Footnotes]]
 		- ## [[HTML]]
@@ -214,6 +215,7 @@ heading:: true
 		- ## [[PDF Annotations]]
 		- ## [[Encryption]]
 		- ## Querying Data ([[Queries]])
+		- ## [[Page Version History]]
 		- ## Customization: [[Custom CSS]] & [[Plugins API]]
 			- To change the _appearance_ of Logseq you can add your own [CSS](https://en.wikipedia.org/wiki/CSS) rules. These are defined in Logseq's [[custom CSS]] file.
 			- To change the _functionality_ of Logseq you can write your own plugin via the [[Plugins API]].

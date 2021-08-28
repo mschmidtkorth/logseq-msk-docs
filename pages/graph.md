@@ -20,3 +20,21 @@ alias:: Graphs, workspace
   **Technical details**
   A graph contains content (as files) that is parsed by Logseq to be stored in its database (generated on-the-fly).
   #+END_NOTE
+## Using Multiple Graphs
+	- You can use as many graphs as you would like. Simply click on the graph menu item in the toolbar and select _Add new graph_.
+	- For example, you can use one graph for work and another for personal items.
+	-
+	  #+BEGIN_TIP
+	  You can easily _merge_ graphs as long as there is no overlap in page names. Simply copy the Markdown/Org Mode files from one graph to another. Separating graphs is more challenging as you need to manually select the right files.
+	  #+END_TIP
+	- **Pro**
+		- Separates context
+		- Can reuse pages with the same name but different meaning
+		- Can easily switch between graphs
+		- Improves performance for very large graphs
+		- Allows more precise search as out-of-context files are not considered
+		- Supports different home pages or themes
+	- **Con**
+		- You cannot use references across paths
+		- Search considers current graph only
+		- Switching between graphs returns you to the default home page
