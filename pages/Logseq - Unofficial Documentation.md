@@ -110,7 +110,8 @@ heading:: true
 			- [#A] `shift+click` or `cmd+shift+o` when focus is within square brackets to open a page in the sidebar (also works for search results!)
 			- `g h` to go to your start page ( <ins>g</ins>o <ins>h</ins>ome)
 			- Drawers
-				-
+			- Sometimes you want to keep information associated with an entry, but you normally do not want to see it
+			-
 			-
 			  :TEST:
 			  Test
