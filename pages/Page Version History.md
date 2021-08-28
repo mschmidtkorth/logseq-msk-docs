@@ -13,7 +13,7 @@
 -
   #+BEGIN_WARNING
   If you already have a manually created Git repository in your [[graph]] directory, Logseq's Git integration will create commits for your _existing_ repository. You can still push to your remote location if you have specified one, or use it locally only.
-  If you want to keep using your current repository, create your own repository for the [[graph]]'s _parent_ directory. 
+  If you want to keep using your current repository, create your own repository for the [[graph]]'s _parent_ directory. This allows you to use Logseq's automatic version history and your own manual commits outside of Logseq's native functionality.
   If you rely on descriptions of your changes (custom commit messages), disable the automatic commit in Logseq's settings and use `c` to commit manually.
   Logseq's `.git` folder is stored (on MacOS) in your Home folder at `~/.logseq/.git`.
   #+END_WARNING
@@ -31,6 +31,10 @@
 		- Logseq does not automatically push your changes. You have to do it manually or use means that are independent of Logseq, for example [git post-commit hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
 	- You can access your page history at the three dots menu of the page next to the page title at _Check page history_
 		- To restore to a previous version, click on any entry, copy its content and replace your current page with it
+		-
+		  #+BEGIN_TIP
+		  If you are familiar with Git, you can use `git log --stat` for an overview of 
+		  #+END_TIP
 	-
 	-
 	-
