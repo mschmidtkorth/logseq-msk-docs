@@ -1,3 +1,28 @@
+/* Fix: Keep underlined text on same line  */
+.raw_html+.is-paragraph {
+	display: inline;
+}
+.raw_html {
+	display: inline;
+}
+
+
+.search-ac {
+	top: 8em !important;
+	left: 5em !important;
+	/* right: 50vw !important; */
+	width: 80vw !important;
+	min-width: 80vw;
+	max-width: 1024px !important;
+	height: 70vh !important;
+	box-shadow: 0 5px 55px -3px rgb(0 0 0 / 85%), 0 4px 6px -2px rgb(0 0 0 / 50%) !important;
+	border: 1px solid #BBB;
+}
+
+.search-results #ui__ac-inner div:hover {
+	cursor: pointer;
+}
+
 .block-control {
 	z-index: 1;
 }
