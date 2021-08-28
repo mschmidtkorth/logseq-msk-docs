@@ -59,9 +59,9 @@ position: absolute;
 left: 0;
 min-width: 5em;
 width: 5em;
-min-height: 5em;
-height: 3em;
-margin-top: -2em;
+min-height: 2em;
+height: 2em;
+margin-top: 0em;
 }
 
 /* Not yet supported by CSS - wanted to do blurred background */
