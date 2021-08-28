@@ -49,7 +49,7 @@ div[title^="Page"] {
 #ui__ac-inner > div {
 	margin-left: 2em;
 }
-#ui__ac-inner > div a:before {
+#ui__ac-inner > div:before {
 	content: " ";
 	background: url("/Users/mschmidtkorth/Github/MSK/logseq-msk-secret-theme/searchIcon.png") no-repeat !important;
 background-position: left 1000px top 0%;
