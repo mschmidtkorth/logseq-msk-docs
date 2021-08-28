@@ -97,7 +97,7 @@ margin-top: 1em;
 	content: "Recent";
 	font-weight: bold;
 	margin-top: -1em !important;
-	font-size: 1em;
+	font-size: .9em;
 }
 
 /* Not yet supported by CSS - wanted to do blurred background */
