@@ -41,7 +41,8 @@
 }
 /* Hide icon */
 div[title^="Block"],
-div[title^="File"] {
+div[title^="File"],
+div[title^="Page"] {
 	display: none;
 }
 /* Display custom icon */
