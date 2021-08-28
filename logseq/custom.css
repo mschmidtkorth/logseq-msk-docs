@@ -23,7 +23,8 @@
 #ui__ac-inner,
 #ui__ac,
 .cp__header,
-#ui__ac-inner div {
+#ui__ac-inner div,
+.white-theme a.menu-link {
 background-color: #FFF !important;
 }
 /* Not yet supported by CSS - wanted to do blurred background */
