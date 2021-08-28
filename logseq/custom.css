@@ -65,7 +65,7 @@ height: 2.5em;
 margin-top: 1em;
 }
 #ui__ac-inner:after {
-	content: " ";
+	content: "xxxxx";
 	background: url("/Users/mschmidtkorth/Github/MSK/logseq-msk-secret-theme/searchSide.png") no-repeat !important;
 	padding-bottom: 1em;
 	margin-left: 0;
@@ -78,7 +78,7 @@ margin-top: 1em;
 	margin-top: 1em;
 }
 #ui__ac-inner>div:first:after {
-	content: " ";
+	content: "xxxxx";
 	background: url("/Users/mschmidtkorth/Github/MSK/logseq-msk-secret-theme/searchSide.png") no-repeat !important;
 	padding-bottom: 1em;
 	margin-left: 0;
