@@ -2,14 +2,14 @@
 - Version history is managed via [Git](https://git-scm.com/) as a version control system. Logseq uses an internal Git client so you do not need to have it installed on your system.
 - Version history is optional. You can still use other ways to backup your data.
 -
+  #+BEGIN_TIP
+  You do not need to know anything about Git to use Logseq's version history capability. However, some of the explanations below are intended for people that are familiar with Git.
+  #+END_TIP
+-
   #+BEGIN_CAUTION
   Do not use Logseq's Git version history (or Git in general) in conjunction with Dropbox, Google Drive or similar tools. Synchronization managed by these tools may conflict with Git's version management and may result in a broken Git version management (a broken repository). Git relies on metadata information stored in its (invisible) `.git` folder and very frequently makes modifications to it - something external tools like Dropbox have trouble with.
   If you must use these services, make sure to add the `.git` folder to your ignore list for Dropbox, Google Drive etc.
   #+END_CAUTION
--
-  #+BEGIN_TIP
-  You do not need to know anything about Git to use Logseq's version history capability.
-  #+END_TIP
 -
   #+BEGIN_WARNING
   If you already have a manually created Git repository in your [[graph]] directory, Logseq's Git integration will create commits for your _existing_ repository. You can still push to your remote location if you have specified one, or use it locally only.
