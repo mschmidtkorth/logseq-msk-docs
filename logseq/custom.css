@@ -66,16 +66,17 @@ margin-top: 1em;
 }
 #ui__ac-inner:after {
 	content: "xxxxx";
-	/* background: url("/Users/mschmidtkorth/Github/MSK/logseq-msk-secret-theme/searchSide.png") no-repeat !important;
+	background: url("/Users/mschmidtkorth/Github/MSK/logseq-msk-secret-theme/searchSide.png") no-repeat !important;
 	padding-bottom: 1em;
 	margin-left: 0;
 	position: absolute;
+	top: 0;
 	left: 0.5em;
 	min-width: 5em;
 	width: 5em;
 	min-height: 2.5em;
 	height: 2.5em;
-	margin-top: 1em; */
+	margin-top: 1em;
 }
 #ui__ac-inner>div:first:after {
 	content: "yyyyy";
