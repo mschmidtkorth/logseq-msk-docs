@@ -90,7 +90,7 @@ margin-top: 1em;
 	min-height: 4em;
 	height: 4em;
 }
-#ui__ac-inner>div:first {
+#ui__ac-inner>div {
 	margin-top: 3em !important;
 }
 
