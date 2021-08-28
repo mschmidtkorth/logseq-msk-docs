@@ -113,6 +113,10 @@ margin-top: 1em;
 	margin-top: 3em !important;
 	background-color: #000 !important;
 }
+#ui__ac-inner>div {
+	margin-top: 3em !important;
+	background-color: #000 !important;
+}
 /* #ui__ac-inner>div:first-child a div:before {
 	content: "Recent";
 	font-weight: bold;
