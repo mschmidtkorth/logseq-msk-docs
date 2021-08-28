@@ -47,7 +47,7 @@ div[title^="Page"] {
 }
 /* Display custom icon */
 #ui__ac-inner div a:before {
-	content: "x";
+	content: " ";
 	background: url("/Users/mschmidtkorth/Github/MSK/logseq/docs/logseq/searchIcon.png") no-repeat !important;
 background-position: left 1000px top 0%;
 padding-bottom: 1em;
