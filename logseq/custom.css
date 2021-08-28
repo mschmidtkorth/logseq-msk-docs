@@ -37,6 +37,7 @@
 }
 .search-ac p span {
 	color: rgb(167, 176, 190) !important;
+	font-size: 0.9em;
 }
 
 /* Not yet supported by CSS - wanted to do blurred background */
