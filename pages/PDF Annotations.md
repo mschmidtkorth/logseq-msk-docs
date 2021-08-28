@@ -1,6 +1,9 @@
 - You can annotate any PDF files you have [attached]([[files]]) to your Logseq blocks.
 - **USAGE**
-	- Drag & drop a PDF file into Logseq or attach it (see [[Files]])
+	-
+	  1. Drag & drop a PDF file into Logseq or attach it using `/asset` [[command]] (see [[Files]]), or
+	  1. Use a PDF imported from [[Zotero]], or
+	  1. Use an external PDF hosted on the internet (via `![PDF name](http://www.example.com/file.pdf)`) using `/link` [[command]]
 	- You can highlight 
 	  1. specific text, or
 	  1. an area in the document (such as an image) via the area highlight toolbar button (then drag your pointer) - click the icon in the toolbar or hold `Cmd` or `Alt`
