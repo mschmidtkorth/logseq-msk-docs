@@ -80,8 +80,6 @@ margin-top: 1em;
 }
 #ui__ac-inner:before {
 	content: "Search for docs, chats, authors, people...";
-	padding-bottom: 1em;
-	margin-left: 0;
 	position: relative;
 	padding: 5em;
 	top: 2em;
