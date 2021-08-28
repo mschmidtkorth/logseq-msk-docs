@@ -108,8 +108,8 @@ margin-top: 1em;
 	left: 0em;
 	min-width: 50em;
 	width: 50em;
-	min-height: 4em;
-	height: 4em;
+	min-height: 2em;
+	height: 2em;
 }
 
 /* Not yet supported by CSS - wanted to do blurred background */
