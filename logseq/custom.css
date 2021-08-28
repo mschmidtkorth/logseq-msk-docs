@@ -8,8 +8,8 @@
 
 
 .search-ac {
-	top: 8em !important;
-	left: 5em !important;
+	/* top: 8em !important;
+	left: 5em !important; */
 	/* right: 50vw !important; */
 	width: 80vw !important;
 	min-width: 80vw;
