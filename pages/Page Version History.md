@@ -4,7 +4,7 @@
 -
   #+BEGIN_CAUTION
   Do not use Logseq's Git version history (or Git in general) in conjunction with Dropbox, Google Drive or similar tools. Synchronization managed by these tools may conflict with Git's version management and may result in a broken Git version management (a broken repository).
-  If you must use the
+  If you must use these services, make sure to add the `.git` folder to your ignore list for Dropbox, Google Drive etc.
   #+END_CAUTION
 -
   #+BEGIN_TIP
