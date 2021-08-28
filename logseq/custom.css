@@ -7,9 +7,7 @@
 }
 
 
-body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Quip Glyphs" !important;
-}
+
 .search-ac {
 	top: 8em !important;
 	left: 5em !important;
@@ -2234,4 +2232,7 @@ div[data-refs-self*="kanban-w400"]>.block-children .block-content {
 /* === PDF Annotations === */
 .extensions__pdf-toolbar {
 	background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0, #fff 40%);
+}
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Quip Glyphs" !important;
 }
