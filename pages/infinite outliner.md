@@ -1,6 +1,7 @@
 alias:: Infinite Outliners
 
 - Infinite outliners are a category of textual knowledge management tools that organize content into individual _blocks_, whereby each block can be collapsed/expanded or opened in its own view.
+- To be precise, Logseq is an Infinite Outliner (organizing content into blocks) with bidirectional linking (having references between source/origin).
 - Outliners typically allow you to link content via references to individual blocks of content. They also do not work in a typical page-by-page mode like a word processing software like Microsoft Word. Instead, you generate content by linking to other [[blocks]] of content - the result of connections between blocks of content is called a _[[Graph]]_.
 -
   #+BEGIN_TIP
