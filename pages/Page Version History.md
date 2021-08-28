@@ -4,6 +4,10 @@
   #+BEGIN_TIP
   You do not need to know anything about Git to use Logseq's version history capability.
   #+END_TIP
+-
+  #+BEGIN_WARNING
+  If you already have a Git repository in your [[graph]] directory, 
+  #+END_WARNING
 - **USAGE**
 	- Version history is enabled at _[[Settings]] > Version Control_
 	- You can choose to save changes automatically or on-demand
