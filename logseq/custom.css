@@ -82,7 +82,7 @@ margin-top: 1em;
 	content: "Search for docs, chats, authors, people...";
 	padding-bottom: 1em;
 	margin-left: 0;
-	/* position: absolute; */
+	position: relative;
 	padding: 5em;
 	top: 2em;
 	left: 2em;
