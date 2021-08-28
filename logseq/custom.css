@@ -79,7 +79,7 @@ margin-top: 1em;
 	margin-top: 1em;
 }
 #ui__ac-inner:before {
-	content: "Search";
+	content: "Search for docs, chats, authors, people...";
 	padding-bottom: 1em;
 	margin-left: 0;
 	/* position: absolute; */
