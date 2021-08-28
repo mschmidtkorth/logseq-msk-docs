@@ -89,6 +89,7 @@ margin-top: 1em;
 	width: 50em;
 	min-height: 4em;
 	height: 4em;
+	z-index: 5;
 }
 #ui__ac-inner>div:first-child {
 	margin-top: 3em !important;
