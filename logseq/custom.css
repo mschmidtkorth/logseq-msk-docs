@@ -93,7 +93,7 @@ margin-top: 1em;
 #ui__ac-inner>div:first-child {
 	margin-top: 3em !important;
 }
-#ui__ac-inner>div>a:first-child:before {
+#ui__ac-inner>div:first-child>a:before {
 	content: "Recent";
 	font-weight: bold;
 	margin-top: -1em !important;
