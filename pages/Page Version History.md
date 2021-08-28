@@ -13,7 +13,7 @@
 -
   #+BEGIN_WARNING
   If you already have a manually created Git repository in your [[graph]] directory, Logseq's Git integration will create commits for your _existing_ repository. You can still push to your remote location if you have specified one, or use it locally only.
-  If you rely on descriptions of your changes (custom commit messages), disable the automatic commit in Logseq's settings and use `c
+  If you rely on descriptions of your changes (custom commit messages), disable the automatic commit in Logseq's settings and use `c` to commit manually.
   #+END_WARNING
 - **USAGE**
 	- Version history is enabled at _[[Settings]] > Version Control_
