@@ -30,6 +30,11 @@
 .white-theme a.menu-link {
 	background-color: #FFF !important;
 }
+
+.search-ac a {
+	color: #FFF !important;
+}
+
 /* Not yet supported by CSS - wanted to do blurred background */
 /* body:has(.search-ac) {
 	background: #000;
