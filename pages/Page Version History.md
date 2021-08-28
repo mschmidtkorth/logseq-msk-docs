@@ -6,7 +6,7 @@
   #+END_TIP
 -
   #+BEGIN_WARNING
-  If you already have a Git repository in your [[graph]] directory, 
+  If you already have a Git repository in your [[graph]] directory, Logseq's Git integration will create commits for your existing repository. You can still push to your remote location if you have specified one, or use it locally only.
   #+END_WARNING
 - **USAGE**
 	- Version history is enabled at _[[Settings]] > Version Control_
