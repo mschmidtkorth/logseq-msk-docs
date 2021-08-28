@@ -78,7 +78,7 @@ margin-top: 1em;
 	height: 150em;
 	margin-top: 1em;
 }
-#ui__ac-inner>div:first:before {
+#ui__ac-inner>before {
 	content: "Search";
 	padding-bottom: 1em;
 	margin-left: 0;
