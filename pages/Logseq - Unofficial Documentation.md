@@ -246,9 +246,8 @@ heading:: true
 	- ## [[Static Export]]
 	- ## [[Logseq Publish]]
 - # Logseq vs. Similar Apps
-  collapsed:: true
 	- See [[Infinite Outliners]]
-	- ## VuePress
+	- ## [[VuePress]]
 		- Advantages
 			- Block-based
 			- Better search (fuzzy match - even though it is available for VuePress, it is not when using your IDE to write)
