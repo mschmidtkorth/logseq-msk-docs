@@ -84,7 +84,7 @@ html[data-theme='light'] {
 /* Custom overrides due to hard-coded colors */
 .bg-indigo-600,
 .bg-indigo-700 {
-	background-color: var(--ls-active-secondary-color);
+	background-color: var(--ls-active-secondary-color) !important;
 }
 
 /* region Reset top elements */
