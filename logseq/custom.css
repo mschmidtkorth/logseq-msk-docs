@@ -78,6 +78,7 @@ margin-top: 1em;
 	height: 150em;
 	margin-top: 1em;
 }
+/* Input */
 #ui__ac-inner:before {
 	content: "Search for docs, chats, authors, people...";
 	position: relative;
@@ -90,7 +91,7 @@ margin-top: 1em;
 	height: 4em;
 }
 #ui__ac-inner>div:first {
-	margin-top: 3em;
+	margin-top: 3em !important;
 }
 
 /* Not yet supported by CSS - wanted to do blurred background */
