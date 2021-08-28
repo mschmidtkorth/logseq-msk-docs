@@ -33,7 +33,7 @@
 		- To restore to a previous version, click on any entry, copy its content and replace your current page with it
 		-
 		  #+BEGIN_TIP
-		  If you are familiar with Git, you can use `git log --stat` for an overview of 
+		  If you are familiar with Git, you can use `git log --stat` for an overview of files and their changes per commit that Logseq has performed.
 		  #+END_TIP
 	-
 	-
