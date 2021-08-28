@@ -117,9 +117,11 @@ heading:: true
 			  Test
 			  :END:
 			- LATER Test
+			  SCHEDULED: <2021-08-28 Sat>
 			  :LOGBOOK:
 			  Test
 			  :END:
+			- <dr
 		- User Interface
 			- `t w` Toggle <ins>w</ins>ide mode
 			- `t r` Toggle <ins>r</ins>ight sidebar
