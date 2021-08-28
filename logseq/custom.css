@@ -78,31 +78,18 @@ margin-top: 1em;
 	height: 150em;
 	margin-top: 1em;
 }
-#ui__ac-inner>div:first:after {
-	content: "yyyyy";
-	/* background: url("/Users/mschmidtkorth/Github/MSK/logseq-msk-secret-theme/searchSide.png") no-repeat !important;
-	padding-bottom: 1em;
-	margin-left: 0;
-	position: absolute;
-	left: 0.5em;
-	min-width: 5em;
-	width: 5em;
-	min-height: 2.5em;
-	height: 2.5em;
-	margin-top: 1em; */
-}
 #ui__ac-inner>div:first:before {
 	content: "Search";
-	/* background: url("/Users/mschmidtkorth/Github/MSK/logseq-msk-secret-theme/searchSide.png") no-repeat !important;
 	padding-bottom: 1em;
 	margin-left: 0;
-	position: absolute;
-	left: 0.5em;
-	min-width: 5em;
-	width: 5em;
-	min-height: 2.5em;
-	height: 2.5em;
-	margin-top: 1em; */
+	/* position: absolute; */
+	top: 0;
+	left: 65%;
+	min-width: 50em;
+	width: 50em;
+	min-height: 150em;
+	height: 150em;
+	margin-top: 1em;
 }
 
 /* Not yet supported by CSS - wanted to do blurred background */
