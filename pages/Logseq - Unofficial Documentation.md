@@ -109,11 +109,16 @@ heading:: true
 			- [#A] `cmd+o` when focus is within square brackets to open page in the sidebar
 			- [#A] `shift+click` or `cmd+shift+o` when focus is within square brackets to open a page in the sidebar (also works for search results!)
 			- `g h` to go to your start page ( <ins>g</ins>o <ins>h</ins>ome)
+			- Drawers
+				-
 			-
 			  :TEST:
 			  Test
 			  :END:
-			-
+			- LATER Test
+			  :LOGBOOK:
+			  Test
+			  :END:
 		- User Interface
 			- `t w` Toggle <ins>w</ins>ide mode
 			- `t r` Toggle <ins>r</ins>ight sidebar
