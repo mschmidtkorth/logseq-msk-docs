@@ -11,7 +11,7 @@
 		- Manually create a new version by hitting `c` (for <ins>c</ins>ommit) on your keyboard and entering a message to describe the change
 	- You can run any custom Git commands, for example `git push` to _push_ your changes - i.e. update your remote repository -, via `Cmd+!` or `Alt+!`
 	- You can access your page history at the three dots menu of the page next to the page title at _Check page history_
-		- To restore to a previous version, click on any entry, copy the content and replace your current page with it
+		- To restore to a previous version, click on any entry, copy its content and replace your current page with it
 	-
 	-
 	-
