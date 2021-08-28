@@ -96,7 +96,8 @@ margin-top: 1em;
 #ui__ac-inner>div:first-child:before {
 	content: "Recent";
 	font-weight: bold;
-	margin-top: 0em !important;
+	margin-top: -1em !important;
+	font-size: 1em;
 }
 
 /* Not yet supported by CSS - wanted to do blurred background */
