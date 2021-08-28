@@ -39,7 +39,7 @@ heading:: true
 		  1. **Standalone desktop application:** This is the most popular way of using Logseq and supports the most features as well as best performance. It can be used fully offline. It supports Windows and MacOS. It does not support GitHub online repositories.
 		  1. **Browser application with GitHub login:** This allows using a GitHub account to store your content directly in a GitHub online repository as well as local storage. It allows using browser extensions such as [Greasemonkey](https://addons.mozilla.org/de/firefox/addon/greasemonkey/) or [Grammarly](https://addons.mozilla.org/de/firefox/addon/grammarly-1/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) and normal page-based search.
 		  #+BEGIN_WARNING
-		  The authentication via GitHub is going to be deprecated.
+		  The authentication via GitHub is going to be deprecated. This is independent from [[versioning]] via Git.
 		  #+END_WARNING
 		- ### Mobile
 			- Logseq has a mobile application in development but it is not yet available.
@@ -72,6 +72,7 @@ heading:: true
 	- Keyboard Shortcuts
 	  heading:: true
 	  id:: 612a3629-bfa5-4d51-9d6f-fb03237c43fe
+	  collapsed:: true
 		-
 		  alias:: keyboard shortcut, keyboard shortcuts
 		-
@@ -184,6 +185,7 @@ heading:: true
 	  collapsed:: true
 		- Text you copy and paste in Logseq will retain its block structure and formatting - you can use `cmd+shift+v` or type ` twice and put the pasted content in-between to prevent that
 	- ## Performance
+	  collapsed:: true
 		- Logseq is generally performant, but certain situations can lead to slowness:
 		  id:: 6109951e-1c4d-4491-8147-9c4072672d56
 			-
@@ -246,8 +248,9 @@ heading:: true
 	- ## [[Static Export]]
 	- ## [[Logseq Publish]]
 - # Logseq vs. Similar Apps
+  collapsed:: true
 	- See [[Infinite Outliners]]
-	- ## [[VuePress]]
+	- ## VuePress
 		- Advantages
 			- Block-based
 			- Better search (fuzzy match - even though it is available for VuePress, it is not when using your IDE to write)
