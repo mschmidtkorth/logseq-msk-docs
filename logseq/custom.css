@@ -98,6 +98,7 @@ margin-top: 1em;
 	font-weight: bold;
 	margin-top: -1em !important;
 	font-size: .9em;
+	position: absolute;
 }
 
 /* Not yet supported by CSS - wanted to do blurred background */
