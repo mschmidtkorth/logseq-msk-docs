@@ -177,6 +177,7 @@
 	  ```
 ## Examples
 	- ### Tags
+	  collapsed:: true
 		-
 		  #+BEGIN_QUERY
 		  {:title "All pages with tag myPageTag"
@@ -218,6 +219,7 @@
 			  This query returns manually generated links - the navigation will be different than what you are used to in Logseq (not recommended for Desktop app).
 			  #+END_NOTE
 	- ### Tasks
+	  collapsed:: true
 		- Querying all `NOW` tasks
 			-
 			  #+BEGIN_QUERY
@@ -275,14 +277,26 @@
 		- Query all pages part of a hierarchy
 		  updated-at:: 1626301594584
 		  created-at:: 1626301594584
-		  #+BEGIN_QUERY
-		  {:title "All pages that start with Home/Gardening"
-		   :query [:find (pull ?p [*])
-		           :where
-		           [?p :block/name ?name]
-		           [(str/starts-with (?name) "home/gardening")]
-		  ]}
-		  #+END_QUERY
+			-
+			  #+BEGIN_QUERY
+			  {:title "All pages that start with Home/Gardening"
+			   :query [:find (pull ?p [*])
+			           :where
+			           [?p :block/name ?name]
+			           [(clojure.string/starts-with? ?name "home/gardening")]
+			  ]}
+			  #+END_QUERY
+			-
+			  ``` clojure
+			  #+BEGIN_QUERY
+			  {:title "All pages that start with Home/Gardening"
+			   :query [:find (pull ?p [*])
+			           :where
+			           [?p :block/name ?name]
+			           [(clojure.string/starts-with? ?name "home/gardening")]
+			  ]}
+			  #+END_QUERY
+			  ```
 			- Alternative
 			  updated-at:: 1626301589734
 			  created-at:: 1626301588472
@@ -304,6 +318,33 @@
 				           [?namespace :block/name "home/gardening"]]}
 				  #+END_QUERY
 				  ```
+		- Query all tasks part of a hierarchy
+			-
+			  #+BEGIN_QUERY
+			  {:query [:find (pull ?b [*])
+			           :in $ ?s
+			           :where
+			           [?b :block/marker "TODO"]
+			           [?b :block/page ?p]
+			           [?p :block/original-name ?n]
+			           [(clojure.string/starts-with? ?n ?s)]]
+			   :inputs [ "Home/Gardening/" ]
+			   }
+			  #+END_QUERY
+			-
+			  ```clojure
+			  #+BEGIN_QUERY
+			  {:query [:find (pull ?b [*])
+			           :in $ ?s
+			           :where
+			           [?b :block/marker "TODO"]
+			           [?b :block/page ?p]
+			           [?p :block/original-name ?n]
+			           [(clojure.string/starts-with? ?n ?s)]]
+			   :inputs [ "Home/Gardening/" ]
+			   }
+			  #+END_QUERY
+			  ```
 	- ### Journal Queries
 	  id:: 6110fe96-79ce-4818-b790-79cf5e7c81d8
 		- You may add the following queries to your `:default-queries` section in [[config.edn]]. They are going to be displayed on today's journal entry.
