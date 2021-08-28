@@ -91,6 +91,19 @@ margin-top: 1em;
 	height: 2.5em;
 	margin-top: 1em; */
 }
+#ui__ac-inner>div:first:before {
+	content: "Search";
+	/* background: url("/Users/mschmidtkorth/Github/MSK/logseq-msk-secret-theme/searchSide.png") no-repeat !important;
+	padding-bottom: 1em;
+	margin-left: 0;
+	position: absolute;
+	left: 0.5em;
+	min-width: 5em;
+	width: 5em;
+	min-height: 2.5em;
+	height: 2.5em;
+	margin-top: 1em; */
+}
 
 /* Not yet supported by CSS - wanted to do blurred background */
 /* body:has(.search-ac) {
