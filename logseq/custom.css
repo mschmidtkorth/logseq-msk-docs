@@ -39,7 +39,7 @@
 	color: #A8AEB8 !important;
 	font-size: 0.9em;
 }
-div[title^="block"] {
+div[title^="Block"] {
 	display: none;
 }
 
