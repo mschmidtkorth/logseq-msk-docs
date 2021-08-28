@@ -111,7 +111,7 @@ heading:: true
 			- `g h` to go to your start page ( <ins>g</ins>o <ins>h</ins>ome)
 			- Drawers
 			- Sometimes you want to keep information associated with an entry, but you normally do not want to see it
-			-
+			- he way I understand it, is this is for metadata related to a block, such as completion times (as in the example). You don't want this to be in a new block because blocks can be moved around and it won't be clear what the metadata is supposed to refer to.
 			-
 			  :TEST:
 			  Test
