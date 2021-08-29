@@ -70,6 +70,8 @@ title:: Queries/Advanced Queries/Tutorial
 	  		}
 	  	#+END_QUERY
 - ## Example 3 - Multiple Markers And TODO States
+  collapsed:: true
+	- Notice lines **\#5** and **\#6**, that replace the single line **\#5** fom the previous example. We're looking for a marker, called `?marker`. We also specify that `?marker` should _contain_ either `TODO` or `DOING`
 	-
 	  ```clojure
 	  #+BEGIN_QUERY
@@ -83,7 +85,6 @@ title:: Queries/Advanced Queries/Tutorial
 	  }
 	  #+END_QUERY
 	  ```
-	- Notice lines **\#5** and **\#6**, that replace the single line **\#5** fom the previous example. We're looking for a marker, called `?marker`. We also specify that `?marker` should _contain_ either `TODO` or `DOING`
 	-
 	  #+BEGIN_QUERY
 	  	{:title "Find: TODO or DOING MyTag"
@@ -98,40 +99,42 @@ title:: Queries/Advanced Queries/Tutorial
 	  	}
 	  	#+END_QUERY
 	- You can use the same method to look for multiple tags:
-	-
-	  ```clojure
-	  #+BEGIN_QUERY
-	  	{:title "Find: MyTag and MyOtherTag"
-	  	:query [:find (pull ?b [*])
-	  	:where
-	  
-	  		[?b :block/marker ?marker]
-	  		[(contains? #{"TODO" "DOING"} ?marker)]
-	  
-	  		[?b :block/ref-pages ?p]
-	  		[?p :block/name ?tag]
-	  		[(contains? #{"mytag" "myothertag"} ?tag)]]
-	  	}
-	  	#+END_QUERY
-	  ```
-	- {:title "Find: MyTag and MyOtherTag"
-	  	:query [:find (pull ?b [*])
-	  	:where
-	  
-	  		[?b :block/marker ?marker]
-	  		[(contains? #{"TODO" "DOING"} ?marker)]
-	  
-	  		[?b :block/ref-pages ?p]
-	  		[?p :block/name ?tag]
-	  		[(contains? #{"mytag" "myothertag"} ?tag)]]
-	  	}
-	-
-	  #+BEGIN_IMPORTANT
-	  	Notice the closing `]` on line **11**, it's easy to forget these, especially as you slowly add more complexity to your searches
-	  	#+END_IMPORTANT
-## Example 4 - Search for Parts of a Tag
-collapsed:: true
-	- Some people have complicated tag configurations, like: `Topic/boats, Topic/airplanes, Topic/automobiles`, to look for _all_ those `Topic`s at the same time, we can use (we, though, stick with our alphabet examples):
+		-
+		  ```clojure
+		  #+BEGIN_QUERY
+		  	{:title "Find: MyTag and MyOtherTag"
+		  	:query [:find (pull ?b [*])
+		  	:where
+		  
+		  		[?b :block/marker ?marker]
+		  		[(contains? #{"TODO" "DOING"} ?marker)]
+		  
+		  		[?b :block/ref-pages ?p]
+		  		[?p :block/name ?tag]
+		  		[(contains? #{"mytag" "myothertag"} ?tag)]]
+		  	}
+		  	#+END_QUERY
+		  ```
+			-
+			  #+BEGIN_IMPORTANT
+			  	Notice the overall closing `]` on line **11**, it's easy to forget - especially as you slowly add more complexity to your searches.
+			  	#+END_IMPORTANT
+		-
+		  #+BEGIN_QUERY
+		  	{:title "Find: MyTag and MyOtherTag"
+		  	:query [:find (pull ?b [*])
+		  	:where
+		  
+		  		[?b :block/marker ?marker]
+		  		[(contains? #{"TODO" "DOING"} ?marker)]
+		  
+		  		[?b :block/ref-pages ?p]
+		  		[?p :block/name ?tag]
+		  		[(contains? #{"mytag" "myothertag"} ?tag)]]
+		  	}
+		  #+END_QUERY
+- ## Example 4 - Search for Parts of a Tag
+	- Some people have complicated tag configurations, like: `Topic/boats, Topic/airplanes, Topic/automobiles`. To look for _all_ those `Topic`s at the same time, we can use `starts-with`:
 	-
 	  ```clojure
 	  #+BEGIN_QUERY
@@ -139,7 +142,7 @@ collapsed:: true
 	  	:where
 	  	[?b :block/ref-pages ?p]
 	  	[?p :block/name ?tag]
-	  	[(clojure.string/starts-with? ?tag "ab")]]
+	  	[(clojure.string/starts-with? ?tag "MyT")]]
 	  }
 	  #+END_QUERY
 	  ```
