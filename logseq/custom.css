@@ -2098,6 +2098,10 @@ div[data-refs-self*="kanban-w400"]>.block-children .block-content {
 	width: 380px;
 }
 
+.admonition-icon svg {
+	filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 0px)
+}
+
 /* === Tooltip Delay === */
 /* hide the container bg */
 /* .tippy-tooltip {
