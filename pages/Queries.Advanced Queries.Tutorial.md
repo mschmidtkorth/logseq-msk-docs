@@ -329,11 +329,11 @@ title:: Queries/Advanced Queries/Tutorial
 	  	```
 	- This is a very useful one. Let's see what it does:
 		- Line **\#6** gets `?marker` - it can (line **\#15**) contain `NOW, LATER, TODO` etc.
-		- Line **\#8** `or`, means either of these shuold be true, it should _either_ be a `deadline` or `scheduled`
-			- `or` is related to `not` from [Example 8](((612bf199-6083-4b19-81e2-d6df94b3b2a2))), there is still a cousin called `and`
+		- In line **\#8** `or` means either of these should be true: It should _either_ be a `deadline` _or_ `scheduled`
+			- `or` is related to `not` from [Example 8](((612bf199-6083-4b19-81e2-d6df94b3b2a2))), there is also a cousin called `and`
 		- Lines **\#12** and **\#13** are new, you have to read them in the following order:
 			- Line **\#16** offers two values, `:180d` and `:today`
-			- Next is line **\#4**, where those values are assigned to `?start` and `?today` (again, variables, starting with `?` can be called anything, it could have been `?john` and `?ringo`)
+			- Next is line **\#4**, where those values are assigned to `?start` and `?today` (again, variables, starting with `?` can be called anything, it could have been `?john` and `?ringo`). We define the variables in
 			- Finally they are used on lines **\#12** and **\#13** where we compare the values of `block/scheduled` (line **\#9**) to `?start` and `block/deadline` (line **\#10**) to `?today`
 		- And as a bonus, lines **\#17** to **\#19**, we sort on deadlines
 	-
