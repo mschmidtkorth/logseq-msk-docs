@@ -2099,7 +2099,8 @@ div[data-refs-self*="kanban-w400"]>.block-children .block-content {
 }
 
 .admonition-icon svg {
-	/* filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 0px) !important; */
+	/* Remove shadow */
+	filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 0px) !important;
 }
 
 /* === Tooltip Delay === */
