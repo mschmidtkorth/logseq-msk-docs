@@ -6,12 +6,12 @@ title:: Queries/Advanced Queries/Tutorial
   #+END_IMPORTANT
 - In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq.
 ## Example 1 - Find a Tag
-	- Let's assume we have a page  start with probably the most simple query:
+	- Let's assume we have a [[tag]] called `MyPage`. We will start with probably the most simple query to just return this page:
 		-
 		  ```clojure
-		  		{{query [[MyPage]]}}
+		  {{query [[MyPage]]}}
 		  ```
-	- To create it, use the `/query` [[command]] and then add `[[MyPage]]`. This will look for the tag `#MyPage` (everywhere), you can see it here in all it's glory:
+	- To create it, use the `/query` [[command]] and then add `[[MyPage]]`. This query will look for the tag `#MyPage` anywhere in your [[graph]], you can see it here in all it's glory:
 	- {{query [[MyPage]]}}
 	- The same query, but now written _longhand_, would be:
 	-
@@ -77,7 +77,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	:where
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-
+	  
 	  		[?p :block/name "MyPage"]
 	  		[?b :block/ref-pages ?p]]
 	  	}
@@ -89,10 +89,10 @@ title:: Queries/Advanced Queries/Tutorial
 	  	{:title "Find: TODO or DOING MyPage"
 	  	:query [:find (pull ?b [*])
 	  	:where
-
+	  
 	  	[?b :block/marker ?marker]
 	  	[(contains? #{"TODO" "DOING"} ?marker)]
-
+	  
 	  	[?p :block/name "MyPage"]
 	  	[?b :block/ref-pages ?p]]
 	  	}
@@ -104,10 +104,10 @@ title:: Queries/Advanced Queries/Tutorial
 	  	{:title "Find: MyPage and fghij"
 	  	:query [:find (pull ?b [*])
 	  	:where
-
+	  
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/ref-pages ?p]
 	  		[?p :block/name ?tag]
 	  		[(contains? #{"MyPage" "fghij"} ?tag)]]
@@ -119,10 +119,10 @@ title:: Queries/Advanced Queries/Tutorial
 	  	{:title "Find: MyPage and fghij"
 	  	:query [:find (pull ?b [*])
 	  	:where
-
+	  
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/ref-pages ?p]
 	  		[?p :block/name ?tag]
 	  		[(contains? #{"MyPage" "fghij"} ?tag)]]
@@ -192,7 +192,7 @@ collapsed:: true
 	       :where
 	       [?b :block/marker ?marker]
 	       [(contains? #{"NOW" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/page ?p]
 	  		[?p :block/properties ?a]
 	  		[(get ?a :type) ?t]
@@ -213,7 +213,7 @@ collapsed:: true
 	       :where
 	       [?b :block/marker ?marker]
 	       [(contains? #{"NOW" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/page ?p]
 	  		[?p :block/properties ?a]
 	  		[(get ?a :type) ?t]
@@ -234,10 +234,10 @@ collapsed:: true
 	  	:where
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/page ?p]
 	  		[?p :block/journal? true]
-
+	  
 	  	[?b :block/ref-pages ?r]
 	  		[?r :block/name "MyPage"]
 	  		]
@@ -255,10 +255,10 @@ collapsed:: true
 	  	:where
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/page ?p]
 	  		[?p :block/journal? true]
-
+	  
 	  	[?b :block/ref-pages ?r]
 	  		[?r :block/name "MyPage"]
 	  		]
@@ -303,14 +303,14 @@ collapsed:: true
 	  :in $ ?start ?today
 	  :where
 	  [?block :block/marker ?marker]
-
+	  
 	  (or
 	  	[?block :block/scheduled ?d]
 	  	[?block :block/deadline ?d])
-
+	  
 	  [(>= ?d ?start)]
 	  [(<   ?d ?today)]
-
+	  
 	  [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAITING"} ?marker)]]
 	  	:inputs [:180d :today]
 	  	:result-transform  (fn [result]

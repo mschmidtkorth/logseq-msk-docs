@@ -1,3 +1,5 @@
+alias:: tag
+
 - Tags can be used to group pages or blocks by typing `#<tag>`. Tags are in essence just another visualisation for pages - they work in the same way.
 - **USAGE & EXAMPLES**
 	-
