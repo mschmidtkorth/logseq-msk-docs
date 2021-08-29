@@ -197,33 +197,33 @@ title:: Queries/Advanced Queries/Tutorial
 	  #+END_QUERY
 ## Example 6 - Work With Project Tasks
 collapsed:: false
-	- People often use tasks/todos in the context of projects. Here we have a page dedicated to the `example` project. We added `type:: example` right under the title. Now we can search for tasks (NOW or DOING), on
+	- People often use tasks/todos in the context of projects. Here we have a page dedicated to the `example` project. We added `type:: example` right under the title. Now we can search for tasks (NOW or DOING), on that page:
 	-
 	  ```clojure
-	  	#+BEGIN_QUERY
-	  	{:title "My examples TODOs"
-	   :query [:find (pull ?b [*])
-	       :where
-	       [?b :block/marker ?marker]
-	       [(contains? #{"NOW" "DOING"} ?marker)]
-	  
-	  		[?b :block/page ?p]
-	  		[?p :block/properties ?a]
-	  		[(get ?a :type) ?t]
-	  		[(= "example" ?t)]
-	       ]
-	   :result-transform (fn [result]
-	       (sort-by (fn [h]
-	           (get h :block/priority "Z")) result))
-	   :collapsed? false}
-	  	#+END_QUERY
-	  	```
+	  #+BEGIN_QUERY
+	  {:title "My example's TODOs"
+	  :query [:find (pull ?b [*])
+	      :where
+	      [?b :block/marker ?marker]
+	      [(contains? #{"NOW" "DOING"} ?marker)]
+	  	  
+	  	[?b :block/page ?p]
+	  	[?p :block/properties ?a]
+	  	[(get ?a :type) ?t]
+	  	[(= "example" ?t)]
+	      ]
+	  :result-transform (fn [result]
+	      (sort-by (fn [h]
+	          (get h :block/priority "Z")) result))
+	  :collapsed? false}
+	  #+END_QUERY
+	  ```
 	- This query combines the _TODO states_ from [Example 3](((612bf199-a799-47eb-8a97-9a7d3452483e))), and _page properties_ from [Example 5](((612bf199-8057-43ef-ae02-c9ce386cfb3a)))
 	- New are lines **\#13-\#15** to will sort TODOs by priority with the most important task first
 	- Notice also how line **\#16** says that the query results should not be shown collapsed
 	-
 	  #+BEGIN_QUERY
-	  	{:title "My examples TODOs"
+	  	{:title "My example's TODOs"
 	   :query [:find (pull ?b [*])
 	       :where
 	       [?b :block/marker ?marker]
