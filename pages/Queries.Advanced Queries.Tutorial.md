@@ -134,6 +134,7 @@ title:: Queries/Advanced Queries/Tutorial
 		  	}
 		  #+END_QUERY
 - ## Example 4 - Search for Parts of a Tag
+  collapsed:: true
 	- Some people have complicated tag configurations, like: `Topic/boats, Topic/airplanes, Topic/automobiles`. To look for _all_ those `Topic`s at the same time, we can use `starts-with` (in this example, we look for pages starting with `MyT` instead of `Topic`):
 	-
 	  ```clojure
@@ -142,7 +143,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	:where
 	  	[?b :block/ref-pages ?p]
 	  	[?p :block/name ?tag]
-	  	[(clojure.string/starts-with? ?tag "MyT")]]
+	  	[(clojure.string/starts-with? ?tag "myt")]]
 	  }
 	  #+END_QUERY
 	  ```
@@ -151,19 +152,18 @@ title:: Queries/Advanced Queries/Tutorial
 	  #+BEGIN_NOTE
 	  For further study, these are the Clojure built-in functions (_builtins_) we can use in our queries: [datascript/query.cljc](https://github.com/logseq/datascript/blob/fork/src/datascript/query.cljc#L194)
 	  #+END_NOTE
-	- Notice also that this query does _not_ have a title - a title is optionalit doesn't _have to_
+	- Notice also that this query does _not_ have a title - a title is optional.
 	-
 	  #+BEGIN_QUERY
 	  {:query [:find (pull ?b [*])
 	  	:where
 	  	[?b :block/ref-pages ?p]
 	  	[?p :block/name ?tag]
-	  	[(clojure.string/starts-with? ?tag "ab")]]
+	  	[(clojure.string/starts-with? ?tag "myt")]]
 	  }
 	  #+END_QUERY
 - ## Example 5 -  Search for Page Properties
-  collapsed:: true
-	- Properties are key-value pairs that allow you to annotate a block or page (see [[Properties]])
+	- ((612bf199-3c8d-405e-86fc-17c7a923a6e4)). Let's look for pages that have their `type` property defined as `example`:
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -175,7 +175,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[(= "example" ?t)]]}
 	  	#+END_QUERY
 	  	```
-	- There can be multiple `block/properties` to one block, so we have to `get` the one we want, in this case `type`. This can be any word added as a property to a page
+	- There can be multiple `block/properties` for one block, so we have to `get` the one we want, in this case `type`. This can be any word added as a property to a page
 	-
 	  #+BEGIN_QUERY
 	  {:title "My examples"

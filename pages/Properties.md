@@ -2,6 +2,7 @@ alias:: Property
 title:: Properties
 
 - Properties are key-value pairs that allow you to annotate a block or page
+  id:: 612bf199-3c8d-405e-86fc-17c7a923a6e4
 	- _Page properties_ are defined by putting them into the first block of the page (_[[frontmatter]]_)
 	- _Block properties_ are defined by putting them into any other block
 	- When a property value matches an existing page title, Logseq will automatically create a link to that page
