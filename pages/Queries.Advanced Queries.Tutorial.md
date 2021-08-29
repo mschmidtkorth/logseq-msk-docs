@@ -71,6 +71,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	#+END_QUERY
 - ## Example 3 - Multiple Markers And TODO States
   collapsed:: true
+  id:: 612bf199-a799-47eb-8a97-9a7d3452483e
 	- Notice lines **\#5** and **\#6**, that replace the single line **\#5** fom the previous example. We're looking for a marker, called `?marker`. We also specify that `?marker` should _contain_ either `TODO` or `DOING`
 	-
 	  ```clojure
@@ -164,6 +165,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  #+END_QUERY
 - ## Example 5 -  Search for Page Properties
   collapsed:: true
+  id:: 612bf199-8057-43ef-ae02-c9ce386cfb3a
 	- ((612bf199-3c8d-405e-86fc-17c7a923a6e4)). Let's look for pages that have their `type` property defined as `example`:
 	-
 	  ```clojure
@@ -207,8 +209,8 @@ title:: Queries/Advanced Queries/Tutorial
 	   :collapsed? false}
 	  	#+END_QUERY
 	  	```
-	- This query combines the `TODO states` from example 3, and `page properties` from example 5
-	- New are lines **\#13-\#15**, this snippet will sort TODOs on priority
+	- This query combines the _TODO states_ from [Example 3](((612bf199-a799-47eb-8a97-9a7d3452483e))), and _page properties_ from [Example 5](((612bf199-8057-43ef-ae02-c9ce386cfb3a)))
+	- New are lines **\#13-\#15** to will sort TODOs by priority
 	-
 	  #+BEGIN_QUERY
 	  	{:title "My examples TODOs"

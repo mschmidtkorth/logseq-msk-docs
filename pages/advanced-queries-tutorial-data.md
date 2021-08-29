@@ -10,3 +10,4 @@ importance:: high
 type:: example
 	- This is something we should not forget
 	- TODO Another task #sample
+	- NOW This must be done as soon as possible #sample
