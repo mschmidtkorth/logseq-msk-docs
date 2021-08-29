@@ -262,7 +262,7 @@ collapsed:: false
 	   }
 	  	#+END_QUERY
 	  	```
-	- New are lines **\#8** and **\#9**, where we ask if the page is a `journal` to only receive tasks from [[journal]] entries.
+	- New are lines **\#8** and **\#9**, where we ask if the page is a `journal` and filter tasks from [[journal]] entries.
 	-
 	  #+BEGIN_QUERY
 	  	{:title "Tagged journal pages"
