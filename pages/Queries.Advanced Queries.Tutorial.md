@@ -65,7 +65,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		:where
 	  		[?b :block/marker "TODO"]
 	  		[?b :block/ref-pages ?p]
-	  		[?p :block/name "mypage"]
+	  		[?p :block/name "mytag"]
 	  ]
 	  		}
 	  	#+END_QUERY
@@ -93,7 +93,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	[?b :block/marker ?marker]
 	  	[(contains? #{"TODO" "DOING"} ?marker)]
 
-	  	[?p :block/name "mypage"]
+	  	[?p :block/name "mytag"]
 	  	[?b :block/ref-pages ?p]]
 	  	}
 	  	#+END_QUERY

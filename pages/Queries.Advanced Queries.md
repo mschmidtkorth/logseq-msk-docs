@@ -187,7 +187,7 @@
 		  {:title "All pages with tag myPageTag"
 		   :query [:find (pull ?b [*])
 		       :where
-		       [?p :page/name "mypagetag"]
+		       [?p :page/name "mytagtag"]
 		       [?b :block/ref-pages ?p]]
 		  :collapsed? true}
 		  #+END_QUERY
@@ -198,7 +198,7 @@
 			  {:title "All pages with tag myPageTag"
 			   :query [:find (pull ?b [*])
 			       :where
-			       [?p :page/name "mypagetag"]
+			       [?p :page/name "mytagtag"]
 			       [?b :block/ref-pages ?p]]
 			  :collapsed? true}
 			  #+END_QUERY
@@ -212,7 +212,7 @@
 		         [?t :block/name ?tag]
 		         [?p :page/tags ?t]
 		         [?p :block/name ?name]]
-		   :inputs ["mypagetag"]
+		   :inputs ["mytagtag"]
 		   :view (fn [result]
 		         [:div.flex.flex-col
 		          (for [page result]
@@ -262,7 +262,7 @@
 			                          (sort-by (fn [h]
 			                                     (get h :block/priority "Z")) result))
 			      :collapsed?       false}
-			  
+
 			  {:title      "📅 NEXT"
 			      :query      [:find (pull ?h [*])
 			                   :in $ ?start ?next
