@@ -1,10 +1,13 @@
 - Advanced queries allow you to specify more detailed, more specific and explicitly formatted queries compared to [[Queries/Simple Queries]].
 -
+  #+BEGIN_NOTE
+  If you are just getting started, check out the [tutorial for Advanced Queries]([[Queries/Advanced Queries/Tutorial]]) that walks you through line-by-line.
+  #+END_NOTE
+-
   #+BEGIN_TIP
   Get familiar with [Logseq's database schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs).
   #+END_TIP
 - ## How to Write Advanced Queries
-  collapsed:: true
 	- Advanced queries are written via [[Datalog]]
 	- Advanced queries can get complex, but their format is always the same:
 	  ```

@@ -2,7 +2,7 @@ title:: Queries/Advanced Queries/Tutorial
 
 -
   #+BEGIN_IMPORTANT
-  Playing around with queries can be **detrimental** to the health of your graph. Use a dedicated playground for this!
+  Playing around with queries can be detrimental to the health of your [[graph]]. Use a dedicated playground graph for this!
   #+END_IMPORTANT
 ## Example 1, find a tag
 	- OK, let's start. The simplest query is probably:
