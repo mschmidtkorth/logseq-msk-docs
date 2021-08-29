@@ -7,22 +7,22 @@ title:: Queries/Advanced Queries/Tutorial
 - In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq.
 - ## Example 1 - Find a Tag
   id:: 612beaec-f2e0-41eb-902c-924d30050263
-	- Let's assume we have a [[tag]] called `MyPage`. We will start with probably the most simple query to just return this page:
+	- Let's assume we have a [[tag]] called `MyTag`. We will start with probably the most simple query to just return this page:
 		-
 		  ```clojure
-		  {{query [[MyPage]]}}
+		  {{query [[MyTag]]}}
 		  ```
-	- To create it, use the `/query` [[command]] and then add `[[MyPage]]`. This query will look for the tag `#MyPage` anywhere in your [[graph]], you can see it here in all its glory:
-		- {{query [[MyPage]]}}
+	- To create it, use the `/query` [[command]] and then add `[[MyTag]]`. This query will look for the tag `#MyTag` anywhere in your [[graph]], you can see it here in all its glory:
+		- {{query [[MyTag]]}}
 	- The same query written as an [advanced query]([[Queries/Advanced Queries]]) would be:
 		-
 		  ```clojure
 		  #+BEGIN_QUERY
-		  {:title "Find tag: MyPage"
+		  {:title "Find tag: MyTag"
 		  :query [:find (pull ?b [*])
 		              :where
 		                [?b :block/ref-pages ?p]
-		                [?p :block/name "MyPage"]
+		                [?p :block/name "MyTag"]
 		  	       ]
 		  }
 		  #+END_QUERY
@@ -38,7 +38,7 @@ title:: Queries/Advanced Queries/Tutorial
 		- **\#6** `block/name` is not the name of the _page_, but of the reference from the previous line **\#5**. We store the name of the tags in `?p` (again this could be anything, you can rename it to `?tagIamLookingFor`)
 			- We can write this in a shorter version to be simpler to understand:
 			  ```clojure
-			  [?b :block/ref-pages [:block/name "MyPage"]]
+			  [?b :block/ref-pages [:block/name "MyTag"]]
 			  ```
 			- This is exactly the same thing, as lines **\#5** and **\#6**. We simply replaced `?p` immediately with `:block/name`.
 	- That's all. From now on we will iterate on this, adding complexity.
@@ -47,11 +47,11 @@ title:: Queries/Advanced Queries/Tutorial
 	-
 	  ```clojure
 	  #+BEGIN_QUERY
-	  {:title "Find: TODO MyPage"
+	  {:title "Find: TODO MyTag"
 	  :query [:find (pull ?b [*])
 	  	:where
 	  	[?b :block/marker "TODO"]
-	  	[?p :block/name "MyPage"]
+	  	[?p :block/name "MyTag"]
 	  	[?b :block/ref-pages ?p]]
 	  	}
 	  #+END_QUERY
@@ -60,7 +60,7 @@ title:: Queries/Advanced Queries/Tutorial
 	- Our search has to satisfy both line **\#5**, a `marker` containing `TODO`, and **\#6** and **\#7**, which belong together. You can think of all three lines to be connected via an `and` operator.
 	-
 	  #+BEGIN_QUERY
-	  	{:title "Find: TODO MyPage"
+	  	{:title "Find: TODO MyTag"
 	  	:query [:find (pull ?b [*])
 	  		:where
 	  		[?b :block/marker "TODO"]
@@ -73,26 +73,26 @@ title:: Queries/Advanced Queries/Tutorial
 	-
 	  ```clojure
 	  #+BEGIN_QUERY
-	  {:title "Find: TODO or DOING MyPage"
+	  {:title "Find: TODO or DOING MyTag"
 	  :query [:find (pull ?b [*])
 	  :where
 	  	[?b :block/marker ?marker]
 	  	[(contains? #{"TODO" "DOING"} ?marker)]
-	  	[?p :block/name "MyPage"]
+	  	[?p :block/name "MyTag"]
 	  	[?b :block/ref-pages ?p]]
 	  }
 	  #+END_QUERY
 	  ```
-	- Notice lines **\#5** and **\#6**, that replace the single line **\#5** fom the previous example. We're looking for a marker, called `?marker`, and `?marker` should _contain_ either `TODO` or `DOING`
+	- Notice lines **\#5** and **\#6**, that replace the single line **\#5** fom the previous example. We're looking for a marker, called `?marker`. We also specify that `?marker` should _contain_ either `TODO` or `DOING`
 	-
 	  #+BEGIN_QUERY
-	  	{:title "Find: TODO or DOING MyPage"
+	  	{:title "Find: TODO or DOING MyTag"
 	  	:query [:find (pull ?b [*])
 	  	:where
-	  
+
 	  	[?b :block/marker ?marker]
 	  	[(contains? #{"TODO" "DOING"} ?marker)]
-	  
+
 	  	[?p :block/name "mypage"]
 	  	[?b :block/ref-pages ?p]]
 	  	}
@@ -101,31 +101,31 @@ title:: Queries/Advanced Queries/Tutorial
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
-	  	{:title "Find: MyPage and fghij"
+	  	{:title "Find: MyTag and fghij"
 	  	:query [:find (pull ?b [*])
 	  	:where
-	  
+
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-	  
+
 	  		[?b :block/ref-pages ?p]
 	  		[?p :block/name ?tag]
-	  		[(contains? #{"MyPage" "fghij"} ?tag)]]
+	  		[(contains? #{"MyTag" "fghij"} ?tag)]]
 	  	}
 	  	#+END_QUERY
 	  	```
 	-
 	  #+BEGIN_QUERY
-	  	{:title "Find: MyPage and fghij"
+	  	{:title "Find: MyTag and fghij"
 	  	:query [:find (pull ?b [*])
 	  	:where
-	  
+
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-	  
+
 	  		[?b :block/ref-pages ?p]
 	  		[?p :block/name ?tag]
-	  		[(contains? #{"MyPage" "fghij"} ?tag)]]
+	  		[(contains? #{"MyTag" "fghij"} ?tag)]]
 	  	}
 	  	#+END_QUERY
 	-
@@ -192,7 +192,7 @@ collapsed:: true
 	       :where
 	       [?b :block/marker ?marker]
 	       [(contains? #{"NOW" "DOING"} ?marker)]
-	  
+
 	  		[?b :block/page ?p]
 	  		[?p :block/properties ?a]
 	  		[(get ?a :type) ?t]
@@ -213,7 +213,7 @@ collapsed:: true
 	       :where
 	       [?b :block/marker ?marker]
 	       [(contains? #{"NOW" "DOING"} ?marker)]
-	  
+
 	  		[?b :block/page ?p]
 	  		[?p :block/properties ?a]
 	  		[(get ?a :type) ?t]
@@ -234,12 +234,12 @@ collapsed:: true
 	  	:where
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-	  
+
 	  		[?b :block/page ?p]
 	  		[?p :block/journal? true]
-	  
+
 	  	[?b :block/ref-pages ?r]
-	  		[?r :block/name "MyPage"]
+	  		[?r :block/name "MyTag"]
 	  		]
 	   :result-transform (fn [result]
 	  			(sort-by (fn [h]
@@ -255,12 +255,12 @@ collapsed:: true
 	  	:where
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-	  
+
 	  		[?b :block/page ?p]
 	  		[?p :block/journal? true]
-	  
+
 	  	[?b :block/ref-pages ?r]
-	  		[?r :block/name "MyPage"]
+	  		[?r :block/name "MyTag"]
 	  		]
 	   :result-transform (fn [result]
 	  			(sort-by (fn [h]
@@ -303,14 +303,14 @@ collapsed:: true
 	  :in $ ?start ?today
 	  :where
 	  [?block :block/marker ?marker]
-	  
+
 	  (or
 	  	[?block :block/scheduled ?d]
 	  	[?block :block/deadline ?d])
-	  
+
 	  [(>= ?d ?start)]
 	  [(<   ?d ?today)]
-	  
+
 	  [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAITING"} ?marker)]]
 	  	:inputs [:180d :today]
 	  	:result-transform  (fn [result]

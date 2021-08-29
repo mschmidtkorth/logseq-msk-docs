@@ -6,19 +6,19 @@
 	- OK, let's start. The simplest query is probably:
 		-
 		  ```conf
-		  		{{query [[MyPage]]}}
+		  		{{query [[MyTag]]}}
 		  		```
-	- Shortcut `/q`, and then add `[[MyPage]]`. This will look for the tag `#MyPage` (everywhere), you can see it here in all it's glory:
-	- {{query [[MyPage]]}}
+	- Shortcut `/q`, and then add `[[MyTag]]`. This will look for the tag `#MyTag` (everywhere), you can see it here in all it's glory:
+	- {{query [[MyTag]]}}
 	- The same query, but now written _longhand_, would be:
 	-
 	  ```clojure
 	  		#+BEGIN_QUERY
-	  		{:title "Find tag: MyPage"
+	  		{:title "Find tag: MyTag"
 	  		:query [:find (pull ?b [*])
 	  	:where
 	  	[?b :block/ref-pages ?p]
-	  	[?p :block/name "MyPage"]
+	  	[?p :block/name "MyTag"]
 	  	]
 	  	}
 	  		#+END_QUERY
@@ -34,7 +34,7 @@
 		- **6** `block/name` is not the name of the _page_, but off the reference from line **5**. We store the name of the tags in `?p` (again this could be anything, you can rename it to `?tagIamLookingFor`)
 		- Writing this in a shorter might be a bit simpler to understand:
 		  			```clojure
-		  			[?b :block/ref-pages [:block/name "MyPage"]]
+		  			[?b :block/ref-pages [:block/name "MyTag"]]
 		  		```
 		  			This is exactly the same thing, as lines **5** and **6**
 	- That's all, from now on we'll iterate on this, adding complexity
@@ -42,11 +42,11 @@
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
-	  	{:title "Find: MyPage"
+	  	{:title "Find: MyTag"
 	  	:query [:find (pull ?b [*])
 	  		:where
 	  		[?b :block/marker "TODO"]
-	  		[?p :block/name "MyPage"]
+	  		[?p :block/name "MyTag"]
 	  		[?b :block/ref-pages ?p]]
 	  		}
 	  	#+END_QUERY
@@ -55,11 +55,11 @@
 	- Our search has to satisfy both line **5**, a `marker` containing `TODO`, and **6** and **7**, which belong together
 	-
 	  #+BEGIN_QUERY
-	  	{:title "Find: TODO MyPage"
+	  	{:title "Find: TODO MyTag"
 	  	:query [:find (pull ?b [*])
 	  		:where
 	  		[?b :block/marker "TODO"]
-	  		[?p :block/name "MyPage"]
+	  		[?p :block/name "MyTag"]
 	  		[?b :block/ref-pages ?p]]
 	  		}
 	  	#+END_QUERY
@@ -67,13 +67,13 @@
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
-	  	{:title "Find: TODO or DOING MyPage"
+	  	{:title "Find: TODO or DOING MyTag"
 	  	:query [:find (pull ?b [*])
 	  	:where
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
 
-	  		[?p :block/name "MyPage"]
+	  		[?p :block/name "MyTag"]
 	  		[?b :block/ref-pages ?p]]
 	  	}
 	  	#+END_QUERY
@@ -81,14 +81,14 @@
 	- Notice lines **5** and **6**, that replace the single line **5** fom the previous example. We're looking for a marker, called `?marker`, and `?marker` should _contain_ either `TODO` or `DOING`
 	-
 	  #+BEGIN_QUERY
-	  	{:title "Find: TODO or DOING MyPage"
+	  	{:title "Find: TODO or DOING MyTag"
 	  	:query [:find (pull ?b [*])
 	  	:where
 
 	  	[?b :block/marker ?marker]
 	  	[(contains? #{"TODO" "DOING"} ?marker)]
 
-	  	[?p :block/name "MyPage"]
+	  	[?p :block/name "MyTag"]
 	  	[?b :block/ref-pages ?p]]
 	  	}
 	  	#+END_QUERY
@@ -96,7 +96,7 @@
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
-	  	{:title "Find: MyPage and fghij"
+	  	{:title "Find: MyTag and fghij"
 	  	:query [:find (pull ?b [*])
 	  	:where
 
@@ -105,13 +105,13 @@
 
 	  		[?b :block/ref-pages ?p]
 	  		[?p :block/name ?tag]
-	  		[(contains? #{"MyPage" "fghij"} ?tag)]]
+	  		[(contains? #{"MyTag" "fghij"} ?tag)]]
 	  	}
 	  	#+END_QUERY
 	  	```
 	-
 	  #+BEGIN_QUERY
-	  	{:title "Find: MyPage and fghij"
+	  	{:title "Find: MyTag and fghij"
 	  	:query [:find (pull ?b [*])
 	  	:where
 
@@ -120,7 +120,7 @@
 
 	  		[?b :block/ref-pages ?p]
 	  		[?p :block/name ?tag]
-	  		[(contains? #{"MyPage" "fghij"} ?tag)]]
+	  		[(contains? #{"MyTag" "fghij"} ?tag)]]
 	  	}
 	  	#+END_QUERY
 	-
@@ -230,7 +230,7 @@
 	  		[?p :block/journal? true]
 
 	  	[?b :block/ref-pages ?r]
-	  		[?r :block/name "MyPage"]
+	  		[?r :block/name "MyTag"]
 	  		]
 	   :result-transform (fn [result]
 	  			(sort-by (fn [h]
@@ -251,7 +251,7 @@
 	  		[?p :block/journal? true]
 
 	  	[?b :block/ref-pages ?r]
-	  		[?r :block/name "MyPage"]
+	  		[?r :block/name "MyTag"]
 	  		]
 	   :result-transform (fn [result]
 	  			(sort-by (fn [h]
