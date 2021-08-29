@@ -33,13 +33,13 @@ title:: Queries/Advanced Queries/Tutorial
 		- **\#3** is where the _actual query_ starts. Note the square bracket `[`, opening here, and closing on line **\#7**
 		- So, we want to _find_ stuff. The blocks we want to find we store in `?b`. This is just a _variable_ we can use to retrieve these stored blocks, you can replace it with `?qwxlea` if you so please. However, remember to use the same variable anywhere you want to reference it
 		- **\#4** `:where` starts the search parameters
-		- **\#5** `block/ref-pages` is the reference where tags are stored
-		- **\#6** `block/name` is not the name of the _page_, but off the reference from line **\#5**. We store the name of the tags in `?p` (again this could be anything, you can rename it to `?tagIamLookingFor`)
-		- Writing this in a shorter might be a bit simpler to understand:
-		  			```clojure
-		  			[?b :block/ref-pages [:block/name "MyPage"]]
-		  		```
-		  			This is exactly the same thing, as lines **\#5** and **\#6**
+		- **\#5** `block/ref-pages` is the reference where _tags_ are stored - that's what we are looking for!
+		- **\#6** `block/name` is not the name of the _page_, but of the reference from the previous line **\#5**. We store the name of the tags in `?p` (again this could be anything, you can rename it to `?tagIamLookingFor`)
+		- Writing this as a shorter might be a bit simpler to understand:
+		  ```clojure
+		  [?b :block/ref-pages [:block/name "MyPage"]]
+		  ```
+		- This is exactly the same thing, as lines **\#5** and **\#6**
 	- That's all, from now on we'll iterate on this, adding complexity
 - ## Example 2 -  Find a Tag That is Also a TODO
   collapsed:: true
