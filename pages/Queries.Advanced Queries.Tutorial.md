@@ -134,7 +134,7 @@ title:: Queries/Advanced Queries/Tutorial
 		  	}
 		  #+END_QUERY
 - ## Example 4 - Search for Parts of a Tag
-	- Some people have complicated tag configurations, like: `Topic/boats, Topic/airplanes, Topic/automobiles`. To look for _all_ those `Topic`s at the same time, we can use `starts-with`:
+	- Some people have complicated tag configurations, like: `Topic/boats, Topic/airplanes, Topic/automobiles`. To look for _all_ those `Topic`s at the same time, we can use `starts-with` (in this example, we look for pages starting with `MyT` instead of `Topic`):
 	-
 	  ```clojure
 	  #+BEGIN_QUERY
@@ -146,9 +146,12 @@ title:: Queries/Advanced Queries/Tutorial
 	  }
 	  #+END_QUERY
 	  ```
-	- The key is off course on line **QQ**, where we use `clojure.string/starts-with?`, the variable we work with is `?tag`, and we filter on `ab`, but this could also be something like `Topic/` for those kind of setups
-	- For further study, these are the clojure builtins we can use in our queries: [datascript/query.cljc at fork · logseq/datascript](https://github.com/logseq/datascript/blob/fork/src/datascript/query.cljc#L194)
-	- Notice also that this query does _not_ have a title, it doesn't _have to_
+	- The key is, of course, line **#\6** where we use `clojure.string/starts-with?`. The variable we work with is `?tag`, and we filter on `MyT`. This could also be something like `Topic/` for those kind of setups.
+	-
+	  #+BEGIN_NOTE
+	  For further study, these are the Clojure built-in functions (_builtins_) we can use in our queries: [datascript/query.cljc](https://github.com/logseq/datascript/blob/fork/src/datascript/query.cljc#L194)
+	  #+END_NOTE
+	- Notice also that this query does _not_ have a title - a title is optionalit doesn't _have to_
 	-
 	  #+BEGIN_QUERY
 	  {:query [:find (pull ?b [*])
