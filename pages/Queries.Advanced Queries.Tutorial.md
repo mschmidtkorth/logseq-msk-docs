@@ -2,9 +2,10 @@ title:: Queries/Advanced Queries/Tutorial
 
 -
   #+BEGIN_IMPORTANT
-  Playing around with queries can be detrimental to the health of your [[graph]]. Use a dedicated playground graph for this!
+  Playing around with queries can be detrimental to the health of your [[graph]] as you may create blocks and pages just for testing purposes. Use a dedicated playground graph for this!
   #+END_IMPORTANT
-## Example 1, find a tag
+- ## Example 1 - Find a Tag
+  collapsed:: true
 	- OK, let's start. The simplest query is probably:
 		-
 		  ```conf
@@ -40,7 +41,8 @@ title:: Queries/Advanced Queries/Tutorial
 		  		```
 		  			This is exactly the same thing, as lines **5** and **6**
 	- That's all, from now on we'll iterate on this, adding complexity
-- ## Example 2, find a tag that is also a TODO
+- ## Example 2 -  Find a Tag That is Also a TODO
+  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -65,7 +67,8 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[?b :block/ref-pages ?p]]
 	  		}
 	  	#+END_QUERY
-- ## Example 3, multiple markers / TODO states
+- ## Example 3 - Multiple Markers And TODO States
+  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -129,7 +132,8 @@ title:: Queries/Advanced Queries/Tutorial
 	  #+BEGIN_IMPORTANT
 	  	Notice the closing `]` on line **11**, it's easy to forget these, especially as you slowly add more complexity to your searches
 	  	#+END_IMPORTANT
-- ## Example 4, search for parts of  tag
+## Example 4 - Search for Parts of a Tag
+collapsed:: true
 	- Some people have complicated tag configurations, like: `Topic/boats, Topic/airplanes, Topic/automobiles`, to look for _all_ those `Topic`s at the same time, we can use (we, though, stick with our alphabet examples):
 	-
 	  ```clojure
@@ -154,7 +158,8 @@ title:: Queries/Advanced Queries/Tutorial
 	  	[(clojure.string/starts-with? ?tag "ab")]]
 	  }
 	  #+END_QUERY
-- ## Example 5, searching for page properties
+- ## Example 5 -  Search for Page Properties
+  collapsed:: true
 	- Properties are key-value pairs that allow you to annotate a block or page (see [[Properties]])
 	-
 	  ```clojure
@@ -177,7 +182,8 @@ title:: Queries/Advanced Queries/Tutorial
 	  	[(get ?p :type) ?t]
 	  	[(= "example" ?t)]]}
 	  #+END_QUERY
-- ## Example 6, project tasks
+- ## Example 6 - Work With Project Tasks
+  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -218,7 +224,8 @@ title:: Queries/Advanced Queries/Tutorial
 	           (get h :block/priority "Z")) result))
 	   :collapsed? false}
 	  	#+END_QUERY
-- ## Example 7, search Journal pages for tagged TODOs
+- ## Example 7 - Search Journal Pages for Tagged TODOs
+  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -260,7 +267,8 @@ title:: Queries/Advanced Queries/Tutorial
 	  				(get h :block/priority "Z")) result))
 	   }
 	  	#+END_QUERY
-- ## Example 8, exclude from a query
+- ## Example 8 - Exclude From a Query
+  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -285,7 +293,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		]
 	  	}
 	  	#+END_QUERY
-- ## Example 9, compare dates
+## Example 9 - Compare Dates
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
