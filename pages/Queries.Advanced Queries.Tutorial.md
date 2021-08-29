@@ -37,6 +37,7 @@ title:: Queries/Advanced Queries/Tutorial
 		- **\#5** `block/ref-pages` is the reference where _tags_ are stored - that's what we are looking for!
 		- **\#6** `block/name` is not the name of the _page_, but of the reference from the previous line **\#5**. We store the name of the tags in `?p` (again this could be anything, you can rename it to `?tagIamLookingFor`)
 			- We can write this in a shorter version to be simpler to understand:
+			  id:: 612bf199-58fb-479e-9b58-71ef69d781e4
 			  ```clojure
 			  [?b :block/ref-pages [:block/name "MyTag"]]
 			  ```
@@ -232,6 +233,7 @@ title:: Queries/Advanced Queries/Tutorial
 	   :collapsed? false}
 	  	#+END_QUERY
 - ## Example 7 - Search Journal Pages for Tagged TODOs
+  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -286,8 +288,8 @@ title:: Queries/Advanced Queries/Tutorial
 	  	}
 	  	#+END_QUERY
 	  	```
-	- Line **5** searches for the `#video` tag (it's two lines in one, see QQ)
-	- Line **6** and **7** look for the `DONE` marker, but now excludes it, by wrapping it in `(not <query>)`. It **has** to be all on one line!
+	- Line **\#5** searches for the `#video` tag (it's two lines in one, see [here](((612bf199-58fb-479e-9b58-71ef69d781e4))))
+	- Line **\#6** looks for the `DONE` marker, but now excludes it, by wrapping it in `(not <query>)`. It **has** to be all on one line!
 	-
 	  #+BEGIN_QUERY
 	  	{:title "📼 Watch list - videos"
