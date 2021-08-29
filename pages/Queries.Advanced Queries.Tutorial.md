@@ -4,14 +4,14 @@ title:: Queries/Advanced Queries/Tutorial
   #+BEGIN_IMPORTANT
   Playing around with queries can be detrimental to the health of your [[graph]] as you may create blocks and pages just for testing purposes. Use a dedicated playground graph for this!
   #+END_IMPORTANT
-- ## Example 1 - Find a Tag
-  collapsed:: true
-	- OK, let's start. The simplest query is probably:
+- In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq. Let's start!
+## Example 1 - Find a Tag
+	- The simplest query is probably:
 		-
-		  ```conf
+		  ```clojure
 		  		{{query [[abcde]]}}
-		  		```
-	- Shortcut `/q`, and then add `[[abcde]]`. This will look for the tag `#abcde` (everywhere), you can see it here in all it's glory:
+		  ```
+	- To create it, use Shortcut `/q`, and then add `[[abcde]]`. This will look for the tag `#abcde` (everywhere), you can see it here in all it's glory:
 	- {{query [[abcde]]}}
 	- The same query, but now written _longhand_, would be:
 	-
@@ -293,7 +293,8 @@ collapsed:: true
 	  		]
 	  	}
 	  	#+END_QUERY
-## Example 9 - Compare Dates
+- ## Example 9 - Compare Dates
+  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
