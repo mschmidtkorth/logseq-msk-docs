@@ -95,7 +95,7 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 	- [Domain Modeling with Datalog](https://www.youtube.com/watch?v=oo-7mN9WXTw&t=1s) (Norbert Wojtowicz)
 	- [Learn Datalog Today](http://www.learndatalogtoday.org/)
 	- [Datascript 101](https://udayv.com/blog/2016-04-28-datascript101/)
-- TODO ==Anything below is work in progress!==
+- TODO ==Anything below is work in progress! Add more examples and explanations==
 	-
 	  #+BEGIN_QUERY
 	  {:title "All page tags"
