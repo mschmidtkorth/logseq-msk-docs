@@ -5,8 +5,9 @@ title:: Queries/Advanced Queries/Tutorial
   Playing around with queries can be detrimental to the health of your [[graph]] as you may create blocks and pages just for testing purposes. Use a dedicated playground graph for this!
   #+END_IMPORTANT
 - In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq.
-- ## Example 1 - Find a Tag
-  id:: 612beaec-f2e0-41eb-902c-924d30050263
+-
+## Example 1 - Find a Tag
+id:: 612beaec-f2e0-41eb-902c-924d30050263
 	- Let's assume we have a [[tag]] called `MyTag`. We will start with probably the most simple query to just return this page:
 		-
 		  ```clojure
@@ -303,6 +304,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	}
 	  	#+END_QUERY
 - ## Example 9 - Compare Dates
+  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -338,8 +340,8 @@ title:: Queries/Advanced Queries/Tutorial
 		- And as a bonus, in lines **\#17** to **\#19** we sort by deadlines
 	-
 	  #+BEGIN_QUERY
-	  	{:title "⚠ OVERDUE"
-	  		:query [:find (pull ?block [*])
+	  {:title "⚠ OVERDUE"
+	  :query [:find (pull ?block [*])
 	  :in $ ?start ?today
 	  :where
 	  [?block :block/marker ?marker]
@@ -349,9 +351,9 @@ title:: Queries/Advanced Queries/Tutorial
 	  [(>= ?d ?start)]
 	  [(<   ?d ?today)]
 	  [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAITING"} ?marker)]]
-	  	:inputs [:180d :today]
-	  	:result-transform  (fn [result]
-	  					(sort-by  (fn [d]
-	  					(get d :block/deadline) ) result ))
-	  	:collapsed? false}
-	  	#+END_QUERY
+	  :inputs [:180d :today]
+	  :result-transform  (fn [result]
+	  				(sort-by  (fn [d]
+	  				(get d :block/deadline)) result ))
+	  :collapsed? false}
+	  #+END_QUERY
