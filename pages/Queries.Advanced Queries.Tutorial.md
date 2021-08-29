@@ -6,6 +6,7 @@ title:: Queries/Advanced Queries/Tutorial
   #+END_IMPORTANT
 - In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq.
 - ## Example 1 - Find a Tag
+  id:: 612beaec-f2e0-41eb-902c-924d30050263
   collapsed:: true
 	- Let's assume we have a [[tag]] called `MyPage`. We will start with probably the most simple query to just return this page:
 		-
@@ -56,8 +57,8 @@ title:: Queries/Advanced Queries/Tutorial
 	  		}
 	  	#+END_QUERY
 	  ```
-	- New is line **5**, `:block-marker`is where _todo keywords_ are stored (for the curious: [logseq/db_schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs), line 57 or so)
-	- Our search has to satisfy both line **5**, a `marker` containing `TODO`, and **6** and **7**, which belong together
+	- New compared to [Example 1](((612beaec-f2e0-41eb-902c-924d30050263))) is line **\#5**, `:block-marker`. This is where _todo keywords_ are stored (for the curious: [logseq/db_schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs), line 57 or so)
+	- Our search has to satisfy both line **\#5**, a `marker` containing `TODO`, and **\#6** and **\#7**, which belong together. You can think of all three lines to be connected via an `and` operator.
 	-
 	  #+BEGIN_QUERY
 	  	{:title "Find: TODO MyPage"
