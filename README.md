@@ -9,3 +9,5 @@ If you would like to contribute to this documentation, please check out the `dev
 ## Thanks
 
 The Logseq team and its community.
+
+[@QWxleA](https://github.com/QWxleA) for the query tutorial.
