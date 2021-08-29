@@ -7,7 +7,7 @@ title:: Queries/Advanced Queries/Tutorial
 - In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq.
 -
   #+BEGIN_TIP
-  We will work with content from page [[advanced-queries-tutorial-data]]. Make sure to check it out before you go through the examples. 
+  We will work with content from page: [[advanced-queries-tutorial-data]]. Make sure to check it out before you go through the examples. 
   #+END_TIP
 - ## Example 1 - Find a Tag
   id:: 612beaec-f2e0-41eb-902c-924d30050263
