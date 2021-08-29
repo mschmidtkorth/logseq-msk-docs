@@ -333,9 +333,9 @@ title:: Queries/Advanced Queries/Tutorial
 			- `or` is related to `not` from [Example 8](((612bf199-6083-4b19-81e2-d6df94b3b2a2))), there is also a cousin called `and`
 		- Lines **\#12** and **\#13** are new, you have to read them in the following order:
 			- Line **\#16** offers two values, `:180d` and `:today`
-			- Next is line **\#4**, where those values are assigned to `?start` and `?today` (again, variables, starting with `?` can be called anything, it could have been `?john` and `?ringo`). We define the variables in
-			- Finally they are used on lines **\#12** and **\#13** where we compare the values of `block/scheduled` (line **\#9**) to `?start` and `block/deadline` (line **\#10**) to `?today`
-		- And as a bonus, lines **\#17** to **\#19**, we sort on deadlines
+			- Next is line **\#4**, where those values are assigned to `?start` and `?today` (again, variables, starting with `?` can be called anything, it could have been `?john` and `?ringo`). We define the variables in **\#4** and later in **\#16** set their values - their input - to `:180d` and `:today`
+			- Finally, they are used on lines **\#12** and **\#13** where we compare the values of `block/scheduled` (line **\#9**) to `?start` and `block/deadline` (line **\#10**) to `?today`
+		- And as a bonus, in lines **\#17** to **\#19** we sort by deadlines
 	-
 	  #+BEGIN_QUERY
 	  	{:title "⚠ OVERDUE"
