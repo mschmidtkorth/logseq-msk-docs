@@ -16,17 +16,17 @@ title:: Queries/Advanced Queries/Tutorial
 	- The same query written as an [advanced query]([[Queries/Advanced Queries]]) would be:
 		-
 		  ```clojure
-		  		#+BEGIN_QUERY
-		  		{:title "Find tag: MyPage"
-		  		:query [:find (pull ?b [*])
-		  	:where
-		  	[?b :block/ref-pages ?p]
-		  	[?p :block/name "MyPage"]
-		  	]
-		  	}
-		  		#+END_QUERY
-		  		```
-	- ### Let's go over this line by line
+		  #+BEGIN_QUERY
+		  {:title "Find tag: MyPage"
+		  :query [:find (pull ?b [*])
+		              :where
+		                [?b :block/ref-pages ?p]
+		                [?p :block/name "MyPage"]
+		  	       ]
+		  }
+		  #+END_QUERY
+		  ```
+	- ### Let's go over this line by line.
 		- **1** and **8**, these indicate the start and end of a code block. Add them with `<q`, and select _query_ (fun fact: this comes from [[Emacs]] [[org-mode]])
 		- **2** and **7**, a query starts and end with curly brackets
 		- **2** `:title "<some title>" <- a simple title field
