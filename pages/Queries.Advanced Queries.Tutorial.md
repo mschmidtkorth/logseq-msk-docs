@@ -155,7 +155,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  }
 	  #+END_QUERY
 	  ```
-	- The key is, of course, line **#\6** where we use `clojure.string/starts-with?`. The variable we work with is `?tag`, and we filter on `MyT`. This could also be something like `Topic/` for those kind of setups.
+	- The key is, of course, line **#6** where we use `clojure.string/starts-with?`. The variable we work with is `?tag`, and we filter on `MyT`. This could also be something like `Topic/` for those kind of setups.
 	-
 	  #+BEGIN_NOTE
 	  For further study, these are the Clojure built-in functions (_builtins_) we can use in our queries: [datascript/query.cljc](https://github.com/logseq/datascript/blob/fork/src/datascript/query.cljc#L194)
