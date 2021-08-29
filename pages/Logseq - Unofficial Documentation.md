@@ -84,6 +84,10 @@ heading:: true
 		  * `a+b` Press both the `a` and `b` key at the same time
 		  * `a b` Press the `a` key first, let it go and then press the `b` key
 		  * `a+b/c` Press both the `a` and `b` or `a` and `c` key at the same time
+		  
+		  The modifier keys for MacOS and Windows are different.
+		  * Windows: `Ctrl`, `Alt``
+		  * MacOS: `Cmd`, `Opt`
 		  #+END_NOTE
 		- `Esc` to leave editing mode and enter [[non-edit mode]] in order to highlight multiple blocks via mouse drag, drag & drop blocks and more
 		  #+BEGIN_TIP
@@ -112,7 +116,7 @@ heading:: true
 			- `g h` to go to your start page ( <ins>g</ins>o <ins>h</ins>ome)
 		- User Interface
 			- `t w` Toggle <ins>w</ins>ide mode
-			- `t r` Toggle <ins>r</ins>ight sidebar
+			- `t r` Toggle <ins>r</ins>ight sidebar; `cmd+c cmd+c` to clear its contents
 			- `t f` Toggle contents (i.e. <ins>f</ins>avorites) in sidebar
 			- `t s` Toggle <ins>s</ins>ettings
 			- `t t` Toggle <ins>t</ins>heme (dark/light)
@@ -126,7 +130,7 @@ heading:: true
 			- `cmd+shift+u` Search in current page
 		- Version Management
 			- `c` Create new version (<ins>c</ins>ommit) of file
-			- `Cmd!+/Alt+!` Execute custom Git command
+			- `Cmd+!` (MacOS)/`Alt+!` (Windows) Execute custom Git command
 		- Other
 			- `alt+click` on file link to open in native application (e.g. PDF for fullscreen)
 			- `cmd-c cmd-s` to rebuild the search index without refreshing the browser
