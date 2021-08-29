@@ -42,7 +42,7 @@ title:: Queries/Advanced Queries/Tutorial
 			  ```
 			- This is exactly the same thing, as lines **\#5** and **\#6**. We simply replaced `?p` immediately with `:block/name`.
 	- That's all. From now on we will iterate on this, adding complexity.
-## Example 2 -  Find a Tag That is Also a TODO
+- ## Example 2 -  Find a Tag That is Also a TODO
 	- Let's start with the result:
 	-
 	  ```clojure
@@ -63,29 +63,27 @@ title:: Queries/Advanced Queries/Tutorial
 	  	{:title "Find: TODO MyPage"
 	  	:query [:find (pull ?b [*])
 	  		:where
-	  		[?b :block/marker todo]
+	  		[?b :block/marker "TODO"]
 	  		[?b :block/ref-pages ?p]
-	  		[?p :block/name "MyPage"]
+	  		[?p :block/name "mypage"]
 	  ]
 	  		}
 	  	#+END_QUERY
-## Example 3 - Multiple Markers And TODO States
-collapsed:: true
+- ## Example 3 - Multiple Markers And TODO States
 	-
 	  ```clojure
-	  	#+BEGIN_QUERY
-	  	{:title "Find: TODO or DOING MyPage"
-	  	:query [:find (pull ?b [*])
-	  	:where
-	  		[?b :block/marker ?marker]
-	  		[(contains? #{"TODO" "DOING"} ?marker)]
-	  
-	  		[?p :block/name "MyPage"]
-	  		[?b :block/ref-pages ?p]]
-	  	}
-	  	#+END_QUERY
-	  	```
-	- Notice lines **5** and **6**, that replace the single line **5** fom the previous example. We're looking for a marker, called `?marker`, and `?marker` should _contain_ either `TODO` or `DOING`
+	  #+BEGIN_QUERY
+	  {:title "Find: TODO or DOING MyPage"
+	  :query [:find (pull ?b [*])
+	  :where
+	  	[?b :block/marker ?marker]
+	  	[(contains? #{"TODO" "DOING"} ?marker)]
+	  	[?p :block/name "MyPage"]
+	  	[?b :block/ref-pages ?p]]
+	  }
+	  #+END_QUERY
+	  ```
+	- Notice lines **\#5** and **\#6**, that replace the single line **\#5** fom the previous example. We're looking for a marker, called `?marker`, and `?marker` should _contain_ either `TODO` or `DOING`
 	-
 	  #+BEGIN_QUERY
 	  	{:title "Find: TODO or DOING MyPage"
@@ -95,7 +93,7 @@ collapsed:: true
 	  	[?b :block/marker ?marker]
 	  	[(contains? #{"TODO" "DOING"} ?marker)]
 	  
-	  	[?p :block/name "MyPage"]
+	  	[?p :block/name "mypage"]
 	  	[?b :block/ref-pages ?p]]
 	  	}
 	  	#+END_QUERY
