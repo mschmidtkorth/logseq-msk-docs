@@ -27,19 +27,19 @@ title:: Queries/Advanced Queries/Tutorial
 		  #+END_QUERY
 		  ```
 	- ### Let's go over this line by line.
-		- **1** and **8**, these indicate the start and end of a code block. Add them with `<q`, and select _query_ (fun fact: this comes from [[Emacs]] [[org-mode]])
-		- **2** and **7**, a query starts and end with curly brackets
-		- **2** `:title "<some title>" <- a simple title field
-		- **3** This is where the _actual query_ starts, not the square bracket `[`, opening here, and closing on line **7**
+		- **\#1** and **\#9** indicate the start and end of a code block. Add them with `<q`, and select _query_ (fun fact: this comes from [[Emacs]] [[org-mode]])
+		- **\#2** and **\#7**, a query starts and end with curly brackets
+		- **\#2** `:title "<some title>" <- a simple title field
+		- **\#3** This is where the _actual query_ starts, not the square bracket `[`, opening here, and closing on line **\#7**
 		- So we want to **find** stuff, and the blocks we want to find we store in **?b**. This is just a variable, you can replace it with **?qwxlea** if you so please, just use the same one everywhere 😄
-		- **4** `:where` starts the search parameters
-		- **5** `block/ref-pages` is the reference where tags are stored
-		- **6** `block/name` is not the name of the _page_, but off the reference from line **5**. We store the name of the tags in `?p` (again this could be anything, you can rename it to `?tagIamLookingFor`)
+		- **\#4** `:where` starts the search parameters
+		- **\#5** `block/ref-pages` is the reference where tags are stored
+		- **\#6** `block/name` is not the name of the _page_, but off the reference from line **\#5**. We store the name of the tags in `?p` (again this could be anything, you can rename it to `?tagIamLookingFor`)
 		- Writing this in a shorter might be a bit simpler to understand:
 		  			```clojure
 		  			[?b :block/ref-pages [:block/name "MyPage"]]
 		  		```
-		  			This is exactly the same thing, as lines **5** and **6**
+		  			This is exactly the same thing, as lines **\#5** and **\#6**
 	- That's all, from now on we'll iterate on this, adding complexity
 - ## Example 2 -  Find a Tag That is Also a TODO
   collapsed:: true
