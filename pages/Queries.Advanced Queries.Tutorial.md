@@ -195,8 +195,9 @@ title:: Queries/Advanced Queries/Tutorial
 	  	[(get ?p :type) ?t]
 	  	[(= "example" ?t)]]}
 	  #+END_QUERY
-- ## Example 6 - Work With Project Tasks
-  collapsed:: false
+## Example 6 - Work With Project Tasks
+collapsed:: false
+	- People often use tasks/todos in the context of projects. Here we have a page dedicated to the `example` project
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
