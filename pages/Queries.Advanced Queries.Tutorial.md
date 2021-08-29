@@ -5,7 +5,8 @@ title:: Queries/Advanced Queries/Tutorial
   Playing around with queries can be detrimental to the health of your [[graph]] as you may create blocks and pages just for testing purposes. Use a dedicated playground graph for this!
   #+END_IMPORTANT
 - In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq.
-## Example 1 - Find a Tag
+- ## Example 1 - Find a Tag
+  collapsed:: true
 	- Let's assume we have a [[tag]] called `MyPage`. We will start with probably the most simple query to just return this page:
 		-
 		  ```clojure
@@ -35,14 +36,14 @@ title:: Queries/Advanced Queries/Tutorial
 		- **\#4** `:where` starts the search parameters
 		- **\#5** `block/ref-pages` is the reference where _tags_ are stored - that's what we are looking for!
 		- **\#6** `block/name` is not the name of the _page_, but of the reference from the previous line **\#5**. We store the name of the tags in `?p` (again this could be anything, you can rename it to `?tagIamLookingFor`)
-		- Writing this as a shorter might be a bit simpler to understand:
-		  ```clojure
-		  [?b :block/ref-pages [:block/name "MyPage"]]
-		  ```
-		- This is exactly the same thing, as lines **\#5** and **\#6**
-	- That's all, from now on we'll iterate on this, adding complexity
-- ## Example 2 -  Find a Tag That is Also a TODO
-  collapsed:: true
+			- We can write this in a shorter version to be simpler to understand:
+			  ```clojure
+			  [?b :block/ref-pages [:block/name "MyPage"]]
+			  ```
+			- This is exactly the same thing, as lines **\#5** and **\#6**. We simply replaced `?p` immediately with `:block/name`.
+	- That's all. From now on we will iterate on this, adding complexity.
+## Example 2 -  Find a Tag That is Also a TODO
+	- Let's start with the result:
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -54,7 +55,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[?b :block/ref-pages ?p]]
 	  		}
 	  	#+END_QUERY
-	  	```
+	  ```
 	- New is line **5**, `:block-marker`is where _todo keywords_ are stored (for the curious: [logseq/db_schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs), line 57 or so)
 	- Our search has to satisfy both line **5**, a `marker` containing `TODO`, and **6** and **7**, which belong together
 	-
