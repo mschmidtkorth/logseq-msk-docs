@@ -210,7 +210,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	#+END_QUERY
 	  	```
 	- This query combines the _TODO states_ from [Example 3](((612bf199-a799-47eb-8a97-9a7d3452483e))), and _page properties_ from [Example 5](((612bf199-8057-43ef-ae02-c9ce386cfb3a)))
-	- New are lines **\#13-\#15** to will sort TODOs by priority
+	- New are lines **\#13-\#15** to will sort TODOs by priority with the most important task first
 	-
 	  #+BEGIN_QUERY
 	  	{:title "My examples TODOs"
