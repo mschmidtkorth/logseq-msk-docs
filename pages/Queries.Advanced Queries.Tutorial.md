@@ -47,15 +47,15 @@ title:: Queries/Advanced Queries/Tutorial
 	- Let's start with the result:
 	-
 	  ```clojure
-	  	#+BEGIN_QUERY
-	  	{:title "Find: MyPage"
-	  	:query [:find (pull ?b [*])
-	  		:where
-	  		[?b :block/marker "TODO"]
-	  		[?p :block/name "MyPage"]
-	  		[?b :block/ref-pages ?p]]
-	  		}
-	  	#+END_QUERY
+	  #+BEGIN_QUERY
+	  {:title "Find: TODO MyPage"
+	  :query [:find (pull ?b [*])
+	  	:where
+	  	[?b :block/marker "TODO"]
+	  	[?p :block/name "MyPage"]
+	  	[?b :block/ref-pages ?p]]
+	  	}
+	  #+END_QUERY
 	  ```
 	- New compared to [Example 1](((612beaec-f2e0-41eb-902c-924d30050263))) is line **\#5**, `:block-marker`. This is where _todo keywords_ are stored (for the curious: [logseq/db_schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs), line 57 or so)
 	- Our search has to satisfy both line **\#5**, a `marker` containing `TODO`, and **\#6** and **\#7**, which belong together. You can think of all three lines to be connected via an `and` operator.
@@ -69,8 +69,8 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[?b :block/ref-pages ?p]]
 	  		}
 	  	#+END_QUERY
-- ## Example 3 - Multiple Markers And TODO States
-  collapsed:: true
+## Example 3 - Multiple Markers And TODO States
+collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY

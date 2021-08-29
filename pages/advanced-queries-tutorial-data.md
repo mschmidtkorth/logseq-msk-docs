@@ -5,7 +5,7 @@ awesomeness:: high
 - This is an example tag #MyPage
 - TODO This is a task marked #MyPage #sample
 - DOING Is even better then a task #MyPage #sample
-- But this is something different #abNOTbcde
+- But this is something different #MyNotPage
 ## More important information
 type:: example
 	- This is something we shouldn't forget
