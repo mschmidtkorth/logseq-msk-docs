@@ -30,7 +30,7 @@ title:: Properties
 	- Pages mentioned as property values get backlinked.
 - **USAGE**
 	- A property is defined via `propertyName:: value` (note the two colons)
-	- A page can have _many_ pairs of properties (the collection is a user-defined dictionary) as long as they are in first block of that page
+	- A page can have _many_ pairs of properties (the collection is a user-defined dictionary) as long as they are in first block of that page - to add a new one, use `Shift+Enter`
 	  ```
 	  type:: documentation
 	  parts:: motor, steering wheel, tyres
@@ -44,11 +44,17 @@ title:: Properties
 	  ```
 	-
 	  #+BEGIN_TIP
-	  You can also use actual YAML [[frontmatter]] syntax, which is often used in other Markdown readers. Frontmatter can only be used for page properties (i.e. as part of the first block of a page). Frontmatter properties are wrapped into `---` and use a single colon only. For example:
-	  ```
+	  You can also use actual YAML [[frontmatter]] syntax, which is often used in other Markdown readers. Frontmatter can only be used for page properties (i.e. as part of the first block of a page). Frontmatter properties are wrapped into `---` and use a single colon only.
+	   
+	  Example in Frontmatter:
+	  ```md
 	  ---
 	  alias: MyAlias
 	  ---
+	  ```
+	  Example in Logseq syntax:
+	  ```md
+	  alias:: MyAlias
 	  ```
 	  #+END_TIP
 	-
