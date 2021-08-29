@@ -1,17 +1,14 @@
-title:: Queries/Advanced Queries/Tutorial
-
 -
   #+BEGIN_IMPORTANT
-  Playing around with queries can be detrimental to the health of your [[graph]] as you may create blocks and pages just for testing purposes. Use a dedicated playground graph for this!
+  Playing around with queries can be **detrimental** to the health of your graph. Use a dedicated playground for this!
   #+END_IMPORTANT
-- In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq.
-## Example 1 - Find a Tag
-	- Let's assume we have a page  start with probably the most simple query:
+## Example 1, find a tag
+	- OK, let's start. The simplest query is probably:
 		-
-		  ```clojure
+		  ```conf
 		  		{{query [[MyPage]]}}
-		  ```
-	- To create it, use the `/query` [[command]] and then add `[[MyPage]]`. This will look for the tag `#MyPage` (everywhere), you can see it here in all it's glory:
+		  		```
+	- Shortcut `/q`, and then add `[[MyPage]]`. This will look for the tag `#MyPage` (everywhere), you can see it here in all it's glory:
 	- {{query [[MyPage]]}}
 	- The same query, but now written _longhand_, would be:
 	-
@@ -41,8 +38,7 @@ title:: Queries/Advanced Queries/Tutorial
 		  		```
 		  			This is exactly the same thing, as lines **5** and **6**
 	- That's all, from now on we'll iterate on this, adding complexity
-- ## Example 2 -  Find a Tag That is Also a TODO
-  collapsed:: true
+- ## Example 2, find a tag that is also a TODO
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -67,8 +63,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[?b :block/ref-pages ?p]]
 	  		}
 	  	#+END_QUERY
-- ## Example 3 - Multiple Markers And TODO States
-  collapsed:: true
+- ## Example 3, multiple markers / TODO states
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -132,8 +127,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  #+BEGIN_IMPORTANT
 	  	Notice the closing `]` on line **11**, it's easy to forget these, especially as you slowly add more complexity to your searches
 	  	#+END_IMPORTANT
-## Example 4 - Search for Parts of a Tag
-collapsed:: true
+- ## Example 4, search for parts of  tag
 	- Some people have complicated tag configurations, like: `Topic/boats, Topic/airplanes, Topic/automobiles`, to look for _all_ those `Topic`s at the same time, we can use (we, though, stick with our alphabet examples):
 	-
 	  ```clojure
@@ -158,8 +152,7 @@ collapsed:: true
 	  	[(clojure.string/starts-with? ?tag "ab")]]
 	  }
 	  #+END_QUERY
-- ## Example 5 -  Search for Page Properties
-  collapsed:: true
+- ## Example 5, searching for page properties
 	- Properties are key-value pairs that allow you to annotate a block or page (see [[Properties]])
 	-
 	  ```clojure
@@ -182,8 +175,7 @@ collapsed:: true
 	  	[(get ?p :type) ?t]
 	  	[(= "example" ?t)]]}
 	  #+END_QUERY
-- ## Example 6 - Work With Project Tasks
-  collapsed:: true
+- ## Example 6, project tasks
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -224,8 +216,7 @@ collapsed:: true
 	           (get h :block/priority "Z")) result))
 	   :collapsed? false}
 	  	#+END_QUERY
-- ## Example 7 - Search Journal Pages for Tagged TODOs
-  collapsed:: true
+- ## Example 7, search Journal pages for tagged TODOs
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -267,8 +258,7 @@ collapsed:: true
 	  				(get h :block/priority "Z")) result))
 	   }
 	  	#+END_QUERY
-- ## Example 8 - Exclude From a Query
-  collapsed:: true
+- ## Example 8, exclude from a query
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -293,8 +283,7 @@ collapsed:: true
 	  		]
 	  	}
 	  	#+END_QUERY
-- ## Example 9 - Compare Dates
-  collapsed:: true
+- ## Example 9, compare dates
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY

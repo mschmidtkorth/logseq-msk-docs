@@ -2,9 +2,9 @@ type:: example
 awesomeness:: high
 
 - The data on this page is being used on [[Queries/Advanced Queries/Tutorial]], don't remove
-- This is an example tag #abcde
-- TODO This is a task marked #abcde
-- DOING Is even better then a task #abcde
+- This is an example tag #MyPage
+- TODO This is a task marked #MyPage
+- DOING Is even better then a task #MyPage
 - But this is something different #abNOTbcde
 ## More important information
 type:: example
