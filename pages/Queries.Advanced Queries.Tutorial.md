@@ -197,7 +197,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  #+END_QUERY
 ## Example 6 - Work With Project Tasks
 collapsed:: false
-	- People often use tasks/todos in the context of projects. Here we have a page dedicated to the `example` project
+	- People often use tasks/todos in the context of projects. Here we have a page dedicated to the `example` project. We added `type:: example` right under the title. Now we can search for tasks (NOW or DOING), on
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
