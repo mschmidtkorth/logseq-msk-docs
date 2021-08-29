@@ -116,7 +116,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  ```
 	-
 	  #+BEGIN_QUERY
-	  	{:title "Find: MyTag and sample"
+	  	{:title "Find: MyTag and MyOtherTag"
 	  	:query [:find (pull ?b [*])
 	  	:where
 	  
@@ -125,7 +125,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  
 	  		[?b :block/ref-pages ?p]
 	  		[?p :block/name ?tag]
-	  		[(contains? #{"MyTag" "sample"} ?tag)]]
+	  		[(contains? #{"mytag" "myothertag"} ?tag)]]
 	  	}
 	  	#+END_QUERY
 	-
