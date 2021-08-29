@@ -189,6 +189,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	[(= "example" ?t)]]}
 	  #+END_QUERY
 - ## Example 6 - Work With Project Tasks
+  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -211,6 +212,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	```
 	- This query combines the _TODO states_ from [Example 3](((612bf199-a799-47eb-8a97-9a7d3452483e))), and _page properties_ from [Example 5](((612bf199-8057-43ef-ae02-c9ce386cfb3a)))
 	- New are lines **\#13-\#15** to will sort TODOs by priority with the most important task first
+	- Notice also how line **\#16** says that the query results should not be shown collapsed
 	-
 	  #+BEGIN_QUERY
 	  	{:title "My examples TODOs"
@@ -230,7 +232,6 @@ title:: Queries/Advanced Queries/Tutorial
 	   :collapsed? false}
 	  	#+END_QUERY
 - ## Example 7 - Search Journal Pages for Tagged TODOs
-  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -252,7 +253,7 @@ title:: Queries/Advanced Queries/Tutorial
 	   }
 	  	#+END_QUERY
 	  	```
-	- New are the lines **8** and **9**, where we ask if the page is a `journal`
+	- New are lines **\#8** and **\#9**, where we ask if the page is a `journal` to only receive tasks from [[journal]] entries.
 	-
 	  #+BEGIN_QUERY
 	  	{:title "Tagged journal pages"
@@ -265,7 +266,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[?p :block/journal? true]
 	  
 	  	[?b :block/ref-pages ?r]
-	  		[?r :block/name "MyTag"]
+	  		[?r :block/name "mytag"]
 	  		]
 	   :result-transform (fn [result]
 	  			(sort-by (fn [h]
@@ -273,7 +274,6 @@ title:: Queries/Advanced Queries/Tutorial
 	   }
 	  	#+END_QUERY
 - ## Example 8 - Exclude From a Query
-  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
