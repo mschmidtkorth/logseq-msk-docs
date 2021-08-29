@@ -11,7 +11,6 @@ title:: Queries/Advanced Queries/Tutorial
   #+END_TIP
 - ## Example 1 - Find a Tag
   id:: 612beaec-f2e0-41eb-902c-924d30050263
-  collapsed:: true
 	- Let's assume we have a [[tag]] called `MyTag`. We will start with probably the most simple query to just return this page:
 		-
 		  ```clojure
@@ -49,7 +48,6 @@ title:: Queries/Advanced Queries/Tutorial
 			- This is exactly the same thing, as lines **\#5** and **\#6**. We simply replaced `?p` immediately with `:block/name`.
 	- That's all. From now on we will iterate on this, adding complexity.
 - ## Example 2 -  Find a Tag That is Also a TODO
-  collapsed:: true
 	- Let's start with the result:
 	-
 	  ```clojure
@@ -77,7 +75,6 @@ title:: Queries/Advanced Queries/Tutorial
 	  		}
 	  	#+END_QUERY
 - ## Example 3 - Multiple Markers And TODO States
-  collapsed:: true
   id:: 612bf199-a799-47eb-8a97-9a7d3452483e
 	- Notice lines **\#5** and **\#6**, that replace the single line **\#5** fom the previous example. We're looking for a marker, called `?marker`. We also specify that `?marker` should _contain_ either `TODO` or `DOING`
 	-
@@ -142,7 +139,6 @@ title:: Queries/Advanced Queries/Tutorial
 		  	}
 		  #+END_QUERY
 - ## Example 4 - Search for Parts of a Tag
-  collapsed:: true
 	- Some people have complicated tag configurations, like: `Topic/boats, Topic/airplanes, Topic/automobiles`. To look for _all_ those `Topic`s at the same time, we can use `starts-with` (in this example, we look for pages starting with `MyT` instead of `Topic`):
 	-
 	  ```clojure
@@ -171,7 +167,6 @@ title:: Queries/Advanced Queries/Tutorial
 	  }
 	  #+END_QUERY
 - ## Example 5 -  Search for Page Properties
-  collapsed:: true
   id:: 612bf199-8057-43ef-ae02-c9ce386cfb3a
 	- ((612bf199-3c8d-405e-86fc-17c7a923a6e4)). Let's look for pages that have their `type` property defined as `example`:
 	-
@@ -196,7 +191,6 @@ title:: Queries/Advanced Queries/Tutorial
 	  	[(= "example" ?t)]]}
 	  #+END_QUERY
 - ## Example 6 - Work With Project Tasks
-  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -239,7 +233,6 @@ title:: Queries/Advanced Queries/Tutorial
 	   :collapsed? false}
 	  	#+END_QUERY
 - ## Example 7 - Search Journal Pages for Tagged TODOs
-  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -283,7 +276,6 @@ title:: Queries/Advanced Queries/Tutorial
 	  	#+END_QUERY
 - ## Example 8 - Exclude From a Query
   id:: 612bf199-6083-4b19-81e2-d6df94b3b2a2
-  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -309,7 +301,6 @@ title:: Queries/Advanced Queries/Tutorial
 	  	}
 	  	#+END_QUERY
 - ## Example 9 - Compare Dates
-  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
