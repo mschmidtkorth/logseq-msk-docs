@@ -1,7 +1,7 @@
 type:: example
 awesomeness:: high
 
-- The data on this page is being used on [[Advanced queries tutorial]], don't remove
+- The data on this page is being used on [[Queries/Advanced Queries/Tutorial]], don't remove
 - This is an example tag #abcde
 - TODO This is a task marked #abcde
 - DOING Is even better then a task #abcde

@@ -3,7 +3,8 @@
   #+BEGIN_TIP
   Get familiar with [Logseq's database schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs).
   #+END_TIP
-## How to Write Advanced Queries
+- ## How to Write Advanced Queries
+  collapsed:: true
 	- Advanced queries are written via [[Datalog]]
 	- Advanced queries can get complex, but their format is always the same:
 	  ```
