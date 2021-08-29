@@ -5,7 +5,7 @@ importance:: high
 - This is an example tag #MyTag
 - TODO This is a task marked #MyTag #sample
 - DOING Is even better then a task #MyTag #sample
-- But this is something different #MyNotPage
+- But this is something different #MyNotTag
 ## More important information
 type:: example
 	- This is something we should not forget
