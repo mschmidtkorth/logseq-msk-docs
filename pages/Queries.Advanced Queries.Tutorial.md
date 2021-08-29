@@ -89,43 +89,43 @@ title:: Queries/Advanced Queries/Tutorial
 	  	{:title "Find: TODO or DOING MyTag"
 	  	:query [:find (pull ?b [*])
 	  	:where
-
+	  
 	  	[?b :block/marker ?marker]
 	  	[(contains? #{"TODO" "DOING"} ?marker)]
-
+	  
 	  	[?p :block/name "mytag"]
 	  	[?b :block/ref-pages ?p]]
 	  	}
 	  	#+END_QUERY
-	- This same method you can use to look for multiple tags:
+	- You can use the same method to look for multiple tags:
 	-
 	  ```clojure
-	  	#+BEGIN_QUERY
-	  	{:title "Find: MyTag and fghij"
-	  	:query [:find (pull ?b [*])
-	  	:where
-
-	  		[?b :block/marker ?marker]
-	  		[(contains? #{"TODO" "DOING"} ?marker)]
-
-	  		[?b :block/ref-pages ?p]
-	  		[?p :block/name ?tag]
-	  		[(contains? #{"MyTag" "fghij"} ?tag)]]
-	  	}
-	  	#+END_QUERY
-	  	```
+	  #+BEGIN_QUERY
+	  {:title "Find: MyTag and sample"
+	  :query [:find (pull ?b [*])
+	  :where
+	  
+	  	[?b :block/marker ?marker]
+	  	[(contains? #{"TODO" "DOING"} ?marker)]
+	  
+	  	[?b :block/ref-pages ?p]
+	  	[?p :block/name ?tag]
+	  	[(contains? #{"MyTag" "sample"} ?tag)]]
+	  }
+	  #+END_QUERY
+	  ```
 	-
 	  #+BEGIN_QUERY
-	  	{:title "Find: MyTag and fghij"
+	  	{:title "Find: MyTag and sample"
 	  	:query [:find (pull ?b [*])
 	  	:where
-
+	  
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/ref-pages ?p]
 	  		[?p :block/name ?tag]
-	  		[(contains? #{"MyTag" "fghij"} ?tag)]]
+	  		[(contains? #{"MyTag" "sample"} ?tag)]]
 	  	}
 	  	#+END_QUERY
 	-
@@ -192,7 +192,7 @@ collapsed:: true
 	       :where
 	       [?b :block/marker ?marker]
 	       [(contains? #{"NOW" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/page ?p]
 	  		[?p :block/properties ?a]
 	  		[(get ?a :type) ?t]
@@ -213,7 +213,7 @@ collapsed:: true
 	       :where
 	       [?b :block/marker ?marker]
 	       [(contains? #{"NOW" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/page ?p]
 	  		[?p :block/properties ?a]
 	  		[(get ?a :type) ?t]
@@ -234,10 +234,10 @@ collapsed:: true
 	  	:where
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/page ?p]
 	  		[?p :block/journal? true]
-
+	  
 	  	[?b :block/ref-pages ?r]
 	  		[?r :block/name "MyTag"]
 	  		]
@@ -255,10 +255,10 @@ collapsed:: true
 	  	:where
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-
+	  
 	  		[?b :block/page ?p]
 	  		[?p :block/journal? true]
-
+	  
 	  	[?b :block/ref-pages ?r]
 	  		[?r :block/name "MyTag"]
 	  		]
@@ -303,14 +303,14 @@ collapsed:: true
 	  :in $ ?start ?today
 	  :where
 	  [?block :block/marker ?marker]
-
+	  
 	  (or
 	  	[?block :block/scheduled ?d]
 	  	[?block :block/deadline ?d])
-
+	  
 	  [(>= ?d ?start)]
 	  [(<   ?d ?today)]
-
+	  
 	  [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAITING"} ?marker)]]
 	  	:inputs [:180d :today]
 	  	:result-transform  (fn [result]
