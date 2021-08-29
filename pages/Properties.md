@@ -30,11 +30,6 @@ title:: Properties
 	- Pages mentioned as property values get backlinked.
 - **USAGE**
 	- A property is defined via `propertyName:: value` (note the two colons)
-	-
-	  #+BEGIN_TIP
-	  You can also use YAML frontmatter syntax, which is often used in other Markdown readers.
-	  #+END_TIP
-	-
 	- A page can have _many_ pairs of properties (the collection is a user-defined dictionary) as long as they are in first block of that page
 	  ```
 	  type:: documentation
@@ -47,6 +42,15 @@ title:: Properties
 	  author:: [[sönke ahrens]]
 	  publication_date:: [[february 21, 2017]]
 	  ```
+	-
+	  #+BEGIN_TIP
+	  You can also use actual YAML [[frontmatter]] syntax, which is often used in other Markdown readers. Frontmatter can only be used for page properties (i.e. as part of the first block of a page). Frontmatter properties are wrapped into `---` and use a single colon only. For example:
+	  ```
+	  ---
+	  alias: MyAlias
+	  ---
+	  ```
+	  #+END_TIP
 	-
 	  #+BEGIN_TIP
 	  You can hide properties so they are only shown upon editing the property section. Add the name of any property you want to hide to your [[config.edn]] into the `:block-hidden-properties` section (create if it does not exist). To remove or update the property, you need to use a text editor.
