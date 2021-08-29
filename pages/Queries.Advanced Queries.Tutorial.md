@@ -7,7 +7,6 @@ title:: Queries/Advanced Queries/Tutorial
 - In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq.
 - ## Example 1 - Find a Tag
   id:: 612beaec-f2e0-41eb-902c-924d30050263
-  collapsed:: true
 	- Let's assume we have a [[tag]] called `MyPage`. We will start with probably the most simple query to just return this page:
 		-
 		  ```clojure
@@ -64,9 +63,10 @@ title:: Queries/Advanced Queries/Tutorial
 	  	{:title "Find: TODO MyPage"
 	  	:query [:find (pull ?b [*])
 	  		:where
-	  		[?b :block/marker "TODO"]
+	  		[?b :block/marker todo]
+	  		[?b :block/ref-pages ?p]
 	  		[?p :block/name "MyPage"]
-	  		[?b :block/ref-pages ?p]]
+	  ]
 	  		}
 	  	#+END_QUERY
 ## Example 3 - Multiple Markers And TODO States
