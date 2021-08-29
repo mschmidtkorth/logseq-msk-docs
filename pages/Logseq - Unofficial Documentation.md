@@ -72,7 +72,6 @@ heading:: true
 	- Keyboard Shortcuts
 	  heading:: true
 	  id:: 612a3629-bfa5-4d51-9d6f-fb03237c43fe
-	  collapsed:: true
 		-
 		  alias:: keyboard shortcut, keyboard shortcuts
 		-

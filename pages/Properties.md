@@ -20,7 +20,7 @@ alias:: Property
 		  parts:: [[motor]] and other parts
 	-
 	  #+BEGIN_TIP
-	  Wrapping 
+	  Wrapping values in `[[]]` allows you to use auto-complete for pages.
 	  #+END_TIP
 	-
 	  #+BEGIN_TIP
