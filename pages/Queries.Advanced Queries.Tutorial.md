@@ -31,7 +31,7 @@ title:: Queries/Advanced Queries/Tutorial
 		- **\#2** and **\#8** define our query - a query starts and end with curly brackets
 		- **\#2** sets the title via the `title` field - `:title "<some title>"`
 		- **\#3** is where the _actual query_ starts. Note the square bracket `[`, opening here, and closing on line **\#7**
-		- So, we want to _find_ stuff, and the blocks we want to find we store in **?b**. This is just a variable, you can replace it with **?qwxlea** if you so please, just use the same one everywhere 😄
+		- So, we want to _find_ stuff. The blocks we want to find we store in `?b`. This is just a _variable_ we can use to retrieve these stored blocks, you can replace it with `?qwxlea` if you so please. However, remember to use the same variable anywhere you want to reference it
 		- **\#4** `:where` starts the search parameters
 		- **\#5** `block/ref-pages` is the reference where tags are stored
 		- **\#6** `block/name` is not the name of the _page_, but off the reference from line **\#5**. We store the name of the tags in `?p` (again this could be anything, you can rename it to `?tagIamLookingFor`)
