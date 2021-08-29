@@ -125,7 +125,7 @@ title:: Queries/Advanced Queries/Tutorial
 		  ```
 			-
 			  #+BEGIN_IMPORTANT
-			  	Notice the overall closing `]` on line **11**, it's easy to forget - especially as you slowly add more complexity to your searches.
+			  	Notice the two closing `]` on line **11**, it's easy to forget - especially as you slowly add more complexity to your searches.
 			  	#+END_IMPORTANT
 		-
 		  #+BEGIN_QUERY
