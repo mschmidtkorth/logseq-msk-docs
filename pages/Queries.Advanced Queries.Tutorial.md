@@ -11,21 +11,21 @@ title:: Queries/Advanced Queries/Tutorial
 		  ```clojure
 		  {{query [[MyPage]]}}
 		  ```
-	- To create it, use the `/query` [[command]] and then add `[[MyPage]]`. This query will look for the tag `#MyPage` anywhere in your [[graph]], you can see it here in all it's glory:
-	- {{query [[MyPage]]}}
-	- The same query, but now written _longhand_, would be:
-	-
-	  ```clojure
-	  		#+BEGIN_QUERY
-	  		{:title "Find tag: MyPage"
-	  		:query [:find (pull ?b [*])
-	  	:where
-	  	[?b :block/ref-pages ?p]
-	  	[?p :block/name "MyPage"]
-	  	]
-	  	}
-	  		#+END_QUERY
-	  		```
+	- To create it, use the `/query` [[command]] and then add `[[MyPage]]`. This query will look for the tag `#MyPage` anywhere in your [[graph]], you can see it here in all its glory:
+		- {{query [[MyPage]]}}
+	- The same query written as an [advanced query]([[Queries/Advanced Queries]]) would be:
+		-
+		  ```clojure
+		  		#+BEGIN_QUERY
+		  		{:title "Find tag: MyPage"
+		  		:query [:find (pull ?b [*])
+		  	:where
+		  	[?b :block/ref-pages ?p]
+		  	[?p :block/name "MyPage"]
+		  	]
+		  	}
+		  		#+END_QUERY
+		  		```
 	- ### Let's go over this line by line
 		- **1** and **8**, these indicate the start and end of a code block. Add them with `<q`, and select _query_ (fun fact: this comes from [[Emacs]] [[org-mode]])
 		- **2** and **7**, a query starts and end with curly brackets
