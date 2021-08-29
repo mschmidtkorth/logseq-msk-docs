@@ -101,21 +101,6 @@ title:: Queries/Advanced Queries/Tutorial
 	-
 	  ```clojure
 	  #+BEGIN_QUERY
-	  {:title "Find: MyTag and sample"
-	  :query [:find (pull ?b [*])
-	  :where
-	  
-	  	[?b :block/marker ?marker]
-	  	[(contains? #{"TODO" "DOING"} ?marker)]
-	  
-	  	[?b :block/ref-pages ?p]
-	  	[?p :block/name ?tag]
-	  	[(contains? #{"MyTag" "sample"} ?tag)]]
-	  }
-	  #+END_QUERY
-	  ```
-	-
-	  #+BEGIN_QUERY
 	  	{:title "Find: MyTag and MyOtherTag"
 	  	:query [:find (pull ?b [*])
 	  	:where
@@ -128,6 +113,18 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[(contains? #{"mytag" "myothertag"} ?tag)]]
 	  	}
 	  	#+END_QUERY
+	  ```
+	- {:title "Find: MyTag and MyOtherTag"
+	  	:query [:find (pull ?b [*])
+	  	:where
+	  
+	  		[?b :block/marker ?marker]
+	  		[(contains? #{"TODO" "DOING"} ?marker)]
+	  
+	  		[?b :block/ref-pages ?p]
+	  		[?p :block/name ?tag]
+	  		[(contains? #{"mytag" "myothertag"} ?tag)]]
+	  	}
 	-
 	  #+BEGIN_IMPORTANT
 	  	Notice the closing `]` on line **11**, it's easy to forget these, especially as you slowly add more complexity to your searches
