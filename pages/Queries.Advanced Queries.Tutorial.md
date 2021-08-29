@@ -163,6 +163,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  }
 	  #+END_QUERY
 - ## Example 5 -  Search for Page Properties
+  collapsed:: true
 	- ((612bf199-3c8d-405e-86fc-17c7a923a6e4)). Let's look for pages that have their `type` property defined as `example`:
 	-
 	  ```clojure
@@ -175,7 +176,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[(= "example" ?t)]]}
 	  	#+END_QUERY
 	  	```
-	- There can be multiple `block/properties` for one block, so we have to `get` the one we want, in this case `type`. This can be any word added as a property to a page
+	- There can be multiple `block/properties` for one block, so we have to `get` the one we want - in this case `type`. This can be any word added as a property to a page:
 	-
 	  #+BEGIN_QUERY
 	  {:title "My examples"
@@ -186,7 +187,6 @@ title:: Queries/Advanced Queries/Tutorial
 	  	[(= "example" ?t)]]}
 	  #+END_QUERY
 - ## Example 6 - Work With Project Tasks
-  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -208,7 +208,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	#+END_QUERY
 	  	```
 	- This query combines the `TODO states` from example 3, and `page properties` from example 5
-	- New are lines **13-15**, this snippet will sort TODOs on priority
+	- New are lines **\#13-\#15**, this snippet will sort TODOs on priority
 	-
 	  #+BEGIN_QUERY
 	  	{:title "My examples TODOs"
