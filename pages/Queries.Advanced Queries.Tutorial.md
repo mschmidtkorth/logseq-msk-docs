@@ -6,8 +6,12 @@ title:: Queries/Advanced Queries/Tutorial
   #+END_IMPORTANT
 - In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq.
 -
-## Example 1 - Find a Tag
-id:: 612beaec-f2e0-41eb-902c-924d30050263
+  #+BEGIN_TIP
+  We will work with content from page [[advanced-queries-tutorial-data]]. Make sure to check it out before you to through the examples. 
+  #+END_TIP
+- ## Example 1 - Find a Tag
+  id:: 612beaec-f2e0-41eb-902c-924d30050263
+  collapsed:: true
 	- Let's assume we have a [[tag]] called `MyTag`. We will start with probably the most simple query to just return this page:
 		-
 		  ```clojure
@@ -45,6 +49,7 @@ id:: 612beaec-f2e0-41eb-902c-924d30050263
 			- This is exactly the same thing, as lines **\#5** and **\#6**. We simply replaced `?p` immediately with `:block/name`.
 	- That's all. From now on we will iterate on this, adding complexity.
 - ## Example 2 -  Find a Tag That is Also a TODO
+  collapsed:: true
 	- Let's start with the result:
 	-
 	  ```clojure
@@ -277,8 +282,8 @@ id:: 612beaec-f2e0-41eb-902c-924d30050263
 	   }
 	  	#+END_QUERY
 - ## Example 8 - Exclude From a Query
-  collapsed:: true
   id:: 612bf199-6083-4b19-81e2-d6df94b3b2a2
+  collapsed:: true
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
