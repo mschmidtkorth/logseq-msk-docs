@@ -29,6 +29,12 @@ title:: Properties
 	  #+END_TIP
 	- Pages mentioned as property values get backlinked.
 - **USAGE**
+	- A property is defined via `propertyName:: value` (note the two colons)
+	-
+	  #+BEGIN_TIP
+	  You can also use YAML frontmatter syntax, which is often used in other Markdown readers.
+	  #+END_TIP
+	-
 	- A page can have _many_ pairs of properties (the collection is a user-defined dictionary) as long as they are in first block of that page
 	  ```
 	  type:: documentation
