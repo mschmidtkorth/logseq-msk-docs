@@ -185,7 +185,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[(= "example" ?t)]]}
 	  	#+END_QUERY
 	  	```
-	- There can be multiple `block/properties` for one block, so we have to `get` (line **#6**) the one we want - in this case `type` (line **#7**). This can be any word added as a property to a page:
+	- There can be multiple `block/properties` for one block, so we have to `get` (line **#6**) the one we want - in this case `type` (line **#7**).
 	-
 	  #+BEGIN_QUERY
 	  {:title "My examples"
