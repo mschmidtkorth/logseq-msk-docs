@@ -20,6 +20,10 @@ alias:: Property
 		  parts:: [[motor]] and other parts
 	-
 	  #+BEGIN_TIP
+	  Wrapping 
+	  #+END_TIP
+	-
+	  #+BEGIN_TIP
 	  To prevent values from being auto-linked, wrap _all_ values within quotes (`"`) - for example, `parts:: "[[motor]], steering wheel, tyres"`
 	  You cannot quote (unlink) _parts_ (items) of a list property, e.g. `parts:: [[motor]], "steering wheel, tyres"` is not going to prevent values from being linked - see [feature request](https://discuss.logseq.com/t/property-values-with-a-mix-of-references-and-unlinked-text/1720))
 	  #+END_TIP
