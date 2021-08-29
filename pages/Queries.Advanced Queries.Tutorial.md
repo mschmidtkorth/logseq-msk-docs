@@ -63,7 +63,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	}
 	  #+END_QUERY
 	  ```
-	- New compared to [Example 1](((612beaec-f2e0-41eb-902c-924d30050263))) is line **\#5**, `:block-marker`. This is where _todo keywords_ are stored (for the curious: [logseq/db_schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs), line 57 or so)
+	- New, compared to [Example 1](((612beaec-f2e0-41eb-902c-924d30050263))) is line **\#5**, `:block-marker`. This is where _todo keywords_ are stored (for the curious: [logseq/db_schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs), line 57 or so)
 	- Our search has to satisfy both line **\#5**, a `marker` containing `TODO`, and **\#6** and **\#7**, which belong together. You can think of all three lines to be connected via an `and` operator.
 	-
 	  #+BEGIN_QUERY
