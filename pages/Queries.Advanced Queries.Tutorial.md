@@ -28,10 +28,10 @@ title:: Queries/Advanced Queries/Tutorial
 		  ```
 	- ### Let's go over this line by line.
 		- **\#1** and **\#9** indicate the start and end of a code block. Add them with `<q`, and select _query_ (fun fact: this comes from [[Emacs]] [[org-mode]])
-		- **\#2** and **\#7**, a query starts and end with curly brackets
-		- **\#2** `:title "<some title>" <- a simple title field
-		- **\#3** This is where the _actual query_ starts, not the square bracket `[`, opening here, and closing on line **\#7**
-		- So we want to **find** stuff, and the blocks we want to find we store in **?b**. This is just a variable, you can replace it with **?qwxlea** if you so please, just use the same one everywhere 😄
+		- **\#2** and **\#8** define our query - a query starts and end with curly brackets
+		- **\#2** sets the title via the `title` field - `:title "<some title>"`
+		- **\#3** is where the _actual query_ starts. Note the square bracket `[`, opening here, and closing on line **\#7**
+		- So, we want to _find_ stuff, and the blocks we want to find we store in **?b**. This is just a variable, you can replace it with **?qwxlea** if you so please, just use the same one everywhere 😄
 		- **\#4** `:where` starts the search parameters
 		- **\#5** `block/ref-pages` is the reference where tags are stored
 		- **\#6** `block/name` is not the name of the _page_, but off the reference from line **\#5**. We store the name of the tags in `?p` (again this could be anything, you can rename it to `?tagIamLookingFor`)
