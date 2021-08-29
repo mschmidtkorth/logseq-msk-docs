@@ -1,5 +1,5 @@
-myHiddenProperty:: You cannot see me
 alias:: Property
+title:: Properties
 
 - Properties are key-value pairs that allow you to annotate a block or page
 	- _Page properties_ are defined by putting them into the first block of the page (_[[frontmatter]]_)
