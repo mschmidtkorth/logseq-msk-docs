@@ -91,7 +91,7 @@ id:: 610fdfba-d6cf-4bb1-a88d-b3fe28e0a72d
 			  The function has to be a child of the query table.
 			  #+END_WARNING
 ## Resources
-	- TODO Check
+	- TODO Gather input for Datalog from resources
 	- [Domain Modeling with Datalog](https://www.youtube.com/watch?v=oo-7mN9WXTw&t=1s) (Norbert Wojtowicz)
 	- [Learn Datalog Today](http://www.learndatalogtoday.org/)
 	- [Datascript 101](https://udayv.com/blog/2016-04-28-datascript101/)
