@@ -160,7 +160,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  #+BEGIN_NOTE
 	  For further study, these are the Clojure built-in functions (_builtins_) we can use in our queries: [datascript/query.cljc](https://github.com/logseq/datascript/blob/fork/src/datascript/query.cljc#L194)
 	  #+END_NOTE
-	- Notice also that this query does _not_ have a title - a title is optional.
+	- Notice also that this query does _not_ have a title - a title is strictly optional.
 	-
 	  #+BEGIN_QUERY
 	  {:query [:find (pull ?b [*])
@@ -185,7 +185,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[(= "example" ?t)]]}
 	  	#+END_QUERY
 	  	```
-	- There can be multiple `block/properties` for one block, so we have to `get` the one we want - in this case `type`. This can be any word added as a property to a page:
+	- There can be multiple `block/properties` for one block, so we have to `get` (line **#6**) the one we want - in this case `type` (line **#7**). This can be any word added as a property to a page:
 	-
 	  #+BEGIN_QUERY
 	  {:title "My examples"
