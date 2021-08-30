@@ -9,6 +9,16 @@ title:: Queries/Advanced Queries/Tutorial
   #+BEGIN_TIP
   We will work with content from page: [[advanced-queries-tutorial-data]]. Make sure to check it out before you go through the examples. 
   #+END_TIP
+- You can walk through the examples below one by one or quickly jump to a specific example:
+	- [Example 1 - Find a Tag]((612beaec-f2e0-41eb-902c-924d30050263))
+	- [Example 2 -  Find a Tag That is Also a TODO]((612d1a8c-af09-4c62-a3b0-6e1d63b68579))
+	- [Example 3 - Multiple Markers And TODO States]((612bf199-a799-47eb-8a97-9a7d3452483e))
+	- [Example 4 - Search for Parts of a Tag]((612d1a8c-ac61-4bdb-b7cd-e5606210e178))
+	- [Example 5 -  Search for Page Properties]((612bf199-8057-43ef-ae02-c9ce386cfb3a))
+	- [Example 6 - Work With Project Tasks]((612d1a8c-2404-4600-81bd-76d829d98d90))
+	- [Example 7 - Search Journal Pages for Tagged TODOs]((612d1a8c-bbed-4f87-982b-e5b1927dde94))
+	- [Example 8 - Exclude From a Query]((612bf199-6083-4b19-81e2-d6df94b3b2a2))
+	- [Example 9 - Compare Dates]((612d1a8c-62db-414d-ad84-326d9473c91f))
 - ## Example 1 - Find a Tag
   id:: 612beaec-f2e0-41eb-902c-924d30050263
   collapsed:: false
@@ -50,6 +60,7 @@ title:: Queries/Advanced Queries/Tutorial
 	- That's all. From now on we will iterate on this, adding complexity.
 - ## Example 2 -  Find a Tag That is Also a TODO
   collapsed:: false
+  id:: 612d1a8c-af09-4c62-a3b0-6e1d63b68579
 	- Let's start with the result:
 	-
 	  ```clojure
@@ -143,6 +154,7 @@ title:: Queries/Advanced Queries/Tutorial
 		  #+END_QUERY
 - ## Example 4 - Search for Parts of a Tag
   collapsed:: false
+  id:: 612d1a8c-ac61-4bdb-b7cd-e5606210e178
 	- Some people have complicated tag configurations, like: `Topic/boats, Topic/airplanes, Topic/automobiles`. To look for _all_ those `Topic`s at the same time, we can use `starts-with` (in this example, we look for pages starting with `MyT` instead of `Topic`):
 	-
 	  ```clojure
@@ -195,8 +207,9 @@ title:: Queries/Advanced Queries/Tutorial
 	  	[(get ?p :type) ?t]
 	  	[(= "example" ?t)]]}
 	  #+END_QUERY
-## Example 6 - Work With Project Tasks
-collapsed:: false
+- ## Example 6 - Work With Project Tasks
+  collapsed:: false
+  id:: 612d1a8c-2404-4600-81bd-76d829d98d90
 	- People often use tasks/todos in the context of projects. Here we have a page dedicated to the `example` project. We added `type:: example` right under the title. Now we can search for tasks (NOW or DOING), on that page:
 	-
 	  ```clojure
@@ -241,6 +254,7 @@ collapsed:: false
 	  	#+END_QUERY
 - ## Example 7 - Search Journal Pages for Tagged TODOs
   collapsed:: false
+  id:: 612d1a8c-bbed-4f87-982b-e5b1927dde94
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -311,6 +325,7 @@ collapsed:: false
 	  	#+END_QUERY
 - ## Example 9 - Compare Dates
   collapsed:: false
+  id:: 612d1a8c-62db-414d-ad84-326d9473c91f
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
