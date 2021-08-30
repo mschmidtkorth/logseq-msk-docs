@@ -61,12 +61,16 @@ alias:: command
 			  #+END_VERSE
 		- Drawers
 			- Drawers are a way of managing information - typically _metadata_, i.e. not actual content - in a collapsible section, that is in context to its parent block.
-			- Drawers are originally a [feature](https://orgmode.org/manual/Drawers.html) from [[org-mode]]
+			- They are originally a [feature](https://orgmode.org/manual/Drawers.html) from [[org-mode]].
 			- Drawers
-				- are created automatically for repeating tasks whenever you mark the task is done. This allows you to track your task history without disturbing your document.
+				- are created automatically for repeating tasks whenever you mark the task as done. This allows you to track your task history without disturbing your document.
 				- can be created manually via the following syntax:
 				  ```
 				  :nameOfYourDrawer:
 				  My hidden content
 				  :END:
 				  ```
+					-
+					  :nameOfYourDrawer:
+					  My hidden content
+					  :END:
