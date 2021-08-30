@@ -60,6 +60,6 @@ alias:: command
 			  Another verse.
 			  #+END_VERSE
 		- Drawers
+			-
 			- https://orgmode.org/manual/Drawers.html
-			- Sometimes you want to keep information associated with an entry, but you normally do not want to see it
 			- he way I understand it, is this is for metadata related to a block, such as completion times (as in the example). You don't want this to be in a new block because blocks can be moved around and it won't be clear what the metadata is supposed to refer to.
