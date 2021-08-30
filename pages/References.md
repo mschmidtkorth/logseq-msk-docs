@@ -1,11 +1,11 @@
 alias:: reference, backlink, backlinks
 
 - [[Blocks]] and [[pages]] can be referenced - use `[[]]` for page references and `(())` for block references.
-- `click` on a reference to access it or `shift-click` to open it in the sidebar. This also works for [[search]] results.
 -
   #+BEGIN_TIP
   When there is a match for your typed text, hover with your mouse over the suggested references to preview (or select via `up/down` arrow). You can also use `shift-enter` (or `shift-click`) to preview in the sidebar.
   #+END_TIP
+- `click` on a reference to access it or `shift-click` to open it in the sidebar. This also works for [[search]] results.
 -
   #+BEGIN_CAUTION
   When cutting & pasting the _original_ block somewhere else, all block references are going to become _invalid_ - which is a major drawback. This is also true when reindexing _and_ you have removed the `id::` property
@@ -14,7 +14,7 @@ alias:: reference, backlink, backlinks
 	- When you have a page `smartphone` you can reference it from page `mobile devices` simply by using square brackets - `A [[smartphone]] is a mobile device`.
 	- This will create a _[[linked reference]]_ (a _backlink_) on page `smartphone` to page `mobile devices`. Linked references can be found at the bottom of pages.
 		- Backlinks are automatically created by Logseq if you reference a [[block]]/[[page]] from another [[block]]/[[page]].
-		- Opening a backlink to a page which does not currently exist will _create_ a new page with the backlink text as its title.
+		- Opening a backlink to a page which does not currently exist will _create_ a new page with the backlink text as its title (a file will only be created once the page has at least one block with content)
 	- The [[Unlinked References]] list located below [[Linked References]] on a page displays potential backlinks, files which refer to the page but do not have a relevant backlink present.
 	- Even if you are not explicitly using square brackets - for example, `A smartphone is a mobile device` - a reference is created - an _[[unlinked reference]]_ which can also be found at the bottom of pages. It displays _potential_ backlinks i.e. items which refer to the page but do not have an explicit backlink present.
 	- This allows you to see how your knowledge is connected, and quickly get an overview of a certain topic. Explicitly linked references are also included in your [[graph]].

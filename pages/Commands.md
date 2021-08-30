@@ -64,8 +64,11 @@ alias:: command
 			- They are originally a [feature](https://orgmode.org/manual/Drawers.html) from [[org-mode]].
 			- Drawers
 				- are created automatically for repeating tasks whenever you mark the task as done (`:LOGBOOK:`). This allows you to track your task history without disturbing your document.
-				- TODO Do something regularly
-				  SCHEDULED: <2021-08-31 Tue .+1d>
+					- TODO Do something regularly
+					  SCHEDULED: <2021-08-31 Tue .+1d>
+					  :LOGBOOK:
+					  - STATE: "DONE" FROM "TODO" 2021-08-29T23:05:37
+					  :END:
 				- can be created manually via the following syntax:
 				  ```
 				  :nameOfYourDrawer:
