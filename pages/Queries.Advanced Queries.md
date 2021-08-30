@@ -133,6 +133,7 @@
 	- TODO Add content
 	- You can use the `sort-by` function to sort results.
 	- NOW  Test
+	  id:: 612ca503-57db-4264-bfcc-7d49e65b288c
 	  SCHEDULED: <2021-08-03 Tue>
 	- Sort by priority
 	  query-table:: true
@@ -262,7 +263,7 @@
 			                          (sort-by (fn [h]
 			                                     (get h :block/priority "Z")) result))
 			      :collapsed?       false}
-
+			  
 			  {:title      "📅 NEXT"
 			      :query      [:find (pull ?h [*])
 			                   :in $ ?start ?next

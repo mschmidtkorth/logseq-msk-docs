@@ -20,6 +20,7 @@ alias:: reference, backlink, backlinks
 	- This allows you to see how your knowledge is connected, and quickly get an overview of a certain topic. Explicitly linked references are also included in your [[graph]].
 	- You can *label* references: `[display text]([[page name]])`/`![display text](Task Management)` or `[display text](((block-uuid)))` (note the triple brackets) - see [here](((612a2437-103f-4c3f-bd99-2a98a462b6c2)))
 	  id:: 6109937d-d33f-4496-83e5-8469ecc51b54
+	- You can `right-click` references to replace them with their text (i.e. copy their content) or embed them. You can also define a [[keyboard shortcut]].
 - ## Filters
 	- Items in the [[Linked References]] section can be filtered.
 	- Filters are a simple alternative to [[queries]].
