@@ -32,7 +32,7 @@ title:: Queries/Advanced Queries/Tutorial
 		  }
 		  #+END_QUERY
 		  ```
-	- ### Let's go over this line by line.
+	- Let's go over this line by line.
 		- **\#1** and **\#9** indicate the start and end of a code block. Add them with `<q`, and select _query_ (fun fact: this comes from [[Emacs]] [[org-mode]])
 		- **\#2** and **\#8** define our query - a query starts and end with curly brackets
 		- **\#2** sets the title via the `title` field - `:title "<some title>"`
