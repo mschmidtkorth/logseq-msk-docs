@@ -63,7 +63,10 @@ alias:: command
 			- Drawers are a way of managing information - typically _metadata_, i.e. not actual content - in a collapsible section, that is in context to its parent block.
 			- They are originally a [feature](https://orgmode.org/manual/Drawers.html) from [[org-mode]].
 			- Drawers
-				- are created automatically for repeating tasks whenever you mark the task as done. This allows you to track your task history without disturbing your document.
+				- are created automatically for repeating tasks whenever you mark the task as done (`:LOGBOOK:`). This allows you to track your task history without disturbing your document.
+				- LATER Test
+				- TODO Do something regularly
+				  SCHEDULED: <2021-08-30 Mon .+1h>
 				- can be created manually via the following syntax:
 				  ```
 				  :nameOfYourDrawer:
