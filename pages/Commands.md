@@ -60,6 +60,13 @@ alias:: command
 			  Another verse.
 			  #+END_VERSE
 		- Drawers
-			-
-			- https://orgmode.org/manual/Drawers.html
-			- he way I understand it, is this is for metadata related to a block, such as completion times (as in the example). You don't want this to be in a new block because blocks can be moved around and it won't be clear what the metadata is supposed to refer to.
+			- Drawers are a way of managing information - typically _metadata_, i.e. not actual content - in a collapsible section, that is in context to its parent block.
+			- Drawers are originally a [feature](https://orgmode.org/manual/Drawers.html) from [[org-mode]]
+			- Drawers
+				- are created automatically for repeating tasks whenever you mark the task is done. This allows you to track your task history without disturbing your document.
+				- can be created manually via the following syntax:
+				  ```
+				  :nameOfYourDrawer:
+				  My hidden content
+				  :END:
+				  ```
