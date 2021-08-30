@@ -7,11 +7,11 @@ title:: Queries/Advanced Queries/Tutorial
 - In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with advanced queries in Logseq.
 -
   #+BEGIN_TIP
-  We will work with content from page [[advanced-queries-tutorial-data]]. Make sure to check it out before you go through the examples. 
+  We will work with content from page: [[advanced-queries-tutorial-data]]. Make sure to check it out before you go through the examples. 
   #+END_TIP
 - ## Example 1 - Find a Tag
   id:: 612beaec-f2e0-41eb-902c-924d30050263
-  collapsed:: true
+  collapsed:: false
 	- Let's assume we have a [[tag]] called `MyTag`. We will start with probably the most simple query to just return this page:
 		-
 		  ```clojure
@@ -49,7 +49,7 @@ title:: Queries/Advanced Queries/Tutorial
 			- This is exactly the same thing, as lines **\#5** and **\#6**. We simply replaced `?p` immediately with `:block/name`.
 	- That's all. From now on we will iterate on this, adding complexity.
 - ## Example 2 -  Find a Tag That is Also a TODO
-  collapsed:: true
+  collapsed:: false
 	- Let's start with the result:
 	-
 	  ```clojure
@@ -63,7 +63,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	}
 	  #+END_QUERY
 	  ```
-	- New compared to [Example 1](((612beaec-f2e0-41eb-902c-924d30050263))) is line **\#5**, `:block-marker`. This is where _todo keywords_ are stored (for the curious: [logseq/db_schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs), line 57 or so)
+	- New, compared to [Example 1](((612beaec-f2e0-41eb-902c-924d30050263))), is line **\#5**, `:block-marker`. This is where _todo keywords_ are stored (for the curious: [logseq/db_schema](https://github.com/logseq/logseq/blob/master/src/main/frontend/db_schema.cljs), line 57 or so)
 	- Our search has to satisfy both line **\#5**, a `marker` containing `TODO`, and **\#6** and **\#7**, which belong together. You can think of all three lines to be connected via an `and` operator.
 	-
 	  #+BEGIN_QUERY
@@ -77,7 +77,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		}
 	  	#+END_QUERY
 - ## Example 3 - Multiple Markers And TODO States
-  collapsed:: true
+  collapsed:: false
   id:: 612bf199-a799-47eb-8a97-9a7d3452483e
 	- Notice lines **\#5** and **\#6**, that replace the single line **\#5** fom the previous example. We're looking for a marker, called `?marker`. We also specify that `?marker` should _contain_ either `TODO` or `DOING`
 	-
@@ -125,7 +125,7 @@ title:: Queries/Advanced Queries/Tutorial
 		  ```
 			-
 			  #+BEGIN_IMPORTANT
-			  	Notice the overall closing `]` on line **11**, it's easy to forget - especially as you slowly add more complexity to your searches.
+			  	Notice the two closing `]` on line **11**, it's easy to forget - especially as you slowly add more complexity to your searches.
 			  	#+END_IMPORTANT
 		-
 		  #+BEGIN_QUERY
@@ -142,7 +142,7 @@ title:: Queries/Advanced Queries/Tutorial
 		  	}
 		  #+END_QUERY
 - ## Example 4 - Search for Parts of a Tag
-  collapsed:: true
+  collapsed:: false
 	- Some people have complicated tag configurations, like: `Topic/boats, Topic/airplanes, Topic/automobiles`. To look for _all_ those `Topic`s at the same time, we can use `starts-with` (in this example, we look for pages starting with `MyT` instead of `Topic`):
 	-
 	  ```clojure
@@ -155,12 +155,12 @@ title:: Queries/Advanced Queries/Tutorial
 	  }
 	  #+END_QUERY
 	  ```
-	- The key is, of course, line **#\6** where we use `clojure.string/starts-with?`. The variable we work with is `?tag`, and we filter on `MyT`. This could also be something like `Topic/` for those kind of setups.
+	- The key is, of course, line **#6** where we use `clojure.string/starts-with?`. The variable we work with is `?tag`, and we filter on `MyT`. This could also be something like `Topic/` for those kind of setups.
 	-
 	  #+BEGIN_NOTE
 	  For further study, these are the Clojure built-in functions (_builtins_) we can use in our queries: [datascript/query.cljc](https://github.com/logseq/datascript/blob/fork/src/datascript/query.cljc#L194)
 	  #+END_NOTE
-	- Notice also that this query does _not_ have a title - a title is optional.
+	- Notice also that this query does _not_ have a title - a title is strictly optional.
 	-
 	  #+BEGIN_QUERY
 	  {:query [:find (pull ?b [*])
@@ -171,7 +171,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  }
 	  #+END_QUERY
 - ## Example 5 -  Search for Page Properties
-  collapsed:: true
+  collapsed:: false
   id:: 612bf199-8057-43ef-ae02-c9ce386cfb3a
 	- ((612bf199-3c8d-405e-86fc-17c7a923a6e4)). Let's look for pages that have their `type` property defined as `example`:
 	-
@@ -185,7 +185,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  		[(= "example" ?t)]]}
 	  	#+END_QUERY
 	  	```
-	- There can be multiple `block/properties` for one block, so we have to `get` the one we want - in this case `type`. This can be any word added as a property to a page:
+	- There can be multiple `block/properties` for one block, so we have to `get` (line **#6**) the one we want - in this case `type` (line **#7**).
 	-
 	  #+BEGIN_QUERY
 	  {:title "My examples"
@@ -195,34 +195,35 @@ title:: Queries/Advanced Queries/Tutorial
 	  	[(get ?p :type) ?t]
 	  	[(= "example" ?t)]]}
 	  #+END_QUERY
-- ## Example 6 - Work With Project Tasks
-  collapsed:: true
+## Example 6 - Work With Project Tasks
+collapsed:: false
+	- People often use tasks/todos in the context of projects. Here we have a page dedicated to the `example` project. We added `type:: example` right under the title. Now we can search for tasks (NOW or DOING), on that page:
 	-
 	  ```clojure
-	  	#+BEGIN_QUERY
-	  	{:title "My examples TODOs"
-	   :query [:find (pull ?b [*])
-	       :where
-	       [?b :block/marker ?marker]
-	       [(contains? #{"NOW" "DOING"} ?marker)]
-	  
-	  		[?b :block/page ?p]
-	  		[?p :block/properties ?a]
-	  		[(get ?a :type) ?t]
-	  		[(= "example" ?t)]
-	       ]
-	   :result-transform (fn [result]
-	       (sort-by (fn [h]
-	           (get h :block/priority "Z")) result))
-	   :collapsed? false}
-	  	#+END_QUERY
-	  	```
+	  #+BEGIN_QUERY
+	  {:title "My example's TODOs"
+	  :query [:find (pull ?b [*])
+	      :where
+	      [?b :block/marker ?marker]
+	      [(contains? #{"NOW" "DOING"} ?marker)]
+	  	  
+	  	[?b :block/page ?p]
+	  	[?p :block/properties ?a]
+	  	[(get ?a :type) ?t]
+	  	[(= "example" ?t)]
+	      ]
+	  :result-transform (fn [result]
+	      (sort-by (fn [h]
+	          (get h :block/priority "Z")) result))
+	  :collapsed? false}
+	  #+END_QUERY
+	  ```
 	- This query combines the _TODO states_ from [Example 3](((612bf199-a799-47eb-8a97-9a7d3452483e))), and _page properties_ from [Example 5](((612bf199-8057-43ef-ae02-c9ce386cfb3a)))
 	- New are lines **\#13-\#15** to will sort TODOs by priority with the most important task first
 	- Notice also how line **\#16** says that the query results should not be shown collapsed
 	-
 	  #+BEGIN_QUERY
-	  	{:title "My examples TODOs"
+	  	{:title "My example's TODOs"
 	   :query [:find (pull ?b [*])
 	       :where
 	       [?b :block/marker ?marker]
@@ -239,7 +240,7 @@ title:: Queries/Advanced Queries/Tutorial
 	   :collapsed? false}
 	  	#+END_QUERY
 - ## Example 7 - Search Journal Pages for Tagged TODOs
-  collapsed:: true
+  collapsed:: false
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -261,7 +262,7 @@ title:: Queries/Advanced Queries/Tutorial
 	   }
 	  	#+END_QUERY
 	  	```
-	- New are lines **\#8** and **\#9**, where we ask if the page is a `journal` to only receive tasks from [[journal]] entries.
+	- New are lines **\#8** and **\#9**, where we ask if the page is a `journal` and filter tasks from [[journal]] entries.
 	-
 	  #+BEGIN_QUERY
 	  	{:title "Tagged journal pages"
@@ -283,7 +284,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	#+END_QUERY
 - ## Example 8 - Exclude From a Query
   id:: 612bf199-6083-4b19-81e2-d6df94b3b2a2
-  collapsed:: true
+  collapsed:: false
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
@@ -309,7 +310,7 @@ title:: Queries/Advanced Queries/Tutorial
 	  	}
 	  	#+END_QUERY
 - ## Example 9 - Compare Dates
-  collapsed:: true
+  collapsed:: false
 	-
 	  ```clojure
 	  	#+BEGIN_QUERY
