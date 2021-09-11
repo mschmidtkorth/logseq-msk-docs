@@ -1,8 +1,8 @@
 alias:: reindex
 
 - Reindexing does not manipulate your Markdown/Org Mode files but simply rebuilds Logseq's internal database based on your Markdown/Org Mode files.
-- Refreshing
-- You can also use _three dots menu > Refresh_ to update your Logseq page based on your Markdown/Org Mode file (for example, if you have done a change using an external text editor0.)
+- Refreshing will update the content displayed in Logseq from the content stored in your Markdown/Org Mode files.
+- You can also use _three dots menu > Refresh_ to update your Logseq page based on your Markdown/Org Mode file (for example, if you have done a change using an external text editor)
 -
   #+BEGIN_WARNING
   **Loss of data**
@@ -11,4 +11,7 @@ alias:: reindex
 -
 - **USAGE**
 	- To reindex, click on your graph's name in the top right (next to the three dots) and select _Re-Index_
-	- To refresh,  also use _three dots menu > Refresh_ to update your Logseq page based on your Markdown/Org Mode file (for example, if you have done a change using an external text editor0.)
+	- To refresh, click on your graph's name in the top right (next to the three dots) and select _Refresh_
+- **EXAMPLES**
+	- You have used an external text editor to make modifications to your files. You can use _Refresh_ to update Logseq with these changes.
+	- You have
