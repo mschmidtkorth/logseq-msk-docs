@@ -181,6 +181,11 @@ textarea {
   font-weight: inherit;
   letter-spacing: inherit;
   text-size-adjust: 100%;
+  background: var(--ls-primary-background-color);
+}
+
+.dark-theme textarea {
+  background: var(--ls-tertiary-background-color);
 }
 
 ul {
@@ -1010,6 +1015,7 @@ hr {
 .fade-link {
   opacity: 0.6;
   transition: 0.3s;
+  color: var(--ls-primary-text-color);
 }
 
 a.fade-link:hover {
