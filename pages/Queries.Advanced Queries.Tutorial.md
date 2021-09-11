@@ -328,27 +328,27 @@ title:: Queries/Advanced Queries/Tutorial
   id:: 612d1a8c-62db-414d-ad84-326d9473c91f
 	-
 	  ```clojure
-	  	#+BEGIN_QUERY
+	  #+BEGIN_QUERY
 	  	{:title "⚠️ OVERDUE"
 	  		:query [:find (pull ?block [*])
-	  :in $ ?start ?today
-	  :where
-	  [?block :block/marker ?marker]
+        :in $ ?start ?today
+        :where
+        [?block :block/marker ?marker]
 
-	  (or
-	  	[?block :block/scheduled ?d]
-	  	[?block :block/deadline ?d])
+        (or
+          [?block :block/scheduled ?d]
+          [?block :block/deadline ?d])
 
-	  [(>= ?d ?start)]
-	  [(<   ?d ?today)]
+        [(>= ?d ?start)]
+        [(<   ?d ?today)]
 
-	  [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAITING"} ?marker)]]
-	  	:inputs [:180d :today]
-	  	:result-transform  (fn [result]
-	  					(sort-by  (fn [d]
-	  					(get d :block/deadline) ) result ))
-	  	:collapsed? false}
-	  	#+END_QUERY
+        [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAITING"} ?marker)]]
+          :inputs [:180d :today]
+          :result-transform  (fn [result]
+                  (sort-by  (fn [d]
+                  (get d :block/deadline) ) result ))
+          :collapsed? false}
+	  #+END_QUERY
 	  	```
 	- This is a very useful one. Let's see what it does:
 		- Line **\#6** gets `?marker` - it can (line **\#15**) contain `NOW, LATER, TODO` etc.
