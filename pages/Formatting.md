@@ -58,7 +58,7 @@
 				  * Item 1
 				  * Item 2
 				  * Item 3
-				  ```
+				- ```
 			-
 			  #+BEGIN_TIP
 			  Unordered lists in single blocks can also be used for lists in admonition blocks (e.g. quote or tip blocks - both [simple](((61111d75-fbc7-405e-a309-ac8a209ed9d9))) and [advanced](((61111d75-a7a0-4db7-aa57-1f697d5c5241)))).
