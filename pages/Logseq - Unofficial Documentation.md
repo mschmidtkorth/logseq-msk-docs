@@ -230,6 +230,7 @@ heading:: true
 		- ## Querying Data ([[Queries]])
 		- ## [[Page Version History]]
 		- ## Customization: [[Custom CSS]] & [[Plugins API]]
+		  collapsed:: true
 			- To change the _appearance_ of Logseq you can add your own [CSS](https://en.wikipedia.org/wiki/CSS) rules. These are defined in Logseq's [[custom CSS]] file.
 			- To change the _functionality_ of Logseq you can write your own plugin via the [[Plugins API]].
 		- ## Community Features
