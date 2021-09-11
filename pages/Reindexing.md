@@ -13,4 +13,4 @@ alias:: reindex, refresh, refreshing
 	- To _refresh_, click on your graph's name in the top right (next to the three dots) and select _Refresh_
 - **EXAMPLES**
 	- You have used an external text editor to make modifications to your files. You can use _Refresh_ to update Logseq with these changes.
-	- You have
+	- You have updated your [[config.edn]] in an external text editor and want these changes to reflect in Logseq. You can use _Reindex_ to do so.
