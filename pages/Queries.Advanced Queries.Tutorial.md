@@ -329,25 +329,25 @@ title:: Queries/Advanced Queries/Tutorial
 	-
 	  ```clojure
 	  #+BEGIN_QUERY
-	  	{:title "⚠️ OVERDUE"
-	  		:query [:find (pull ?block [*])
-        :in $ ?start ?today
-        :where
-        [?block :block/marker ?marker]
+    {:title "⚠️ OVERDUE"
+      :query [:find (pull ?block [*])
+      :in $ ?start ?today
+      :where
+      [?block :block/marker ?marker]
 
-        (or
-          [?block :block/scheduled ?d]
-          [?block :block/deadline ?d])
+      (or
+        [?block :block/scheduled ?d]
+        [?block :block/deadline ?d])
 
-        [(>= ?d ?start)]
-        [(<   ?d ?today)]
+      [(>= ?d ?start)]
+      [(<   ?d ?today)]
 
-        [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAITING"} ?marker)]]
-          :inputs [:180d :today]
-          :result-transform  (fn [result]
-                  (sort-by  (fn [d]
-                  (get d :block/deadline) ) result ))
-          :collapsed? false}
+      [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAITING"} ?marker)]]
+        :inputs [:180d :today]
+        :result-transform  (fn [result]
+                (sort-by  (fn [d]
+                (get d :block/deadline) ) result ))
+        :collapsed? false}
 	  #+END_QUERY
 	  	```
 	- This is a very useful one. Let's see what it does:
