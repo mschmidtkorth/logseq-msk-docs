@@ -4,10 +4,10 @@ title:: Queries/Advanced Queries/Tutorial
   #+BEGIN_IMPORTANT
   Playing around with queries can be detrimental to the health of your [[graph]] as you may create blocks and pages just for testing purposes. Use a dedicated playground graph for this!
   #+END_IMPORTANT
-- In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with [advanced queries]([[Queries/Advanced Queries]]) in Logseq.
+- In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with [advanced queries]([[Queries/Advanced Queries]]).
 -
   #+BEGIN_TIP
-  We will work with content from page: [[advanced-queries-tutorial-data]]. Make sure to check it out before you go through the examples. 
+  We will work with content from page: [[advanced-queries-tutorial-data]]. Make sure to check it out before you go through the examples.
   #+END_TIP
 - You can walk through the examples below one by one or quickly jump to a specific example:
 	- [Example 1 - Find a Tag](((612beaec-f2e0-41eb-902c-924d30050263)))
@@ -109,10 +109,10 @@ title:: Queries/Advanced Queries/Tutorial
 	  	{:title "Find: TODO or DOING MyTag"
 	  	:query [:find (pull ?b [*])
 	  	:where
-	  
+
 	  	[?b :block/marker ?marker]
 	  	[(contains? #{"TODO" "DOING"} ?marker)]
-	  
+
 	  	[?p :block/name "mytag"]
 	  	[?b :block/ref-pages ?p]]
 	  	}
@@ -124,10 +124,10 @@ title:: Queries/Advanced Queries/Tutorial
 		  	{:title "Find: MyTag and MyOtherTag"
 		  	:query [:find (pull ?b [*])
 		  	:where
-		  
+
 		  		[?b :block/marker ?marker]
 		  		[(contains? #{"TODO" "DOING"} ?marker)]
-		  
+
 		  		[?b :block/ref-pages ?p]
 		  		[?p :block/name ?tag]
 		  		[(contains? #{"mytag" "myothertag"} ?tag)]]
@@ -143,10 +143,10 @@ title:: Queries/Advanced Queries/Tutorial
 		  	{:title "Find: MyTag and MyOtherTag"
 		  	:query [:find (pull ?b [*])
 		  	:where
-		  
+
 		  		[?b :block/marker ?marker]
 		  		[(contains? #{"TODO" "DOING"} ?marker)]
-		  
+
 		  		[?b :block/ref-pages ?p]
 		  		[?p :block/name ?tag]
 		  		[(contains? #{"mytag" "myothertag"} ?tag)]]
@@ -219,7 +219,7 @@ title:: Queries/Advanced Queries/Tutorial
 	      :where
 	      [?b :block/marker ?marker]
 	      [(contains? #{"NOW" "DOING"} ?marker)]
-	  	  
+
 	  	[?b :block/page ?p]
 	  	[?p :block/properties ?a]
 	  	[(get ?a :type) ?t]
@@ -241,7 +241,7 @@ title:: Queries/Advanced Queries/Tutorial
 	       :where
 	       [?b :block/marker ?marker]
 	       [(contains? #{"NOW" "DOING"} ?marker)]
-	  
+
 	  		[?b :block/page ?p]
 	  		[?p :block/properties ?a]
 	  		[(get ?a :type) ?t]
@@ -263,10 +263,10 @@ title:: Queries/Advanced Queries/Tutorial
 	  	:where
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-	  
+
 	  		[?b :block/page ?p]
 	  		[?p :block/journal? true]
-	  
+
 	  	[?b :block/ref-pages ?r]
 	  		[?r :block/name "MyTag"]
 	  		]
@@ -284,10 +284,10 @@ title:: Queries/Advanced Queries/Tutorial
 	  	:where
 	  		[?b :block/marker ?marker]
 	  		[(contains? #{"TODO" "DOING"} ?marker)]
-	  
+
 	  		[?b :block/page ?p]
 	  		[?p :block/journal? true]
-	  
+
 	  	[?b :block/ref-pages ?r]
 	  		[?r :block/name "mytag"]
 	  		]
@@ -334,14 +334,14 @@ title:: Queries/Advanced Queries/Tutorial
 	  :in $ ?start ?today
 	  :where
 	  [?block :block/marker ?marker]
-	  
+
 	  (or
 	  	[?block :block/scheduled ?d]
 	  	[?block :block/deadline ?d])
-	  
+
 	  [(>= ?d ?start)]
 	  [(<   ?d ?today)]
-	  
+
 	  [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAITING"} ?marker)]]
 	  	:inputs [:180d :today]
 	  	:result-transform  (fn [result]
