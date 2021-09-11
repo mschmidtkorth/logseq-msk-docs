@@ -4,7 +4,7 @@ title:: Queries/Advanced Queries/Tutorial
   #+BEGIN_IMPORTANT
   Playing around with queries can be detrimental to the health of your [[graph]] as you may create blocks and pages just for testing purposes. Use a dedicated playground graph for this!
   #+END_IMPORTANT
-- In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with [advanced queries]([[Queries/Advanced Queries]]).
+- In the following sections you will walk through various examples of querying data in Logseq. The tutorials are intended for beginners getting started with [advanced queries]([[Queries/Advanced Queries]]) in Logseq.
 -
   #+BEGIN_TIP
   We will work with content from page: [[advanced-queries-tutorial-data]]. Make sure to check it out before you go through the examples.
