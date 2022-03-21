@@ -3,11 +3,17 @@
   --ls-tag-text-hover-opacity: 1;
   --ls-page-text-size: 1em;
   --ls-page-title-size: 36px;
-  --ls-font-family: 'Inter';
-  --ls-main-content-max-width: 740px;
+  --ls-main-content-max-width: 810px;
   --ls-main-content-max-width-wide: 100%;
+  --ls-font-family: Inter;
+  --ls-scrollbar-width: 6px;
   --ls-border-radius-low: 4px;
   --ls-border-radius-medium: 8px;
+  --ls-headbar-height: 3rem;
+  --ls-headbar-inner-top-padding: 0px;
+  --ls-left-sidebar-width: 240px;
+  --ls-left-sidebar-sm-width: 70%;
+  --ls-left-sidebar-nav-btn-size: 38px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -140,13 +146,15 @@ html[data-theme='light'] {
   --color-level-5: #bbdaf6;
 }
 
+html:not(.is-native-android) {
+  font-family: var(--ls-font-family), sans-serif, system-ui,
+  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+  Arial, 'Noto Sans', serif, Apple Color Emoji, Segoe UI Emoji,
+  Segoe UI Symbol !important;
+}
+
 /* region Reset top elements */
 html {
-  font-family: var(--ls-font-family), Inter, sans-serif, system-ui,
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-    Arial, 'Noto Sans', serif, Apple Color Emoji, Segoe UI Emoji,
-    Segoe UI Symbol !important;
-
   /* FIXME: rewrite revealjs.css ? */
   height: unset !important;
   overflow: auto !important;
@@ -676,10 +684,6 @@ video {
 /** endregion **/
 
 /** region App utilities **/
-.page {
-  margin-top: 24px;
-}
-
 .ls-center {
   position: absolute;
   top: 50%;
@@ -811,10 +815,6 @@ li p:last-child,
   padding-top: 42.86%;
 }
 
-.footdef {
-  margin: 1rem 0;
-}
-
 .admonitionblock {
   margin: 2rem 0;
 }
@@ -849,6 +849,10 @@ h1.title {
   color: var(--ls-title-text-color, #222);
   font-size: var(--ls-page-title-size, 36px);
   font-weight: 600;
+}
+
+.title .page-icon {
+  margin-right: 12px;
 }
 
 .block-highlight,
@@ -1063,11 +1067,6 @@ mark {
 
 /* block references */
 
-.block-ref {
-  padding: 2px 5px;
-  display: inline;
-}
-
 .block-ref .block-ref {
   padding: 6px 5px;
   border: none;
@@ -1120,10 +1119,12 @@ a.tooltip-priority {
   border-color: var(--ls-primary-text-color);
 }
 
-a.page-op {
-    svg {
-        transform: scale(0.9);
-    }
+#help-latex .katex-html {
+  text-align: right;
+}
+
+a.page-op svg {
+  transform: scale(0.9);
 }
 
 .search-more {
@@ -1135,6 +1136,7 @@ a.page-op {
   background-color: var(--ls-quaternary-background-color);
   padding: 2px 4px !important;
   border-radius: 6px;
+  color: var(--ls-secondary-text-color);
 }
 
 html[data-theme='light'] .keyboard-shortcut > code {
@@ -1142,7 +1144,7 @@ html[data-theme='light'] .keyboard-shortcut > code {
 }
 
 html[data-theme='dark'] .keyboard-shortcut > code {
-  box-shadow: inset 0 -1px 0 var(--ls-primary-background-color), 0 0 1px 1px rgba(255, 255, 255,.1);
+  box-shadow: inset 0 -1px 0 var(--ls-primary-background-color), 0 0 1px 1px rgba(255, 255, 255,.2);
 }
 
 .ui__modal-panel {
