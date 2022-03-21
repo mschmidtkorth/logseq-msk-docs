@@ -1,25 +1,21 @@
--
-  #+BEGIN_NOTE
+- #+BEGIN_NOTE
   This documentation is written by a Logseq fan and not the Logseq team. You can find the official documentation [here](https://logseq.github.io/#/page/Contents).
   **Last update for:** v0.3.6
   #+END_NOTE
--
-  #+BEGIN_TIP
+- #+BEGIN_TIP
   * **You have never used an [[Infinite Outliner]] application?** Feel free to play around - click on links with brackets `[[]]` (you may also hover over them!) to be taken to another section of content, hover over the [[bullet]] on the left side to expand/collapse content or click on it to open it in its own view.
   * Press `t` then `w` (like typing `tw`) to increase the page width.
   * Use the [[search]] at the top left of the screen.
   #+END_TIP
 # Introduction
 heading:: true
-	-
-	  #+BEGIN_WARNING
+	- #+BEGIN_WARNING
 	  **Logseq is still in a beta phase. Regularly backup your files.**
 	  Use a version history tool such as git or even cloud storage providers like Dropbox. When using git, commit your changes regularly (you may use `git diff --stat` to confirm no file has been accidentally cleared; or show changes of previous commits with `git show --stat` or `git log --stat`).
 	  As content is stored as plain Markdown files, you may use any backup tool of your choice.
 	  #+END_WARNING
 	- ## What is Logseq?
-		-
-		  #+BEGIN_TIP
+		- #+BEGIN_TIP
 		  You are looking at it right now - this page was built with Logseq!
 		  #+END_TIP
 		- [Logseq](https://github.com/logseq/logseq) (\[lɒɡsiːk\], from _logbook sequence_) ([documentation](https://logseq.github.io/#/page/Contents)) is an alternative to knowledge management tools like [VuePress](https://vuepress.vuejs.org/guide/) or [Roam Research](https://roamresearch.com/) or even a set of Microsoft Word documents.
@@ -44,12 +40,10 @@ heading:: true
 		- ### Mobile
 			- Logseq has a mobile application in development but it is not yet available.
 			- If you host your content on GitHub, Dropbox etc. you can still access your knowledge from your mobile by opening the Markdown files directly.
-			-
-			  #+BEGIN_TIP
+			- #+BEGIN_TIP
 			  Always make sure to re-sync when switching devices.
 			  #+END_TIP
-			-
-			  #+BEGIN_WARNING
+			- #+BEGIN_WARNING
 			  Be careful with putting your data on the web - there had been an incident with Logseq:
 			  #+BEGIN_QUOTE
 			  * Why I log in with Google but somehow I can see other people's notes on GitHub?
@@ -72,14 +66,11 @@ heading:: true
 	- Keyboard Shortcuts
 	  heading:: true
 	  id:: 612a3629-bfa5-4d51-9d6f-fb03237c43fe
-		-
-		  alias:: keyboard shortcut, keyboard shortcuts
-		-
-		  #+BEGIN_TIP
+		- alias:: keyboard shortcut, keyboard shortcuts
+		- #+BEGIN_TIP
 		  Edit keyboard shortcuts via _[[Settings]] > Customize shortcuts_ or by editing the `:shortcuts` section in the [[config.edn]] file (requires restarting or [[reindexing]] your [[graph]]).
 		  #+END_TIP
-		-
-		  #+BEGIN_NOTE
+		- #+BEGIN_NOTE
 		  **How to read keyboard shortcuts:**
 		  * `a+b` Press both the `a` and `b` key at the same time
 		  * `a b` Press the `a` key first, let it go and then press the `b` key
@@ -172,16 +163,14 @@ heading:: true
 	- ## Emojis
 	  collapsed:: true
 		- You can work with Emojis in Logseq - there are different options:
-			-
-			  1. Native OS emoji picker - `Cmd+Ctrl+Space` for Mac, `Windows+.` for Windows
+			- 1. Native OS emoji picker - `Cmd+Ctrl+Space` for Mac, `Windows+.` for Windows
 			  1. [Emoji picker](http://www.unicode.org/emoji/charts/full-emoji-list.html) [[plugin]] in Logseq
 			  1. Copy and paste from [Unicode emoji overview](http://www.unicode.org/emoji/charts/full-emoji-list.html)
 	- ## Importing Markdown
 	  collapsed:: true
 		- Simply save the `.md` file in your Logseq [[Graph]] folder (sometimes you need to [[reindex]]).
 		- You may also update a `.md` file directly in any other editor - it will refresh in Logseq after a few seconds
-		-
-		  #+BEGIN_WARNING
+		- #+BEGIN_WARNING
 		  Markdown lists are only imported as blocks if prefixed with`-` instead of `*`.
 		  #+END_WARNING
 	- ## Prevent Pasted Text from being Automatically Formatted
@@ -191,13 +180,11 @@ heading:: true
 	  collapsed:: true
 		- Logseq is generally performant, but certain situations can lead to slowness:
 		  id:: 6109951e-1c4d-4491-8147-9c4072672d56
-			-
-			  1. Long pages with many blocks (more than 500) - try to add references to other blocks/pages instead of putting all the content on the same page
+			- 1. Long pages with many blocks (more than 500) - try to add references to other blocks/pages instead of putting all the content on the same page
 			  2. Slow queries in the [[config.edn]][^1] (are always executed) or opened pages
 			  3. Many source code blocks 
 			  [^1]: A workaround is to put the queries into a separate page and a link to it in the [[Favorites]] pane.
-			-
-			  #+BEGIN_TIP
+			- #+BEGIN_TIP
 			  Queries part of collapsed blocks will not be automatically executed. (Use the Developer Tools to confirm the raw Datalog queries)
 			  #+END_TIP
 - Features
@@ -244,8 +231,7 @@ heading:: true
 - # Development
   collapsed:: true
 	- To contribute to Logseq, clone the [git repository](https://github.com/logseq/logseq/), `cd logseq`, `yarn install`, `yarn watch` (check log output - it lists multiple IPs/addresses to open)
-		-
-		  #+BEGIN_TIP
+		- #+BEGIN_TIP
 		  If the Logseq page stays blank, open the dashboard URL (e.g. `http://localhost:9630/dashboard`) and click on `Force recompile` for the Electron app
 		  #+END_TIP
 	- ## [[Plugins API]]
@@ -269,8 +255,7 @@ heading:: true
 			- Has still many bugs that sometimes cause loss of content
 			- Shortcuts for text management are limited compared to an IDE like VS Code (moving lines, quickly cutting lines, manipulating multiple lines etc.)
 	- ## Obsidian
-		-
-		  #+BEGIN_TIP
+		- #+BEGIN_TIP
 		  You can combine Obsidian and Logseq to get best-of-breed tools! Whenever you update content in Logseq it will directly reflect in Obsidian (or vice versa)
 		  #+END_TIP
 		- See [here](https://discuss.logseq.com/t/making-obsidian-play-nice-with-logseq/1185) for tips
@@ -281,8 +266,7 @@ heading:: true
 			- Better search capabilities
 		- Disadvantages
 			- Obsidian is not block-based - i.e. you cannot reference a single paragraph or collapse headings (however, this also makes it more portable as closer to basic Markdown files). The block-based alternative from the same developers is [Dynalist](https://dynalist.io/pricing) which was actually available before Obsidian. However, it comes with a price tag.
-			-
-			  #+BEGIN_TIP
+			- #+BEGIN_TIP
 			  There are plugins like Obidian Outliner or Obsidian Zoom that allow a more outliner-based approach.
 			  #+END_TIP
 			- No WYSIWYG - Markdown code and output are separated into different panes unlike Logseq where you immediately see the result
@@ -295,8 +279,7 @@ heading:: true
 		- This is typically only a visual issue and your content is not lost. Confirm it by opening the Markdown file in a text editor
 		- To resolve
 			- Create a backup of your [[graph]] folder, then
-			-
-			  1. [[Reindex]] your [[graph]], or
+			- 1. [[Reindex]] your [[graph]], or
 			  1. Restart Logseq, or
 			  1. Go to _[[Settings]] > Clear [[Cache]]_ or use `Cmd+Shift+R` to reload without cache (you will need to restore your settings)
 		- Another reason is that the reference does not link to the correct file - for example, you have a file `2021_01_01.md` but link to it via `[[2021-01-01]]` (note the dashes - and rename the file)
