@@ -7,8 +7,8 @@
   * Press `t` then `w` (like typing `tw`) to increase the page width.
   * Use the [[search]] at the top left of the screen.
   #+END_TIP
-# Introduction
-heading:: true
+- # Introduction
+  heading:: true
 	- #+BEGIN_WARNING
 	  **Logseq is still in a beta phase. Regularly backup your files.**
 	  Use a version history tool such as git or even cloud storage providers like Dropbox. When using git, commit your changes regularly (you may use `git diff --stat` to confirm no file has been accidentally cleared; or show changes of previous commits with `git show --stat` or `git log --stat`).
@@ -294,4 +294,4 @@ heading:: true
 	- [Great videos around](https://www.youtube.com/channel/UC525q2RIufHjnaHOuIUFY9A) [[PKM]]
 		- [Learn anything fast with Roam](https://www.youtube.com/watch?v=df-Pufz0OBc)
 	- Introduction videos: [1](https://www.youtube.com/watch?v=Vw-x7yTTO0s&t=496s), [2](https://www.youtube.com/watch?v=43PKm0TfyNk), [3](https://www.youtube.com/watch?v=43PKm0TfyNk), [4](https://www.youtube.com/watch?v=280hiGGM1Yg)
-# [[Contributing]] to This Documentation
+- # [[Contributing]] to This Documentation
