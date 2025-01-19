@@ -150,7 +150,7 @@ heading:: true
 		- Use [[Properties]] to add additional classification and easily query your knowledge.
 		- Leverage [[Unlinked References]] to avoid having to tag everything.
 		- Use [[Aliases]] to make sure your content is linked properly throughout your library.
-		- Use tools like [diigo](https://www.diigo.com/index), [memex](https://getmemex.com/) ([video](https://www.youtube.com/watch?v=G8UF8lQnAKA&t=171s)), or even [todoist](https://todoist.com) to bookmark/highlight/annotate/outline t you found on the web
+		- Use tools like [diigo](https://www.diigo.com/index), [memex](https://memex.garden/) ([video](https://www.youtube.com/watch?v=G8UF8lQnAKA&t=171s)), or even [todoist](https://todoist.com) to bookmark/highlight/annotate/outline things you found on the web
 		- Example - You have recurring meetings with your bank to discuss the possibility of buying a house.
 		- Recurring Meetings
 			- You create a page `Private/House/Bank` and tag it with `#finance`.
