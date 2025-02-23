@@ -75,7 +75,7 @@
 		  * `a+b` Press both the `a` and `b` key at the same time
 		  * `a b` Press the `a` key first, let it go and then press the `b` key
 		  * `a+b/c` Press both the `a` and `b` or `a` and `c` key at the same time
-		  
+
 		  The modifier keys for MacOS and Windows are different.
 		  * Windows: `Ctrl`, `Alt``
 		  * MacOS: `Cmd`, `Opt`
@@ -150,7 +150,7 @@
 		- Use [[Properties]] to add additional classification and easily query your knowledge.
 		- Leverage [[Unlinked References]] to avoid having to tag everything.
 		- Use [[Aliases]] to make sure your content is linked properly throughout your library.
-		- Use tools like [diigo](https://www.diigo.com/index), [memex](https://memex.garden/) ([video](https://www.youtube.com/watch?v=G8UF8lQnAKA&t=171s)), or even [todoist](https://todoist.com) to bookmark/highlight/annotate/outline things you found on the web
+		- Use tools like [diigo](https://www.diigo.com/index), [memex](https://memex.garden/), or of course Logseq to document things you found on the web
 		- Example - You have recurring meetings with your bank to discuss the possibility of buying a house.
 		- Recurring Meetings
 			- You create a page `Private/House/Bank` and tag it with `#finance`.
@@ -165,7 +165,7 @@
 		- You can work with Emojis in Logseq - there are different options:
 			- 1. Native OS emoji picker - `Cmd+Ctrl+Space` for Mac, `Windows+.` for Windows
 			  1. [Emoji picker](http://www.unicode.org/emoji/charts/full-emoji-list.html) [[plugin]] in Logseq
-			  1. Copy and paste from [Unicode emoji overview](http://www.unicode.org/emoji/charts/full-emoji-list.html)
+			  2. Copy and paste from [Unicode emoji overview](http://www.unicode.org/emoji/charts/full-emoji-list.html)
 	- ## Importing Markdown
 	  collapsed:: true
 		- Simply save the `.md` file in your Logseq [[Graph]] folder (sometimes you need to [[reindex]]).
@@ -181,8 +181,8 @@
 		- Logseq is generally performant, but certain situations can lead to slowness:
 		  id:: 6109951e-1c4d-4491-8147-9c4072672d56
 			- 1. Long pages with many blocks (more than 500) - try to add references to other blocks/pages instead of putting all the content on the same page
-			  2. Slow queries in the [[config.edn]][^1] (are always executed) or opened pages
-			  3. Many source code blocks 
+			  1. Slow queries in the [[config.edn]][^1] (are always executed) or opened pages
+			  2. Many source code blocks
 			  [^1]: A workaround is to put the queries into a separate page and a link to it in the [[Favorites]] pane.
 			- #+BEGIN_TIP
 			  Queries part of collapsed blocks will not be automatically executed. (Use the Developer Tools to confirm the raw Datalog queries)
@@ -282,7 +282,7 @@
 			- Create a backup of your [[graph]] folder, then
 			- 1. [[Reindex]] your [[graph]], or
 			  1. Restart Logseq, or
-			  1. Go to _[[Settings]] > Clear [[Cache]]_ or use `Cmd+Shift+R` to reload without cache (you will need to restore your settings)
+			  2. Go to _[[Settings]] > Clear [[Cache]]_ or use `Cmd+Shift+R` to reload without cache (you will need to restore your settings)
 		- Another reason is that the reference does not link to the correct file - for example, you have a file `2021_01_01.md` but link to it via `[[2021-01-01]]` (note the dashes - and rename the file)
 		- If you use the desktop application and force quit it instead of closing it properly, the content displayed when opening it again may not reflect the actual content. Logseq saves its [[graph]] database (the meta information about your files) only when being properly closed. However, no actual content is lost. [[Reindex]] your content to make it appear again.
 - # Resources
