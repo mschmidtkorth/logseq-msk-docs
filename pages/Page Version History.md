@@ -1,0 +1,40 @@
+alias:: versioning
+
+- Logseq stores a version history when editing your files.
+- Version history is managed via [Git](https://git-scm.com/) as a version control system. Logseq uses an internal Git client so you do not need to have it installed on your system.
+- Version history is optional. You can still use other ways to backup your data.
+-
+  #+BEGIN_TIP
+  You do not need to know anything about Git to use Logseq's version history capability. However, some of the explanations below are intended for people that are familiar with Git.
+  #+END_TIP
+-
+  #+BEGIN_WARNING
+  If you already have a manually created Git repository in your [[graph]] directory, Logseq's Git integration will create commits for your _existing_ repository. You can still push to your remote location if you have specified one, or use it locally only.
+  If you want to keep using your current repository, create your own repository for the [[graph]]'s _parent_ directory. This allows you to use Logseq's automatic version history and your own manual commits outside of Logseq's native functionality. Logseq will keep its Git-related files in a `.git` folder stored (on MacOS) in your Home folder at `~/.logseq/.git`. 
+  If you rely on descriptions of your changes (custom commit messages), disable the automatic commit in Logseq's settings and use `c` to commit manually.
+  #+BEGIN_CAUTION 
+  Do not use Dropbox, Google Drive or similar tools to backup your `.git` folder. Synchronization managed by these tools may conflict with Git's version management and may result in a broken Git version management (a broken repository). Git relies on metadata information stored in its (invisible) `.git` folder and very frequently makes modifications to it - something external tools like Dropbox have trouble with due to the locking of files etc.
+  If you must use these services, make sure to add the `.git` folder to your ignore list for Dropbox, Google Drive etc.
+  #+END_CAUTION
+  #+END_WARNING
+- **USAGE**
+	- Version history is enabled at _[[Settings]] > Version Control_
+	- You can choose to save changes automatically or on-demand
+		- Every 60 seconds (or as specified) a new version is created automatically (if there has been any change), or if _[[Settings]] > Version Control > Enable Git auto commit_ is disabled
+		- Manually create a new version by hitting `c` (for <ins>c</ins>ommit) on your keyboard and entering a message to describe the change
+		-
+		  #+BEGIN_TIP
+		  Logseq is going to ask you for your name and email address when using Git. This information is only used to identify the author of changes to your Markdown/Org Mode files.
+		  #+END_TIP
+	- You can run any custom Git commands, for example `git push` to _push_ your changes - i.e. update your remote repository -, via `Cmd+!` or `Alt+!` [keyboard shortcut](((612a3629-bfa5-4d51-9d6f-fb03237c43fe)))
+		- TODO Currently does not work for non-US keyboards and cannot be customized
+		- Logseq does not automatically push your changes. You have to do it manually or use means that are independent of Logseq, for example [git post-commit hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
+	- You can access your page history at the three dots menu of the page next to the page title at _Check page history_
+		- To restore to a previous version, click on any entry, copy its content and replace your current page with it
+		-
+		  #+BEGIN_TIP
+		  If you are familiar with Git, you can use `git log --stat` for an overview of files and their changes per commit that Logseq has performed.
+		  #+END_TIP
+	-
+	-
+	-
