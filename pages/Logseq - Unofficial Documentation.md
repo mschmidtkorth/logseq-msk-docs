@@ -214,6 +214,7 @@ heading:: true
 		- ## [[Spaced Repetition]] (Flashcards)
 		- ## [[PDF Annotations]]
 		- ## [[Encryption]]
+		- ## [[Integration]]
 		- ## Querying Data ([[Queries]])
 		- ## [[Page Version History]]
 		- ## Customization: [[Custom CSS]] & [[Plugins API]]
